@@ -84,7 +84,7 @@ subroutine inductionFactors(r, chord, Rhub, Rtip, phi, cl, cd, B, &
 
         else  ! Glauert(Buhl) correction
 
-            g1 = 2.0_dp*k + 1.0_dp/9
+            g1 = 2.0_dp*k - 1.0_dp/9
             g2 = 2.0_dp*k - 1.0_dp/3
             g3 = 2.0_dp*k - 7.0_dp/9
 

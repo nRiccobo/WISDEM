@@ -84,15 +84,11 @@ subroutine inductionFactors(r, chord, Rhub, Rtip, phi, cl, cd, B, &
 
         else  ! Glauert(Buhl) correction
 
-            g1 = 2.0_dp*F*k - (10.0_dp/9-F)
-            g2 = 2.0_dp*F*k - (4.0_dp/3-F)*F
-            g3 = 2.0_dp*F*k - (25.0_dp/9-2*F)
+            g1 = 2.0_dp*k + 1.0_dp/9
+            g2 = 2.0_dp*k - 1.0_dp/3
+            g3 = 2.0_dp*k - 7.0_dp/9
 
-            if (abs(g3) < 1e-6_dp) then  ! avoid singularity
-                a = 1.0_dp - 1.0_dp/2.0/sqrt(g2)
-            else
-                a = (g1 - sqrt(g2)) / g3
-            end if
+            a = (g1 - sqrt(g2)) / g3
 
         end if
 

@@ -809,7 +809,7 @@ class WindTurbineOntologyPython(object):
                 self.wt_init["components"]["blade"]["internal_structure_2d_fem"]["layers"][i]["thickness"][
                     "values"
                 ] = wt_opt["blade.ps.layer_thickness_param"][i, :].tolist()
-                if wt_opt["blade.internal_structure_2d_fem.definition_layer"][i] < 7:
+                if wt_opt["blade.internal_structure_2d_fem.definition_layer"][i] < 10:
                     if (
                         "start_nd_arc"
                         not in self.wt_init["components"]["blade"]["internal_structure_2d_fem"]["layers"][i]
@@ -835,8 +835,10 @@ class WindTurbineOntologyPython(object):
                         "values"
                     ] = wt_opt["blade.internal_structure_2d_fem.layer_end_nd"][i, :].tolist()
                 if (
-                    wt_opt["blade.internal_structure_2d_fem.definition_layer"][i] > 1
-                    and wt_opt["blade.internal_structure_2d_fem.definition_layer"][i] < 6
+                    (wt_opt["blade.internal_structure_2d_fem.definition_layer"][i] > 1
+                    and wt_opt["blade.internal_structure_2d_fem.definition_layer"][i] < 6) 
+                    or (wt_opt["blade.internal_structure_2d_fem.definition_layer"][i] == 7 or 
+                    wt_opt["blade.internal_structure_2d_fem.definition_layer"][i] == 8)
                 ):
                     self.wt_init["components"]["blade"]["internal_structure_2d_fem"]["layers"][i]["width"][
                         "grid"

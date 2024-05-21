@@ -1,0 +1,103 @@
+general:
+        folder_output: outputs
+        fname_output: jacktow_output
+design_variables:
+
+    tower:
+        outer_diameter:
+            flag: True
+            lower_bound: 6.0
+            upper_bound: 10.0
+        layer_thickness:
+            flag: True
+            lower_bound: 4e-3
+            upper_bound: 2e-1
+            
+    jacket:
+        foot_head_ratio:
+            flag: True
+            lower_bound: 1.1
+            upper_bound: 5.0
+        r_head:
+            flag: True
+            lower_bound: 2.
+            upper_bound: 12.
+        leg_thickness:
+            flag: True
+            lower_bound: 0.05
+            upper_bound: 0.2
+        leg_diameter:
+            flag: True
+            lower_bound: 0.9
+            upper_bound: 10.
+        brace_diameters:
+            flag: True
+            lower_bound: 0.5
+            upper_bound: 4.
+        brace_thicknesses:
+            flag: True
+            lower_bound: 0.05
+            upper_bound: 1.
+
+merit_figure: structural_mass
+
+constraints:
+    tower:
+        height_constraint:
+            flag: False
+            lower_bound: 1.e-2
+            upper_bound: 1.e-2
+        stress:
+            flag: True
+        global_buckling:
+            flag: True
+        shell_buckling:
+            flag: True
+        d_to_t:
+            flag: False
+            lower_bound: 120.0
+            upper_bound: 2000.0
+        taper:
+            flag: False
+            lower_bound: 0.2
+        slope:
+            flag: True
+        frequency:
+            flag: False
+        frequency_1:
+            flag: True
+            lower_bound: 0.13
+            upper_bound: 0.40
+    jacket:
+        stress:
+            flag: True
+        global_buckling:
+            flag: False
+        shell_buckling:
+            flag: True
+        frequency_1:
+            flag: False #True
+            lower_bound: 0.13
+            upper_bound: 0.40
+        tower_diameter_coupling:
+            flag: True
+
+driver:
+    optimization:
+        flag: True            # Flag to enable optimization
+        tol: 1.e-8            # Optimality tolerance
+        max_major_iter: 10    # Maximum number of major design iterations (SNOPT)
+        max_minor_iter: 100   # Maximum number of minor design iterations (SNOPT)
+        max_iter: 100         # Maximum number of iterations (SLSQP)
+        step_size: 1.e-4      # Step size for finite differencing
+        solver: SLSQP         # Optimization solver. Other options are 'SLSQP' - 'CONMIN'
+        form: central         # Finite differencing mode, either forward or central
+    design_of_experiments:
+        flag: False           # Flag to enable design of experiments
+        run_parallel: True    # Flag to run using parallel processing
+        generator: Uniform    # Type of input generator. (Uniform)
+        num_samples: 5        # number of samples for (Uniform only)
+
+recorder:
+    flag: False                            # Flag to activate OpenMDAO recorder
+    file_name: log_opt.sql    # Name of OpenMDAO recorder

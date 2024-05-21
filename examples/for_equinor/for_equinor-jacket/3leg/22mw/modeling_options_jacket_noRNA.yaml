@@ -1,0 +1,50 @@
+# Generic modeling options file to run standard WISDEM case
+General:
+    verbosity: False  # When set to True, the code prints to screen many infos
+WISDEM:
+    n_dlc: 1           # Number of design load cases
+    RotorSE:
+        flag: False
+    DriveSE:
+        flag: False
+    TowerSE:             # Options of TowerSE module
+        flag: True
+        wind: PowerWind  # Wind used
+        gamma_f: 1.35    # Safety factor for fatigue loads
+        gamma_m: 1.3     # Safety factor for material properties
+        gamma_n: 1.0     # Safety factor for ...
+        gamma_b: 1.1     # Safety factor for ...
+        gamma_fatigue: 1.755  # Safety factor for fatigue loads
+        buckling_method: dnvgl # Buckling code type [eurocode or dnvgl]
+        buckling_length: 15    # Buckling parameter
+        frame3dd:
+            shear: True
+            geom: True
+            tol: 1e-8
+    FixedBottomSE:
+        flag: True
+        soil_springs: True
+        wind: PowerWind  # Wind used
+        gamma_f: 1.35    # Safety factor for fatigue loads
+        gamma_m: 1.3     # Safety factor for material properties
+        gamma_n: 1.0     # Safety factor for ...
+        gamma_b: 1.1     # Safety factor for ...
+        gamma_fatigue: 1.755  # Safety factor for fatigue loads
+        buckling_method: dnvgl # Buckling code type [eurocode or dnvgl]
+        buckling_length: 15    # Buckling parameter
+        frame3dd:
+            shear: True
+            geom: True
+            tol: 1e-8
+            modal_method: 1
+    BOS:
+        flag: False
+    Loading:
+        mass: 1052287.0
+        center_of_mass: [-6.52428438, -0.11383621, 4.70664538 ]
+        moment_of_inertia: [6.42480954e+08, 3.93511385e+08, 3.73787404e+08, 3.26735017e+02, 2.84895953e+06, 2.42688030e+05]
+        loads:
+            - force: [4.47571522e+06, -6.00480233e+03, -7.01529188e+06 ]
+              moment: [-1222871.81897416, -7540618.89171338, 11936204.0340628]
+              velocity: 20.2675116
+

@@ -1,0 +1,49 @@
+# Generic modeling options file to run standard WISDEM case
+General:
+    verbosity: True  # When set to True, the code prints to screen many infos
+WISDEM:
+    n_dlc: 1           # Number of design load cases
+    RotorSE:
+        flag: False
+    DriveSE:
+        flag: False
+    TowerSE:             # Options of TowerSE module
+        flag: True
+        wind: PowerWind  # Wind used
+        gamma_f: 1.35    # Safety factor for fatigue loads
+        gamma_m: 1.3     # Safety factor for material properties
+        gamma_n: 1.0     # Safety factor for ...
+        gamma_b: 1.1     # Safety factor for ...
+        gamma_fatigue: 1.755  # Safety factor for fatigue loads
+        buckling_method: dnvgl # Buckling code type [eurocode or dnvgl]
+        buckling_length: 15    # Buckling parameter
+        frame3dd:
+            shear: True
+            geom: True
+            tol: 1e-8
+    FixedBottomSE:
+        flag: True
+        soil_springs: True
+        wind: PowerWind  # Wind used
+        gamma_f: 1.35    # Safety factor for fatigue loads
+        gamma_m: 1.3     # Safety factor for material properties
+        gamma_n: 1.0     # Safety factor for ...
+        gamma_b: 1.1     # Safety factor for ...
+        gamma_fatigue: 1.755  # Safety factor for fatigue loads
+        buckling_method: dnvgl # Buckling code type [eurocode or dnvgl]
+        buckling_length: 15    # Buckling parameter
+        frame3dd:
+            shear: True
+            geom: True
+            tol: 1e-8
+            modal_method: 1
+    BOS:
+        flag: False
+    Loading:
+        mass: 825984.97715361
+        center_of_mass: [-6.58645204, -0.06649943,  2.80042883]
+        moment_of_inertia: [2.21927957e+08, 1.60976174e+08, 1.55911834e+08, 2.07017680e+02, 6.23958851e+06, 8.14619002e+04]
+        loads:
+            - force: [2.24067125e+06, -3.70251651e+03, -6.38902888e+06] # towerse.rna_F
+              moment: [-684465.49250858, -30894909.33681112, 6612313.40965286] # towerse.rna_M
+              velocity: 21.51755666 #fixedse.env.Uref

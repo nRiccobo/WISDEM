@@ -1,0 +1,52 @@
+# Generic modeling options file to run standard WISDEM case
+General:
+    verbosity: False  # When set to True, the code prints to screen many infos
+WISDEM:
+    n_dlc: 1           # Number of design load cases
+    RotorSE:
+        flag: False
+    DriveSE:
+        flag: False
+    TowerSE:             # Options of TowerSE module
+        flag: True
+        wind: PowerWind  # Wind used
+        gamma_f: 1.35    # Safety factor for fatigue loads
+        gamma_m: 1.3     # Safety factor for material properties
+        gamma_n: 1.0     # Safety factor for ...
+        gamma_b: 1.1     # Safety factor for ...
+        gamma_fatigue: 1.755  # Safety factor for fatigue loads
+        buckling_method: dnvgl # Buckling code type [eurocode or dnvgl]
+        buckling_length: 15    # Buckling parameter
+        frame3dd:
+            shear: True
+            geom: True
+            tol: 1e-8
+    FixedBottomSE:
+        flag: True
+        soil_springs: True
+        wind: PowerWind  # Wind used
+        gamma_f: 1.35    # Safety factor for fatigue loads
+        gamma_m: 1.3     # Safety factor for material properties
+        gamma_n: 1.0     # Safety factor for ...
+        gamma_b: 1.1     # Safety factor for ...
+        gamma_fatigue: 1.755  # Safety factor for fatigue loads
+        buckling_method: dnvgl # Buckling code type [eurocode or dnvgl]
+        buckling_length: 15    # Buckling parameter
+        frame3dd:
+            shear: True
+            geom: True
+            tol: 1e-8
+            modal_method: 1
+    BOS:
+        flag: False
+    Loading:
+        mass: 1023949.0
+        center_of_mass: [-6.50611071, -0.10521004, 4.7073192 ]
+        moment_of_inertia: [5.81806473e+08, 3.60713497e+08, 3.41178669e+08, 2.77344567e+02, 4.89364270e+06, 2.10348122e+05]
+        loads:
+            - force: [4.47571522e+06, -6.00480233e+03, -7.01529188e+06 ]
+              moment: [-1222871.81897416, -7540618.89171338, 11936204.0340628]
+              velocity: 20.16340794
+              # More suspicious:
+            #- force: [4325619.16738658, -8167.2762198, -6844586.34174298 ]
+            #  moment: [-1169697.69529042, -8480303.32979336, 11526781.69112781]

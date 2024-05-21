@@ -1,0 +1,34 @@
+general: {folder_output: outputs, fname_output: monotow_output}
+design_variables:
+    tower:
+        outer_diameter: {flag: true, lower_bound: 6.0, upper_bound: 10.0}
+        layer_thickness: {flag: true, lower_bound: 0.004, upper_bound: 0.2}
+    monopile:
+        outer_diameter: {flag: true, lower_bound: 6.0, upper_bound: 10.0}
+        layer_thickness: {flag: true, lower_bound: 0.004, upper_bound: 0.2}
+merit_figure: structural_mass
+constraints:
+    tower:
+        height_constraint: {flag: false, lower_bound: 0.01, upper_bound: 0.01}
+        stress: {flag: true}
+        global_buckling: {flag: true}
+        shell_buckling: {flag: true}
+        d_to_t: {flag: false, lower_bound: 120.0, upper_bound: 2000.0}
+        taper: {flag: false, lower_bound: 0.2}
+        slope: {flag: true}
+        frequency: {flag: false}
+        frequency_1: {flag: true, lower_bound: 0.22, upper_bound: 0.4}
+    monopile:
+        stress: {flag: true}
+        global_buckling: {flag: true}
+        shell_buckling: {flag: true}
+        d_to_t: {flag: false, lower_bound: 120.0, upper_bound: 2000.0}
+        taper: {flag: false, lower_bound: 0.2}
+        slope: {flag: true}
+        frequency_1: {flag: true, lower_bound: 0.22, upper_bound: 0.4}
+        pile_depth: {flag: true, lower_bound: 30.0}
+        tower_diameter_coupling: {flag: true}
+driver:
+    optimization: {flag: true, tol: 1e-09, max_major_iter: 10, max_minor_iter: 100, max_iter: 500, step_size: 0.0001, solver: SLSQP, form: central}
+    design_of_experiments: {flag: false, run_parallel: true, generator: Uniform, num_samples: 5}
+recorder: {flag: false, file_name: log_opt.sql}

@@ -3,7 +3,7 @@ General:
     goodman_correction: true
     openfast_configuration: {use_exe: false, OF_run_fst: EquinorRWT, OF_run_dir: OFtemp}
 WISDEM:
-    RotorSE: {flag: true, spar_cap_ss: DP13_DP10_triax, spar_cap_ps: DP07_DP04_uniax, te_ss: TE_reinforcement_SS, te_ps: TE_reinforcement_PS, peak_thrust_shaving: true, thrust_shaving_coeff: 0.8}
+    RotorSE: {flag: true, spar_cap_ss: DP13_DP10_uniax, spar_cap_ps: DP07_DP04_uniax, te_ss: DP13_DP10_triax, te_ps: DP07_DP04_uniax, peak_thrust_shaving: true, thrust_shaving_coeff: 0.8}
     DriveSE: {flag: true}
     TowerSE:
         flag: true

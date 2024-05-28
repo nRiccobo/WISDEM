@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 from wisdem import run_wisdem
 from helper_functions import load_yaml, write_yaml, init_fig_axis, fig_format, save
 
+import time
+
 # ---------------------------------------------------------------------------------------------
 ### USER OPTIONS FOR SCRIPT ###
 
@@ -22,18 +24,20 @@ run_fatigue_openfast = False
 # Should we generate output plots
 make_plots = False
 
+# Direct-drive or gear box system
+gear_box = False
 # Which machine ratings should we run [in MW] (choices are 15, 20, 22, 25)?
-ratings = [10] # [15, 20, 22, 25]
+ratings = [10, 15, 22] # [15, 20, 22, 25]
 
 # Which depths should we run [in m] (choices are 20, 30, 40, 50, 60)?
-depths  = [20] # , 30, 40, 50, 60]
+depths  = [20, 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
 max_diam = 10. * np.ones( (len(ratings), len(depths)) )
 if len(ratings) > 1:
-    max_diam[1,:] = 11. # 20 m
-    max_diam[2,:] = 11. # 22 m
-    max_diam[3,:] = 12. # 25 m
+    max_diam[1,:] = 11. # 20 mw
+    max_diam[2,:] = 11. # 22 mw
+#    max_diam[3,:] = 12. # 25 mw
 
 # Set the first natural frequency [in Hz] of the monopile-tower structure (with the nacelle+rotor on top)
 freq_lower = 0.22 * np.ones( (len(ratings), len(depths)) )
@@ -71,6 +75,21 @@ for ri, r in enumerate(ratings):
 
         os.chdir(f'{d}m')
 
+        tmpgeo = load_yaml(fgeometry)
+        tmpans = load_yaml(fanalysis)
+        # Direct-drive or gearbox, rewrites geometry file with a gear_ratio != 1
+        if gear_box:
+            tmpgeo['assembly']['drivetrain'] = 'Geared'
+            tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 126.0 # made this up
+            tmpans['general']['fname_output'] = 'turb_gen_output'
+        else:
+            tmpgeo['assembly']['drivetrain'] = 'direct_drive'
+            tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 1.0 # direct-drive
+            tmpans['general']['fname_output'] = 'turb_dd_output'
+
+        write_yaml(tmpgeo, fgeometry)
+        write_yaml(tmpans, fanalysis)
+
         # Run optimization
         if run_optimization:
             # Write out customized analysis options
@@ -83,6 +102,7 @@ for ri, r in enumerate(ratings):
             write_yaml(analysis_opt_yaml, fanalysis_tmp)
 
             # Run WISDEM optimization of tower and monopile
+            t = time.time()
             wt_opt, _, _ = run_wisdem(fgeometry, fmodeling_opt, fanalysis_tmp)
 
             # Read output
@@ -93,12 +113,18 @@ for ri, r in enumerate(ratings):
             if overwrite_geometry:
                 shutil.move(fopt_path, fgeometry)
 
+            print(f"Full Opt Elapsed Time: {time.time() - t:.2f}")
+
         # Run full WISDEM
         if run_evaluation or run_optimization:
+
+            t2 = time.time()
             if r == 10:
                 tmp = load_yaml(fmodeling)
-                tmp['WISDEM']['RotorSE']['spar_cap_ss'] = 'DP13_DP10_triax'           # Name in the yaml of the spar cap laminate on the suction side for 10mw
+                tmp['WISDEM']['RotorSE']['spar_cap_ss'] = 'DP13_DP10_uniax'           # Name in the yaml of the spar cap laminate on the suction side for 10mw
                 tmp['WISDEM']['RotorSE']['spar_cap_ps'] = 'DP07_DP04_uniax'           # Name in the yaml of the spar cap laminate on the pressure side for 10mw
+                tmp['WISDEM']['RotorSE']['te_ss'] = 'DP13_DP10_triax'           # Name in the yaml of the spar cap laminate on the suction side for 10mw
+                tmp['WISDEM']['RotorSE']['te_ps'] = 'DP07_DP04_uniax'           # Name in the yaml of the spar cap laminate on the pressure side for 10mw
                 write_yaml(tmp, fmodeling_10mw)
 
                 wt_run, _, _ = run_wisdem(fgeometry, fmodeling_10mw, fanalysis)
@@ -106,6 +132,7 @@ for ri, r in enumerate(ratings):
             else:
                 wt_run, _, _ = run_wisdem(fgeometry, fmodeling, fanalysis)
 
+            print(f"Eval Elapsed Time: {time.time() - t2:.2f}")
         if run_fatigue_openfast:
             wt_run, _, _ = run_weis(fgeometry, fmodeling, fanalysis)
 

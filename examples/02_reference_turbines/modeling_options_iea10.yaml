@@ -23,3 +23,15 @@ WISDEM:
             geom: True
     BOS:
         flag: True
+
+DLC_driver:
+    DLCs:
+        - DLC: "1.2"
+          #wind_speed: [6., 10., 11., 15.]
+          n_seeds: 1
+          analysis_time: 600.
+          transient_time: 120.
+          turbulent_wind:
+              HubHt: 165
+              GridHeight: 350
+              GridWidth: 350

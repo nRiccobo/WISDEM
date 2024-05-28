@@ -1,4 +1,1 @@
-# Generic analysis options where nothing is run
-general:
-    folder_output: outputs
-    fname_output: equinor_turb_output
+general: {folder_output: outputs, fname_output: turb_dd_output}

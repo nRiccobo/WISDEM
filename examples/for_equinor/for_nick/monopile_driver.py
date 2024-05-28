@@ -25,7 +25,7 @@ run_fatigue_openfast = False
 make_plots = False
 
 # Direct-drive or gear box system
-gear_box = False
+gear_box = True
 # Which machine ratings should we run [in MW] (choices are 15, 20, 22, 25)?
 ratings = [10, 15, 22] # [15, 20, 22, 25]
 
@@ -80,7 +80,7 @@ for ri, r in enumerate(ratings):
         # Direct-drive or gearbox, rewrites geometry file with a gear_ratio != 1
         if gear_box:
             tmpgeo['assembly']['drivetrain'] = 'Geared'
-            tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 126.0 # made this up
+            tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 150.0 # made this up
             tmpans['general']['fname_output'] = 'turb_gen_output'
         else:
             tmpgeo['assembly']['drivetrain'] = 'direct_drive'
@@ -113,7 +113,7 @@ for ri, r in enumerate(ratings):
             if overwrite_geometry:
                 shutil.move(fopt_path, fgeometry)
 
-            print(f"Full Opt Elapsed Time: {time.time() - t:.2f}")
+            print(f"{r}mw {d}m Full Opt Elapsed Time: {time.time() - t:.2f}")
 
         # Run full WISDEM
         if run_evaluation or run_optimization:
@@ -132,7 +132,7 @@ for ri, r in enumerate(ratings):
             else:
                 wt_run, _, _ = run_wisdem(fgeometry, fmodeling, fanalysis)
 
-            print(f"Eval Elapsed Time: {time.time() - t2:.2f}")
+            print(f"{r}mw {d}m Eval Elapsed Time: {time.time() - t2:.2f}")
         if run_fatigue_openfast:
             wt_run, _, _ = run_weis(fgeometry, fmodeling, fanalysis)
 

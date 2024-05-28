@@ -1,0 +1,4 @@
+**/outputs/*.mat
+**/outputs/*.npz
+**/outputs/*.pkl
+**/outputs/*.xlsx

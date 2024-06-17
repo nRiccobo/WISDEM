@@ -419,8 +419,8 @@ components:
         hub_material: cast_iron
         spinner_material: glass_uni
         elastic_properties_mb:
-            system_mass: 94717.01664448272
-            system_inertia: [2089018.8038250215, 1356231.596099771, 1356231.596099771, 0.0, 0.0, 0.0]
+            system_mass: 94717.01664503163
+            system_inertia: [2089018.803838744, 1356231.5961066335, 1356231.5961066335, 0.0, 0.0, 0.0]
     nacelle:
         drivetrain:
             uptilt: 0.10471975511965977
@@ -471,11 +471,11 @@ components:
             planet_numbers: [3, 3, 0]
         generator: {generator_type: PMSG_Outer, rho_Fe: 7700.0, rho_Fes: 7850.0, rho_Copper: 8900.0, rho_PM: 7450.0, B_r: 1.279, P_Fe0e: 1.0, P_Fe0h: 4.0, S_N: -0.002, alpha_p: 1.0995574287564276, b_r_tau_r: 0.45, b_ro: 0.004, b_s_tau_s: 0.45, b_so: 0.004, cofi: 0.9, freq: 60.0, h_i: 0.004, h_sy0: 0.0, h_w: 0.005, k_fes: 0.8, k_fillr: 0.55, k_fills: 0.65, k_s: 0.2, m: 3, mu_0: 1.2566370614359173e-06, mu_r: 1.06, phi: 1.5707963267948966, q1: 5, q2: 4, ratio_mw2pp: 0.8, resist_Cu: 2.52e-08, y_tau_pr: 0.8333333, y_tau_p: 0.8, rad_ag: 5.12623359, len_s: 2.23961662, tau_p: 0.1610453779, tau_s: 0.1339360726, h_s: 0.3769449149, b_s: 0.05121796888, b_t: 0.08159225451, h_t: 0.3859449149, h_ys: 0.03618114528, h_yr: 0.0361759511, h_m: 0.0995385122, b_m: 0.1288363023, B_g: 1.38963289, B_symax: 1.63455514, B_rymax: 1.63478983, p: 100.0, R_s: 0.02457052, L_s: 0.01138752, S: 240, t_r: 0.0607657125, h_sr: 0.04677116325, t_s: 0.06065213554, h_ss: 0.04650825863, E_p: 1905.2558883257652, b: 2.0, c: 5.0, N_c: 2.0, B_tmax: 1.9, u_allow_pcent: 8.5, y_allow_pcent: 1.0, z_allow_deg: 0.05, sigma: 60000.0, h_0: 0.05, C_Cu: 4.786, C_Fe: 0.556, C_Fes: 0.50139, C_PM: 50.0, mass_coefficient: 0.0, S_Nmax: -0.2, q3: 4, I_0: 0.0, d_r: 0.0, n_r: 0.0, t_wr: 0.0, n_s: 0.0, b_st: 0.0, d_s: 0.0, t_ws: 0.0}
         elastic_properties_mb:
-            system_mass: 660509.1789883577
-            yaw_mass: 27010.980265420858
-            system_inertia: [9409287.897771325, 8246915.799846889, 8594964.966084674, 485624.31658286613, 1454977.405280937, -269840.325088194]
-            system_inertia_tt: [21261056.527845953, 30495329.650301777, 19036878.380104247, 2.3283064365386963e-10, 12556826.65586612, 247597.37774999999]
-            system_center_mass: [-3.971727204935245, -0.18511523214146758, 4.231916176855968]
+            system_mass: 660509.1789881837
+            yaw_mass: 27010.980265420843
+            system_inertia: [9409287.897771062, 8246915.799845948, 8594964.966083823, 485624.3165827987, 1454977.4052806697, -269840.3250881698]
+            system_inertia_tt: [21261056.52784147, 30495329.65029097, 19036878.380097765, 3.4924596548080444e-10, 12556826.655860865, 247597.37774999987]
+            system_center_mass: [-3.971727204934693, -0.18511523214151632, 4.231916176855769]
     tower:
         outer_shape_bem:
             reference_axis: &id003
@@ -490,7 +490,7 @@ components:
                     values: [15.0, 50.0, 100.0, 130.0, 158.0]
             outer_diameter:
                 grid: [0.0, 0.2447552447552448, 0.5944055944055944, 0.8041958041958042, 1.0]
-                values: [11.0, 11.0, 11.0, 10.649910992002791, 6.000000000000002]
+                values: [10.999999999999998, 10.999999999999996, 11.0, 10.793978350676358, 6.0]
             drag_coefficient:
                 grid: [0.0, 1.0]
                 values: [0.5, 0.5]
@@ -502,7 +502,7 @@ components:
                   material: steel
                   thickness:
                       grid: [0.0, 0.2447552447552448, 0.5944055944055944, 0.8041958041958042, 1.0]
-                      values: [0.08000679616915227, 0.05605421092125095, 0.03801489356265117, 0.012475459238376563, 0.013831347509214916]
+                      values: [0.08156674615285212, 0.04812030569964928, 0.020090877899703593, 0.009367007667337907, 0.020096852923630754]
     monopile:
         transition_piece_mass: 100000.0
         transition_piece_cost: 500000.0
@@ -516,10 +516,10 @@ components:
                     values: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
                 z:
                     grid: [0.0, 0.35294117647058826, 0.5294117647058824, 0.7058823529411765, 0.8235294117647058, 0.9411764705882353, 1.0]
-                    values: [-70.0, -40.0, -25.0, -10.0, 0.0, 10.0, 15.000000000000002]
+                    values: [-70.0, -40.0, -25.0, -10.0, 0.0, 10.0, 15.0]
             outer_diameter:
                 grid: [0.0, 0.35294117647058826, 0.5294117647058824, 0.7058823529411765, 0.8235294117647058, 0.9411764705882353, 1.0]
-                values: [11.0, 11.0, 10.999999999999998, 11.0, 10.999999999999998, 11.0, 10.999999999999998]
+                values: [10.999999999999998, 10.999999999999998, 10.999999999999996, 11.0, 11.0, 11.0, 10.999999999999998]
             drag_coefficient:
                 grid: [0.0, 1.0]
                 values: [0.5, 0.5]
@@ -531,7 +531,7 @@ components:
                   material: steel
                   thickness:
                       grid: [0.0, 0.35294117647058826, 0.5294117647058824, 0.7058823529411765, 0.8235294117647058, 0.9411764705882353, 1.0]
-                      values: [0.01933056248147185, 0.06622763032655007, 0.11823492185237917, 0.05082856602577757, 0.10284893705245568, 0.041522432222615195, 0.093083687467071]
+                      values: [0.02070036912104587, 0.08853858576812826, 0.13736565000117992, 0.06686615701721994, 0.11896095777919183, 0.052823919100454905, 0.10680329963623518]
         gravity_foundation_mass: 0.0
 airfoils:
    -  aerodynamic_center: 0.275
@@ -768,4 +768,4 @@ control:
     shutdown: {limit_type: gen_speed, limit_value: 2.0}
 environment: {air_density: 1.225, air_dyn_viscosity: 1.81e-05, weib_shape_parameter: 2.0, air_speed_sound: 340.0, shear_exp: 0.12, water_density: 1025.0, water_dyn_viscosity: 0.0013351, soil_shear_modulus: 140000000.0, soil_poisson: 0.4, water_depth: 40.0, significant_wave_height: 4.52, significant_wave_period: 9.45, gravity: 9.80665, air_pressure: 103500.0, air_vapor_pressure: 1700.0, V_mean: 0.0}
 bos: {plant_turbine_spacing: 7, plant_row_spacing: 7, commissioning_pct: 0.01, decommissioning_pct: 0.15, distance_to_substation: 1.0, distance_to_interconnection: 8.5, interconnect_voltage: 130.0, distance_to_site: 115.0, distance_to_landfall: 50.0, port_cost_per_month: 2000000.0, site_auction_price: 100000000.0, site_assessment_plan_cost: 1000000.0, site_assessment_cost: 25000000.0, construction_operations_plan_cost: 2500000.0, boem_review_cost: 0.0, design_install_plan_cost: 2500000.0}
-costs: {wake_loss_factor: 0.15, fixed_charge_rate: 0.056, bos_per_kW: 4053.0, opex_per_kW: 137.0, turbine_number: 40.0, labor_rate: 58.8, painting_rate: 30.0, blade_mass_cost_coeff: 12.190527513718202, hub_mass_cost_coeff: 3.9, pitch_system_mass_cost_coeff: 22.1, spinner_mass_cost_coeff: 11.1, lss_mass_cost_coeff: 11.9, bearing_mass_cost_coeff: 4.499999999999999, gearbox_mass_cost_coeff: 12.9, hss_mass_cost_coeff: 6.8, generator_mass_cost_coeff: 13.63116024110424, bedplate_mass_cost_coeff: 2.9, yaw_mass_cost_coeff: 8.3, converter_mass_cost_coeff: 18.8, transformer_mass_cost_coeff: 18.8, hvac_mass_cost_coeff: 124.0, cover_mass_cost_coeff: 5.7, elec_connec_machine_rating_cost_coeff: 41.85, platforms_mass_cost_coeff: 17.1, tower_mass_cost_coeff: 2.5958169229317196, controls_machine_rating_cost_coeff: 21.15, crane_cost: 12000.0, gearbox_torque_cost: 50.0, electricity_price: 0.04, reserve_margin_price: 120.0, capacity_credit: 0.0, benchmark_price: 0.071}
+costs: {wake_loss_factor: 0.15, fixed_charge_rate: 0.056, bos_per_kW: 4053.0, opex_per_kW: 137.0, turbine_number: 40.0, labor_rate: 58.8, painting_rate: 30.0, blade_mass_cost_coeff: 12.190527513718202, hub_mass_cost_coeff: 3.9, pitch_system_mass_cost_coeff: 22.1, spinner_mass_cost_coeff: 11.1, lss_mass_cost_coeff: 11.9, bearing_mass_cost_coeff: 4.499999999999999, gearbox_mass_cost_coeff: 12.9, hss_mass_cost_coeff: 6.8, generator_mass_cost_coeff: 13.63116024110424, bedplate_mass_cost_coeff: 2.9, yaw_mass_cost_coeff: 8.3, converter_mass_cost_coeff: 18.8, transformer_mass_cost_coeff: 18.8, hvac_mass_cost_coeff: 124.0, cover_mass_cost_coeff: 5.7, elec_connec_machine_rating_cost_coeff: 41.85, platforms_mass_cost_coeff: 17.1, tower_mass_cost_coeff: 2.6842203795491404, controls_machine_rating_cost_coeff: 21.15, crane_cost: 12000.0, gearbox_torque_cost: 50.0, electricity_price: 0.04, reserve_margin_price: 120.0, capacity_credit: 0.0, benchmark_price: 0.071}

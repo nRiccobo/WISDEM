@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 from wisdem import run_wisdem
 from helper_functions import load_yaml, write_yaml, init_fig_axis, fig_format, save
 
+import time
+
 # ---------------------------------------------------------------------------------------------
 ### USER OPTIONS FOR SCRIPT ###
 
@@ -14,7 +16,7 @@ run_optimization = True #True
 overwrite_geometry = True
 
 # Should we just evaluate the current design and generate WISDEM outputs? (always run if optimizing)
-run_evaluation = True
+run_evaluation = False
 
 # Is the goal to evaluate support fatigue with DLC 1.2
 run_fatigue_openfast = False
@@ -22,14 +24,17 @@ run_fatigue_openfast = False
 # Should we generate output plots
 make_plots = False
 
+# Gearbox or Direct-drive
+gear_box = True
+
 # Which machine ratings should we run [in MW] (choices are 15, 20, 22, 25)?
 ratings = [10] # [15, 20, 22, 25]
 
 # Which depths should we run [in m] (choices are 20, 30, 40, 50, 60)?
-depths  = [20] # , 30, 40, 50, 60]
+depths  = [20, 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
-max_diam = 10. * np.ones( (len(ratings), len(depths)) )
+max_diam = 11. * np.ones( (len(ratings), len(depths)) )
 if len(ratings) > 1:
     max_diam[1,:] = 11. # 20 m
     max_diam[2,:] = 11. # 22 m
@@ -86,6 +91,7 @@ for ri, r in enumerate(ratings):
             write_yaml(analysis_opt_yaml, fanalysis_tmp)
 
             # Run WISDEM optimization of tower and monopile
+            t = time.time()
             wt_opt, _, _ = run_wisdem(fgeometry, fmodeling_opt, fanalysis_tmp)
 
             # Read output
@@ -96,10 +102,15 @@ for ri, r in enumerate(ratings):
             if overwrite_geometry:
                 shutil.move(fopt_path, fgeometry)
 
+            print(f"{r}mw {d}m Full Opt Elapsed Time: {time.time() - t:.2f}")
+
         # Run full WISDEM
         if run_evaluation or run_optimization:
+
+            t2 = time.time()
             wt_run, _, _ = run_wisdem(fgeometry, fmodeling, fanalysis)
 
+            print(f"{r}mw {d}m Eval Elapsed Time: {time.time() - t2:.2f}")
         if run_fatigue_openfast:
             wt_run, _, _ = run_weis(fgeometry, fmodeling, fanalysis)
 

@@ -1,0 +1,92 @@
+# yaml file for drivetrain/generator parameters for the IEA-15MW
+# Based on generator/gearbox (_gen) configurations or direct-drive (_dd)
+drivetrain_gen:
+  uptilt: 0.10471975511965978
+  distance_tt_hub: 5.614
+  overhang: 12.0313
+  drag_coefficient: 0.5
+  lss_diameter: [1.5, 1.7549349386516508]
+  lss_wall_thickness: [0.131026945422501, 0.023471109650929113]
+  generator_length: 2.15
+  gear_ratio: 120.0
+  gearbox_efficiency: 0.96
+  mb1Type: CARB
+  mb2Type: SRB
+  uptower: true
+  lss_material: steel_drive
+  bedplate_material: steel
+  generator_rpm_efficiency_user:
+      grid: [0.66673458, 0.68427487, 0.70181515, 0.71935544, 0.73689573, 0.75443601, 0.77197629, 0.78951658, 0.80705686, 0.82459715, 0.84213744, 0.85967772, 0.877218, 0.89475829, 0.91229857, 0.92983886, 0.94737915, 0.96491943, 0.98245971, 1.0]
+      values: [0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303, 0.9682517602634303]
+  generator_mass_user: 5116.262657373275
+  distance_hub_mb: 4.857462822889317
+  distance_mb_mb: 0.1
+  generator_radius_user: 0.6163515654412135
+  damping_ratio: 0.005
+  brake_mass_user: 0.0
+  hvac_mass_coefficient: 0.025
+  converter_mass_user: 0.0
+  transformer_mass_user: 0.0
+  gearbox_length_user: 0.0
+  gearbox_radius_user: 0.0
+  gearbox_mass_user: 0.0
+  hss_length: 1.6028117629205632
+  hss_diameter: [0.5330550200548076, 0.5245894700308652]
+  hss_wall_thickness: [0.0010072305947989555, 0.0010071211653617778]
+  hss_material: steel_drive
+  bedplate_flange_width: 0.015258615343878255
+  bedplate_flange_thickness: 0.3864946132925539
+  bedplate_web_thickness: 0.07919403346622268
+  gear_configuration: eep
+  planet_numbers: [3, 3, 0]
+
+generator_gen: {}
+
+drivetrain_dd:
+  uptilt: 0.10471975511965977
+  distance_tt_hub: 5.614
+  overhang: 12.0313
+  drag_coefficient: 0.5
+  distance_hub2mb: 1.0
+  distance_mb2mb: 1.2
+  lss_diameter: [3.0, 3.0]
+  lss_wall_thickness: [0.1, 0.1]
+  nose_diameter: [2.2, 2.2]
+  nose_wall_thickness: [0.1, 0.1]
+  generator_length: 2.15
+  bedplate_wall_thickness:
+      grid: [0.0, 1.0]
+      values: [0.05, 0.05]
+  gear_ratio: 1.0
+  gearbox_efficiency: 1.0
+  mb1Type: CARB
+  mb2Type: SRB
+  uptower: true
+  lss_material: steel_drive
+  bedplate_material: steel_drive
+  distance_hub_mb: 2.0
+  distance_mb_mb: 1.0
+  generator_radius_user: 0.0
+  generator_mass_user: 0.0
+  generator_rpm_efficiency_user:
+      grid: [0.0]
+      values: [0.0]
+  gearbox_length_user: 0.0
+  gearbox_radius_user: 0.0
+  gearbox_mass_user: 0.0
+  gearbox_torque_density: 200.0
+  damping_ratio: 0.005
+  hss_length: 1.5
+  hss_diameter: [0.3, 0.3]
+  hss_wall_thickness: [0.1, 0.1]
+  hss_material: steel
+  bedplate_flange_width: 1.0
+  bedplate_flange_thickness: 0.05
+  bedplate_web_thickness: 0.05
+  brake_mass_user: 0.0
+  hvac_mass_coefficient: 0.025
+  converter_mass_user: 0.0
+  transformer_mass_user: 0.0
+  gear_configuration: EEP
+  planet_numbers: [3, 3, 0]
+generator_dd: {generator_type: PMSG_Outer, rho_Fe: 7700.0, rho_Fes: 7850.0, rho_Copper: 8900.0, rho_PM: 7450.0, B_r: 1.279, P_Fe0e: 1.0, P_Fe0h: 4.0, S_N: -0.002, alpha_p: 1.0995574287564276, b_r_tau_r: 0.45, b_ro: 0.004, b_s_tau_s: 0.45, b_so: 0.004, cofi: 0.9, freq: 60.0, h_i: 0.004, h_sy0: 0.0, h_w: 0.005, k_fes: 0.8, k_fillr: 0.55, k_fills: 0.65, k_s: 0.2, m: 3, mu_0: 1.2566370614359173e-06, mu_r: 1.06, phi: 1.5707963267948966, q1: 5, q2: 4, ratio_mw2pp: 0.8, resist_Cu: 2.52e-08, y_tau_pr: 0.8333333, y_tau_p: 0.8, rad_ag: 5.12623359, len_s: 2.23961662, tau_p: 0.1610453779, tau_s: 0.1339360726, h_s: 0.3769449149, b_s: 0.05121796888, b_t: 0.08159225451, h_t: 0.3859449149, h_ys: 0.03618114528, h_yr: 0.0361759511, h_m: 0.0995385122, b_m: 0.1288363023, B_g: 1.38963289, B_symax: 1.63455514, B_rymax: 1.63478983, p: 100, R_s: 0.02457052, L_s: 0.01138752, S: 240, t_r: 0.0607657125, h_sr: 0.04677116325, t_s: 0.06065213554, h_ss: 0.04650825863, E_p: 1905.2558883257652, b: 2.0, c: 5.0, N_c: 2, B_tmax: 1.9, u_allow_pcent: 8.5, y_allow_pcent: 1.0, z_allow_deg: 0.05, sigma: 60000.0, h_0: 0.05, C_Cu: 4.786, C_Fe: 0.556, C_Fes: 0.50139, C_PM: 50.0, mass_coefficient: 0.0, S_Nmax: -0.2, q3: 4, I_0: 0.0, d_r: 0.0, n_r: 0.0, t_wr: 0.0, n_s: 0.0, b_st: 0.0, d_s: 0.0, t_ws: 0.0}

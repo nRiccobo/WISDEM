@@ -419,8 +419,8 @@ components:
         hub_material: cast_iron
         spinner_material: glass_uni
         elastic_properties_mb:
-            system_mass: 94717.01664448272
-            system_inertia: [2089018.8038250215, 1356231.596099771, 1356231.596099771, 0.0, 0.0, 0.0]
+            system_mass: 94717.01664503163
+            system_inertia: [2089018.803838744, 1356231.5961066335, 1356231.5961066335, 0.0, 0.0, 0.0]
     nacelle:
         drivetrain:
             uptilt: 0.10471975511965977
@@ -471,11 +471,11 @@ components:
             planet_numbers: [3, 3, 0]
         generator: {generator_type: PMSG_Outer, rho_Fe: 7700.0, rho_Fes: 7850.0, rho_Copper: 8900.0, rho_PM: 7450.0, B_r: 1.279, P_Fe0e: 1.0, P_Fe0h: 4.0, S_N: -0.002, alpha_p: 1.0995574287564276, b_r_tau_r: 0.45, b_ro: 0.004, b_s_tau_s: 0.45, b_so: 0.004, cofi: 0.9, freq: 60.0, h_i: 0.004, h_sy0: 0.0, h_w: 0.005, k_fes: 0.8, k_fillr: 0.55, k_fills: 0.65, k_s: 0.2, m: 3, mu_0: 1.2566370614359173e-06, mu_r: 1.06, phi: 1.5707963267948966, q1: 5, q2: 4, ratio_mw2pp: 0.8, resist_Cu: 2.52e-08, y_tau_pr: 0.8333333, y_tau_p: 0.8, rad_ag: 5.12623359, len_s: 2.23961662, tau_p: 0.1610453779, tau_s: 0.1339360726, h_s: 0.3769449149, b_s: 0.05121796888, b_t: 0.08159225451, h_t: 0.3859449149, h_ys: 0.03618114528, h_yr: 0.0361759511, h_m: 0.0995385122, b_m: 0.1288363023, B_g: 1.38963289, B_symax: 1.63455514, B_rymax: 1.63478983, p: 100.0, R_s: 0.02457052, L_s: 0.01138752, S: 240, t_r: 0.0607657125, h_sr: 0.04677116325, t_s: 0.06065213554, h_ss: 0.04650825863, E_p: 1905.2558883257652, b: 2.0, c: 5.0, N_c: 2.0, B_tmax: 1.9, u_allow_pcent: 8.5, y_allow_pcent: 1.0, z_allow_deg: 0.05, sigma: 60000.0, h_0: 0.05, C_Cu: 4.786, C_Fe: 0.556, C_Fes: 0.50139, C_PM: 50.0, mass_coefficient: 0.0, S_Nmax: -0.2, q3: 4, I_0: 0.0, d_r: 0.0, n_r: 0.0, t_wr: 0.0, n_s: 0.0, b_st: 0.0, d_s: 0.0, t_ws: 0.0}
         elastic_properties_mb:
-            system_mass: 661448.1975798196
-            yaw_mass: 27412.51595502405
-            system_inertia: [9457910.232596664, 8295068.681709526, 8660980.496278645, 487378.7723050566, 1468263.1127220124, -270541.6337958445]
-            system_inertia_tt: [21297441.350910388, 30517503.787118398, 19089539.719681017, 0.0, 12557061.292933868, 248830.29010464717]
-            system_center_mass: [-3.9663258580885596, -0.18577290868255003, 4.226688581427064]
+            system_mass: 662716.6599768013
+            yaw_mass: 27956.1766661304
+            system_inertia: [9524064.601019628, 8360558.552965368, 8751142.787652608, 489717.19979324413, 1486157.5860568942, -271467.7584866388]
+            system_inertia_tt: [21347085.59319679, 30547974.95749224, 19161713.569633253, 2.3283064365386963e-10, 12557363.833701994, 250483.5237647728]
+            system_center_mass: [-3.9590521351519956, -0.18664924961381807, 4.2196441932511455]
     tower:
         outer_shape_bem:
             reference_axis: &id003
@@ -490,7 +490,7 @@ components:
                     values: [15.0, 50.0, 100.0, 130.0, 158.0]
             outer_diameter:
                 grid: [0.0, 0.2447552447552448, 0.5944055944055944, 0.8041958041958042, 1.0]
-                values: [11.0, 11.0, 11.0, 11.0, 6.050044024200913]
+                values: [10.99997936725817, 10.999979367255532, 10.991603249665689, 10.990358683596714, 6.117148928280466]
             drag_coefficient:
                 grid: [0.0, 1.0]
                 values: [0.5, 0.5]
@@ -502,7 +502,7 @@ components:
                   material: steel
                   thickness:
                       grid: [0.0, 0.2447552447552448, 0.5944055944055944, 0.8041958041958042, 1.0]
-                      values: [0.10535705194100237, 0.05012799870915013, 0.04295627126069155, 0.006512786975802193, 0.018077780116781128]
+                      values: [0.09995634436938527, 0.06467107278032436, 0.00724697080467242, 0.022457034089382443, 0.006924164588777845]
     monopile:
         transition_piece_mass: 100000.0
         transition_piece_cost: 500000.0
@@ -519,7 +519,7 @@ components:
                     values: [-90.0, -60.0, -35.0, -10.0, 0.0, 10.0, 15.0]
             outer_diameter:
                 grid: [0.0, 0.2857142857142857, 0.5238095238095238, 0.7619047619047619, 0.8571428571428571, 0.9523809523809523, 1.0]
-                values: [11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0]
+                values: [10.99999999943103, 10.99999999986579, 10.999999999999979, 10.999999999480243, 10.999999999013212, 10.999979367203283, 10.999979366785183]
             drag_coefficient:
                 grid: [0.0, 1.0]
                 values: [0.5, 0.5]
@@ -531,7 +531,7 @@ components:
                   material: steel
                   thickness:
                       grid: [0.0, 0.2857142857142857, 0.5238095238095238, 0.7619047619047619, 0.8571428571428571, 0.9523809523809523, 1.0]
-                      values: [0.007171579268661843, 0.09267807362846822, 0.19676915446614857, 0.05062758721239909, 0.16836332514166127, 0.03145516135724424, 0.15726489665708976]
+                      values: [0.062390928755311416, 0.1410357184923758, 0.1662106323460459, 0.09587565525795155, 0.15638529023217312, 0.0805895438887596, 0.15961029783365366]
         gravity_foundation_mass: 0.0
 airfoils:
    -  aerodynamic_center: 0.275
@@ -768,4 +768,4 @@ control:
     shutdown: {limit_type: gen_speed, limit_value: 2.0}
 environment: {air_density: 1.225, air_dyn_viscosity: 1.81e-05, weib_shape_parameter: 2.0, air_speed_sound: 340.0, shear_exp: 0.12, water_density: 1025.0, water_dyn_viscosity: 0.0013351, soil_shear_modulus: 140000000.0, soil_poisson: 0.4, water_depth: 60.0, significant_wave_height: 4.52, significant_wave_period: 9.45, gravity: 9.80665, air_pressure: 103500.0, air_vapor_pressure: 1700.0, V_mean: 0.0}
 bos: {plant_turbine_spacing: 7, plant_row_spacing: 7, commissioning_pct: 0.01, decommissioning_pct: 0.15, distance_to_substation: 1.0, distance_to_interconnection: 8.5, interconnect_voltage: 130.0, distance_to_site: 115.0, distance_to_landfall: 50.0, port_cost_per_month: 2000000.0, site_auction_price: 100000000.0, site_assessment_plan_cost: 1000000.0, site_assessment_cost: 25000000.0, construction_operations_plan_cost: 2500000.0, boem_review_cost: 0.0, design_install_plan_cost: 2500000.0}
-costs: {wake_loss_factor: 0.15, fixed_charge_rate: 0.056, bos_per_kW: 4053.0, opex_per_kW: 137.0, turbine_number: 40.0, labor_rate: 58.8, painting_rate: 30.0, blade_mass_cost_coeff: 12.190527513718202, hub_mass_cost_coeff: 3.9, pitch_system_mass_cost_coeff: 22.1, spinner_mass_cost_coeff: 11.1, lss_mass_cost_coeff: 11.9, bearing_mass_cost_coeff: 4.499999999999999, gearbox_mass_cost_coeff: 12.9, hss_mass_cost_coeff: 6.8, generator_mass_cost_coeff: 13.63116024110424, bedplate_mass_cost_coeff: 2.9, yaw_mass_cost_coeff: 8.3, converter_mass_cost_coeff: 18.8, transformer_mass_cost_coeff: 18.8, hvac_mass_cost_coeff: 124.0, cover_mass_cost_coeff: 5.7, elec_connec_machine_rating_cost_coeff: 41.85, platforms_mass_cost_coeff: 17.1, tower_mass_cost_coeff: 2.578487885175383, controls_machine_rating_cost_coeff: 21.15, crane_cost: 12000.0, gearbox_torque_cost: 50.0, electricity_price: 0.04, reserve_margin_price: 120.0, capacity_credit: 0.0, benchmark_price: 0.071}
+costs: {wake_loss_factor: 0.15, fixed_charge_rate: 0.056, bos_per_kW: 4053.0, opex_per_kW: 137.0, turbine_number: 40.0, labor_rate: 58.8, painting_rate: 30.0, blade_mass_cost_coeff: 12.190527513718202, hub_mass_cost_coeff: 3.9, pitch_system_mass_cost_coeff: 22.1, spinner_mass_cost_coeff: 11.1, lss_mass_cost_coeff: 11.9, bearing_mass_cost_coeff: 4.499999999999999, gearbox_mass_cost_coeff: 12.9, hss_mass_cost_coeff: 6.8, generator_mass_cost_coeff: 13.63116024110424, bedplate_mass_cost_coeff: 2.9, yaw_mass_cost_coeff: 8.3, converter_mass_cost_coeff: 18.8, transformer_mass_cost_coeff: 18.8, hvac_mass_cost_coeff: 124.0, cover_mass_cost_coeff: 5.7, elec_connec_machine_rating_cost_coeff: 41.85, platforms_mass_cost_coeff: 17.1, tower_mass_cost_coeff: 2.6218250409646964, controls_machine_rating_cost_coeff: 21.15, crane_cost: 12000.0, gearbox_torque_cost: 50.0, electricity_price: 0.04, reserve_margin_price: 120.0, capacity_credit: 0.0, benchmark_price: 0.071}

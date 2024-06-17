@@ -12,8 +12,8 @@ import time
 ### USER OPTIONS FOR SCRIPT ###
 
 # Should we go through and run the design optimizations?
-run_optimization = False #True
-overwrite_geometry = False
+run_optimization = True #True
+overwrite_geometry = True
 
 # Should we just evaluate the current design and generate WISDEM outputs? (always run if optimizing)
 run_evaluation = True
@@ -25,18 +25,18 @@ run_fatigue_openfast = False
 make_plots = False
 
 # Direct-drive or gear box system
-gear_box = True
+gear_box = False
 # Which machine ratings should we run [in MW] (choices are 15, 20, 22, 25)?
-ratings = [10, 15, 22] # [15, 20, 22, 25]
+ratings = [15] #, 15, 22] # [15, 20, 22, 25]
 
 # Which depths should we run [in m] (choices are 20, 30, 40, 50, 60)?
-depths  = [20, 30, 40, 50, 60]
+depths  = [20] #, 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
 max_diam = 10. * np.ones( (len(ratings), len(depths)) )
 if len(ratings) > 1:
     max_diam[1,:] = 11. # 20 mw
-    max_diam[2,:] = 11. # 22 mw
+#    max_diam[2,:] = 11. # 22 mw
 #    max_diam[3,:] = 12. # 25 mw
 
 # Set the first natural frequency [in Hz] of the monopile-tower structure (with the nacelle+rotor on top)
@@ -56,6 +56,10 @@ fmodeling     = os.path.join(mydir, 'modeling_options_monopile.yaml')
 fmodeling_10mw = os.path.join(mydir, 'modeling_options_monopile_10mw.yaml')
 fanalysis_tmp = 'analysis_options_temp.yaml'
 ftmp          = 'optimized.yaml'
+
+# Specify yamls for 15 and 22MW's
+fdrivetrain_15mw = os.path.join(mydir, '15_gen_dd.yaml')
+fdrivetrain_22mw = os.path.join(mydir, '22_gen_dd.yaml')
 
 # Load in optimization analysis options for edits later
 analysis_opt_yaml = load_yaml(fanalysis_opt)
@@ -79,12 +83,46 @@ for ri, r in enumerate(ratings):
         tmpans = load_yaml(fanalysis)
         # Direct-drive or gearbox, rewrites geometry file with a gear_ratio != 1
         if gear_box:
+
             tmpgeo['assembly']['drivetrain'] = 'Geared'
-            tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 150.0 # made this up
+
+            if r==15:
+                gbgeom = load_yaml(fdrivetrain_15mw)
+                #fgeometry = os.path.join(mydir, '15MW_MSPMSG_FB.yaml')
+                tmpgeo['components']['nacelle']['drivetrain'] = gbgeom['drivetrain_gen']
+                #tmpgeo['components']['nacelle']['generator'] = gbgeom['generator_gen']
+
+            elif r==22:
+                gbgeom = load_yaml(fdrivetrain_22mw)
+
+                tmpgeo['components']['nacelle']['drivetrain'] = gbgeom['drivetrain_gen']
+
+            # Use simple drivetrain/gen for 10MW
+            else:
+                tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 120.0
+
             tmpans['general']['fname_output'] = 'turb_gen_output'
+
+
         else:
             tmpgeo['assembly']['drivetrain'] = 'direct_drive'
-            tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 1.0 # direct-drive
+
+            # Use entire drivetrain/gen from 15_gen_dd.yaml
+            if r==15:
+                gbgeom = load_yaml(fdrivetrain_15mw)
+                tmpgeo['components']['nacelle']['drivetrain'] = gbgeom['drivetrain_dd']
+                tmpgeo['components']['nacelle']['generator'] = gbgeom['generator_dd']
+            # Use entire drivetrain/gen from 22_gen_dd.yaml
+            elif r==22:
+                gbgeom = load_yaml(fdrivetrain_22mw)
+                tmpgeo['components']['nacelle']['drivetrain'] = gbgeom['drivetrain_dd']
+                tmpgeo['components']['nacelle']['generator'] = gbgeom['generator_dd']
+
+            # Use simple drivetrain/gen for 10MW
+            else:
+
+                tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 1.0
+
             tmpans['general']['fname_output'] = 'turb_dd_output'
 
         write_yaml(tmpgeo, fgeometry)

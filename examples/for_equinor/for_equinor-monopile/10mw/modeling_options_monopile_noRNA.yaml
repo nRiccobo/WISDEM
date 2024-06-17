@@ -1,12 +1,16 @@
 # Generic modeling options file to run standard WISDEM case
 General:
-    verbosity: True  # When set to True, the code prints to screen many infos
+    verbosity: False  # When set to True, the code prints to screen many infos
 WISDEM:
     n_dlc: 1           # Number of design load cases
     RotorSE:
         flag: False
+        spar_cap_ss: DP13_DP10_triax # Name in the yaml of the spar cap laminate on the suction side
+        spar_cap_ps: DP07_DP04_uniax # Name in the yaml of the spar cap laminate on the suction side
+        te_ss: DP17_DP15_uniax # Name in the yaml of the spar cap laminate on the suction side
+        te_ps: DP02_DP00_uniax # Name in the yaml of the spar cap laminate on the suction side
     DriveSE:
-        flag: False
+        flag: True
     TowerSE:             # Options of TowerSE module
         flag: True
         wind: PowerWind  # Wind used

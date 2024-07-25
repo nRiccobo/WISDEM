@@ -1,0 +1,37 @@
+The Meson build system
+Version: 1.4.0
+Source dir: /Users/nriccobo/GitHub/WISDEM
+Build dir: /Users/nriccobo/GitHub/WISDEM/meson_build
+Build type: native build
+Project name: wisdem
+Project version: undefined
+C compiler for the host machine: arm64-apple-darwin20.0.0-clang (clang 18.1.5 "clang version 18.1.5")
+C linker for the host machine: arm64-apple-darwin20.0.0-clang ld64 711
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Fortran compiler for the host machine: /opt/anaconda3/envs/wisdem-env/bin/arm64-apple-darwin20.0.0-gfortran (gcc 13.2.0 "GNU Fortran (GCC) 13.2.0")
+Fortran linker for the host machine: /opt/anaconda3/envs/wisdem-env/bin/arm64-apple-darwin20.0.0-gfortran ld64 711
+Library m found: YES
+Program python found: YES (/opt/anaconda3/envs/wisdem-env/bin/python)
+Did not find pkg-config by name 'pkg-config'
+Found pkg-config: NO
+Run-time dependency python found: YES 3.12
+meson.build:40: WARNING: Project targets '>= 0.60' but uses feature deprecated since '0.55.0': ExternalProgram.path. use ExternalProgram.full_path() instead
+Message: /opt/anaconda3/envs/wisdem-env/bin/python
+Message: /Users/nriccobo/GitHub/WISDEM/meson_build/./
+wisdem/ccblade/meson.build:8: WARNING: Project targets '>= 0.60' but uses feature introduced in '0.63.0': python_installation.extension_module with implicit dependency on python. use python_installation.dependency()
+Build targets in project: 4
+WARNING: Project specifies a minimum meson_version '>= 0.60' but uses features which were added in newer versions:
+ * 0.63.0: {'python_installation.extension_module with implicit dependency on python'}
+WARNING: Deprecated features used:
+ * 0.55.0: {'ExternalProgram.path'}
+
+wisdem undefined
+
+  User defined options
+    buildtype        : release
+    prefix           : /Users/nriccobo/GitHub/WISDEM/meson_build
+    python.platlibdir: .
+    python.purelibdir: .
+
+Found ninja-1.11.1.git.kitware.jobserver-1 at /private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/bin/ninja

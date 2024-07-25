@@ -1,0 +1,17 @@
+# ninja log v5
+0	220	1715887726066136459	wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_HPGutil.c.o	70502ee19b854d12
+0	288	1715887726161852231	wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_coordtrans.c.o	7615d480506eba93
+1	293	1715887726165654581	wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_NRutil.c.o	250be4f4b434647
+1	309	1715887726183131828	wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_main.c.o	e075c8300a15c894
+0	319	1715887726194554922	wisdem/lib_fortranobject.a.p/1821225148ce45913adb234c41004ec18ed41ad2_.._.._f2py_src_fortranobject.c.o	26bcc1e50e84caae
+320	355	1715887726233552059	wisdem/lib_fortranobject.a	c343a1dc8cc1cf85
+1	397	1715887726272828447	wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_eig.c.o	6d24e84c268ae22f
+1	447	1715887726322404758	wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_frame3dd.c.o	47dd43433e667ed7
+1	496	1715887726373104282	wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_HPGmatrix.c.o	102b5510a1c44ef5
+1	557	1715887726433974061	wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_io.c.o	df3ad2d1361672b3
+557	626	1715887726504420008	wisdem/pyframe3dd/_pyframe3dd.dylib	54f78418efe1572d
+0	670	1715887726537527077	wisdem/ccblade/_bemmodule.c	15f87a2851f8fe5f
+670	785	1715887726655252741	wisdem/ccblade/_bem.cpython-312-darwin.so.p/depscan.dd	1cb9edb651ea12b8
+670	945	1715887726822128959	wisdem/ccblade/_bem.cpython-312-darwin.so.p/meson-generated_..__bemmodule.c.o	c772d5f83f337d7
+785	1731	1715887727608598869	wisdem/ccblade/_bem.cpython-312-darwin.so.p/src_bem.f90.o	30a08cc8f5793bde
+1731	1794	1715887727671915095	wisdem/ccblade/_bem.cpython-312-darwin.so	ff3f31858cd86fdc

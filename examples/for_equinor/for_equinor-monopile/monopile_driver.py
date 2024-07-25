@@ -28,13 +28,13 @@ make_plots = False
 gear_box = True
 
 # Which machine ratings should we run [in MW] (choices are 15, 20, 22, 25)?
-ratings = [10] # [15, 20, 22, 25]
+ratings = [15] # [15, 20, 22, 25]
 
 # Which depths should we run [in m] (choices are 20, 30, 40, 50, 60)?
 depths  = [20, 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
-max_diam = 11. * np.ones( (len(ratings), len(depths)) )
+max_diam = 10. * np.ones( (len(ratings), len(depths)) )
 if len(ratings) > 1:
     max_diam[1,:] = 11. # 20 m
     max_diam[2,:] = 11. # 22 m
@@ -62,9 +62,14 @@ analysis_opt_yaml = load_yaml(fanalysis_opt)
 
 # Loop over all ratings, and descend into folder
 for ri, r in enumerate(ratings):
+
     # Declare WISDEM and WEIS input files that vary by machine rating:
     # The turbine definition file
-    fgeometry = f'modified_{r}.yaml'
+    if gear_box:
+        fgeometry = f'modified_{r}_gen.yaml'
+
+    else:
+        fgeometry = f'modified_{r}.yaml'
 
     # The shortened WISDEM simulation that only runs the tower-monopile modules for quicker optimization
     fmodeling_opt  = os.path.join(mydir, f'{r}mw', 'modeling_options_monopile_noRNA.yaml')
@@ -73,11 +78,10 @@ for ri, r in enumerate(ratings):
 
     for di, d in enumerate(depths):
 
-        try:
-            os.chdir(f'{d}m')
-        except FileNotFoundError:
-            os.makedirs(f'{d}m')
-            os.chdir(f'{d}m')
+        os.chdir(f'{d}m')
+
+        # direct drive gear ratio = 1.0
+                #tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 1.0
 
         # Run optimization
         if run_optimization:
@@ -95,7 +99,7 @@ for ri, r in enumerate(ratings):
             wt_opt, _, _ = run_wisdem(fgeometry, fmodeling_opt, fanalysis_tmp)
 
             # Read output
-            fopt_path = os.path.join('outputs', 'monotow_output.yaml')
+            fopt_path = os.path.join('outputs_gen', 'monotow_output.yaml')
             if not os.path.exists(fopt_path): continue
 
             # Overwrite orignal file
@@ -115,6 +119,7 @@ for ri, r in enumerate(ratings):
             wt_run, _, _ = run_weis(fgeometry, fmodeling, fanalysis)
 
         os.chdir('..')
+
     os.chdir('..')
 
 if make_plots:

@@ -65,7 +65,7 @@ WISDEM:
         gamma_n: 1.0
         use_gb_torque_density: true
         hub: {hub_gamma: 2.0, spinner_gamma: 1.5}
-        direct: true
+        direct: false
     TowerSE:
         flag: true
         wind: PowerWind
@@ -121,7 +121,6 @@ WISDEM:
         gamma_fatigue: 1.0
         symmetric_moorings: true
         rank_and_file: false
-    GeneratorSE: {type: pmsg_outer}
 Level3:
     flag: true
     simulation: {DT: 0.005, CompElast: 1, CompInflow: 1, CompAero: 2, CompServo: 1, CompHydro: 1, CompSub: 1, CompMooring: 0, CompIce: 0}
@@ -150,7 +149,7 @@ DLC_driver:
           analysis_time: 600.0
           transient_time: 120.0
           turbulent_wind: {HubHt: 165, GridHeight: 350, GridWidth: 350}
-flags: {blade: true, hub: true, nacelle: true, tower: true, monopile: true, jacket: false, floating_platform: false, mooring: false, RNA: false, assembly: true, components: true, airfoils: true, materials: true, control: true, environment: true, bos: true, costs: true, generator: true, floating: false, offshore: true}
+flags: {blade: true, hub: true, nacelle: true, tower: true, monopile: true, jacket: false, floating_platform: false, mooring: false, RNA: false, assembly: true, components: true, airfoils: true, materials: true, control: true, environment: true, bos: true, costs: true, generator: false, floating: false, offshore: true}
 materials: {n_mat: 11}
 floating: {}
 mooring: {}

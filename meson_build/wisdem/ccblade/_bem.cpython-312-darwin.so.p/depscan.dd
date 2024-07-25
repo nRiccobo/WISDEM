@@ -1,0 +1,2 @@
+ninja_dyndep_version = 1
+build wisdem/ccblade/_bem.cpython-312-darwin.so.p/src_bem.f90.o : dyndep 

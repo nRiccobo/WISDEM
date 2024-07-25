@@ -1,0 +1,8 @@
+[options]
+python.purelibdir = .
+python.platlibdir = .
+prefix = /Users/nriccobo/GitHub/WISDEM/meson_build
+buildtype = release
+
+[properties]
+

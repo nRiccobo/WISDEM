@@ -113,7 +113,6 @@ WISDEM:
         gamma_fatigue: 1.0
         symmetric_moorings: true
         rank_and_file: false
-    GeneratorSE: {type: pmsg_outer}
 flags: {blade: false, hub: false, nacelle: false, tower: true, monopile: true, jacket: false, floating_platform: false, mooring: false, RNA: false, assembly: true, components: true, airfoils: true, materials: true, control: true, environment: true, bos: false, costs: true, generator: false, floating: false, offshore: true}
 materials: {n_mat: 11}
 floating: {}

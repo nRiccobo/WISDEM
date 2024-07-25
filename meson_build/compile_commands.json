@@ -1,0 +1,68 @@
+[
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "arm64-apple-darwin20.0.0-clang -Iwisdem/lib_fortranobject.a.p -Iwisdem -I../wisdem -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/core/include -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/f2py/src -I/opt/anaconda3/envs/wisdem-env/include/python3.12 -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -DNPY_NO_DEPRECATED_API=NPY_1_9_API_VERSION -MD -MQ wisdem/lib_fortranobject.a.p/1821225148ce45913adb234c41004ec18ed41ad2_.._.._f2py_src_fortranobject.c.o -MF wisdem/lib_fortranobject.a.p/1821225148ce45913adb234c41004ec18ed41ad2_.._.._f2py_src_fortranobject.c.o.d -o wisdem/lib_fortranobject.a.p/1821225148ce45913adb234c41004ec18ed41ad2_.._.._f2py_src_fortranobject.c.o -c /private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/f2py/src/fortranobject.c",
+    "file": "/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/f2py/src/fortranobject.c",
+    "output": "wisdem/lib_fortranobject.a.p/1821225148ce45913adb234c41004ec18ed41ad2_.._.._f2py_src_fortranobject.c.o"
+  },
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "arm64-apple-darwin20.0.0-clang -Iwisdem/ccblade/_bem.cpython-312-darwin.so.p -Iwisdem/ccblade -I../wisdem/ccblade -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/core/include -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/f2py/src -I/opt/anaconda3/envs/wisdem-env/include/python3.12 -fvisibility=hidden -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/ccblade/_bem.cpython-312-darwin.so.p/meson-generated_..__bemmodule.c.o -MF wisdem/ccblade/_bem.cpython-312-darwin.so.p/meson-generated_..__bemmodule.c.o.d -o wisdem/ccblade/_bem.cpython-312-darwin.so.p/meson-generated_..__bemmodule.c.o -c wisdem/ccblade/_bemmodule.c",
+    "file": "wisdem/ccblade/_bemmodule.c",
+    "output": "wisdem/ccblade/_bem.cpython-312-darwin.so.p/meson-generated_..__bemmodule.c.o"
+  },
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "/opt/anaconda3/envs/wisdem-env/bin/arm64-apple-darwin20.0.0-gfortran -Iwisdem/ccblade/_bem.cpython-312-darwin.so.p -Iwisdem/ccblade -I../wisdem/ccblade -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/core/include -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/f2py/src -Iwisdem/lib_fortranobject.a.p -I/opt/anaconda3/envs/wisdem-env/include/python3.12 -fvisibility=hidden -fdiagnostics-color=always -Wall -O3 -march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -Jwisdem/ccblade/_bem.cpython-312-darwin.so.p -o wisdem/ccblade/_bem.cpython-312-darwin.so.p/src_bem.f90.o -c ../wisdem/ccblade/src/bem.f90",
+    "file": "../wisdem/ccblade/src/bem.f90",
+    "output": "wisdem/ccblade/_bem.cpython-312-darwin.so.p/src_bem.f90.o"
+  },
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_HPGutil.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_HPGutil.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_HPGutil.c.o -c ../wisdem/pyframe3dd/src/HPGutil.c",
+    "file": "../wisdem/pyframe3dd/src/HPGutil.c",
+    "output": "wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_HPGutil.c.o"
+  },
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_coordtrans.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_coordtrans.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_coordtrans.c.o -c ../wisdem/pyframe3dd/src/coordtrans.c",
+    "file": "../wisdem/pyframe3dd/src/coordtrans.c",
+    "output": "wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_coordtrans.c.o"
+  },
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_NRutil.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_NRutil.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_NRutil.c.o -c ../wisdem/pyframe3dd/src/NRutil.c",
+    "file": "../wisdem/pyframe3dd/src/NRutil.c",
+    "output": "wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_NRutil.c.o"
+  },
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_io.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_io.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_io.c.o -c ../wisdem/pyframe3dd/src/py_io.c",
+    "file": "../wisdem/pyframe3dd/src/py_io.c",
+    "output": "wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_io.c.o"
+  },
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_eig.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_eig.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_eig.c.o -c ../wisdem/pyframe3dd/src/py_eig.c",
+    "file": "../wisdem/pyframe3dd/src/py_eig.c",
+    "output": "wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_eig.c.o"
+  },
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_HPGmatrix.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_HPGmatrix.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_HPGmatrix.c.o -c ../wisdem/pyframe3dd/src/py_HPGmatrix.c",
+    "file": "../wisdem/pyframe3dd/src/py_HPGmatrix.c",
+    "output": "wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_HPGmatrix.c.o"
+  },
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_frame3dd.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_frame3dd.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_frame3dd.c.o -c ../wisdem/pyframe3dd/src/py_frame3dd.c",
+    "file": "../wisdem/pyframe3dd/src/py_frame3dd.c",
+    "output": "wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_frame3dd.c.o"
+  },
+  {
+    "directory": "/Users/nriccobo/GitHub/WISDEM/meson_build",
+    "command": "arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_main.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_main.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_main.c.o -c ../wisdem/pyframe3dd/src/py_main.c",
+    "file": "../wisdem/pyframe3dd/src/py_main.c",
+    "output": "wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_main.c.o"
+  }
+]

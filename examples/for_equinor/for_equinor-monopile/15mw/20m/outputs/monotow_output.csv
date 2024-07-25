@@ -151,7 +151,7 @@ tcc.tower_assemblyCostMultiplier,input,,[0.],
 tcc.tower_overheadCostMultiplier,input,,[0.],
 tcc.tower_profitMultiplier,input,,[0.],
 tcc.tower_transportMultiplier,input,,[0.],
-tcc.tower_mass_cost_coeff,input,USD/kg,[2.66846269],
+tcc.tower_mass_cost_coeff,input,USD/kg,[2.66842097],
 tcc.transformer_mass_cost_coeff,input,USD/kg,[18.8],
 tcc.turbine_assemblyCostMultiplier,input,,[0.],
 tcc.turbine_overheadCostMultiplier,input,,[0.],
@@ -2919,7 +2919,7 @@ configuration.rotor_diameter_user,output,m,[250.],Diameter of the rotor specifie
 configuration.hub_height_user,output,m,[162.96],Height of the hub center over the ground (land-based) or the mean sea level (offshore) specified by the user.
 configuration.ws_class,output,Unavailable,I,"IEC wind turbine class. I - offshore, II coastal, III - land-based, IV - low wind speed site."
 configuration.turb_class,output,Unavailable,B,"IEC wind turbine category. A - high turbulence intensity (land-based), B - mid turbulence, C - low turbulence (offshore)."
-configuration.gearbox_type,output,Unavailable,direct_drive,"Gearbox configuration (geared, direct-drive, etc.)."
+configuration.gearbox_type,output,Unavailable,geared,"Gearbox configuration (geared, direct-drive, etc.)."
 configuration.rotor_orientation,output,Unavailable,upwind,"Rotor orientation, either upwind or downwind."
 configuration.upwind,output,Unavailable,True,Convenient boolean for upwind (True) or downwind (False).
 configuration.n_blades,output,Unavailable,3,Number of blades of the rotor.
@@ -2956,7 +2956,7 @@ costs.hvac_mass_cost_coeff,output,USD/kg,[124.],
 costs.cover_mass_cost_coeff,output,USD/kg,[5.7],
 costs.elec_connec_machine_rating_cost_coeff,output,USD/kW,[41.85],
 costs.platforms_mass_cost_coeff,output,USD/kg,[17.1],
-costs.tower_mass_cost_coeff,output,USD/kg,[2.66846269],
+costs.tower_mass_cost_coeff,output,USD/kg,[2.66842097],
 costs.controls_machine_rating_cost_coeff,output,USD/kW,[21.15],
 costs.crane_cost,output,USD,[12000.],
 costs.electricity_price,output,USD/kW/h,[0.04],

@@ -1,0 +1,3 @@
+[console_scripts]
+compare_designs = wisdem.postprocessing.compare_designs:main
+wisdem = wisdem.main:wisdem_cmd

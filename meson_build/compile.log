@@ -1,0 +1,281 @@
+ninja: Entering directory `/Users/nriccobo/GitHub/WISDEM/meson_build'
+[1/16] arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_HPGutil.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_HPGutil.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_HPGutil.c.o -c ../wisdem/pyframe3dd/src/HPGutil.c
+[2/16] arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_coordtrans.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_coordtrans.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_coordtrans.c.o -c ../wisdem/pyframe3dd/src/coordtrans.c
+../wisdem/pyframe3dd/src/coordtrans.c:137:23: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  137 |         double  **a, **ma, **dmatrix();
+      |                              ^
+../wisdem/pyframe3dd/src/NRutil.h:63:10: note: conflicting prototype is here
+   63 | double **dmatrix(long nrl, long nrh, long ncl, long nch);
+      |          ^
+1 warning generated.
+[3/16] arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_NRutil.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_NRutil.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_NRutil.c.o -c ../wisdem/pyframe3dd/src/NRutil.c
+../wisdem/pyframe3dd/src/NRutil.c:832:7: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  832 |         void    exit();
+      |                 ^
+../wisdem/pyframe3dd/src/NRutil.c:860:7: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  860 |         void    exit();
+      |                 ^
+../wisdem/pyframe3dd/src/NRutil.c:888:7: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  888 |         void    exit();
+      |                 ^
+../wisdem/pyframe3dd/src/NRutil.c:916:7: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  916 |         void    exit();
+      |                 ^
+../wisdem/pyframe3dd/src/NRutil.c:959:7: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  959 |         void    exit();
+      |                 ^
+../wisdem/pyframe3dd/src/NRutil.c:1004:14: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+ 1004 |         void    exit();
+      |                 ^
+../wisdem/pyframe3dd/src/NRutil.c:1041:14: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+ 1041 |         void    exit();
+      |                 ^
+7 warnings generated.
+[4/16] arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_main.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_main.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_main.c.o -c ../wisdem/pyframe3dd/src/py_main.c
+../wisdem/pyframe3dd/src/py_main.c:107:5: warning: unused variable 'scale' [-Wunused-variable]
+  107 |     scale=1.0,  // zoom scale for 3D plotting in Gnuplot
+      |     ^~~~~
+1 warning generated.
+[5/16] arm64-apple-darwin20.0.0-clang -Iwisdem/lib_fortranobject.a.p -Iwisdem -I../wisdem -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/core/include -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/f2py/src -I/opt/anaconda3/envs/wisdem-env/include/python3.12 -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -DNPY_NO_DEPRECATED_API=NPY_1_9_API_VERSION -MD -MQ wisdem/lib_fortranobject.a.p/1821225148ce45913adb234c41004ec18ed41ad2_.._.._f2py_src_fortranobject.c.o -MF wisdem/lib_fortranobject.a.p/1821225148ce45913adb234c41004ec18ed41ad2_.._.._f2py_src_fortranobject.c.o.d -o wisdem/lib_fortranobject.a.p/1821225148ce45913adb234c41004ec18ed41ad2_.._.._f2py_src_fortranobject.c.o -c /private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/f2py/src/fortranobject.c
+[6/16] rm -f wisdem/lib_fortranobject.a && arm64-apple-darwin20.0.0-ar csr wisdem/lib_fortranobject.a wisdem/lib_fortranobject.a.p/1821225148ce45913adb234c41004ec18ed41ad2_.._.._f2py_src_fortranobject.c.o && arm64-apple-darwin20.0.0-ranlib -c wisdem/lib_fortranobject.a
+[7/16] arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_eig.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_eig.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_eig.c.o -c ../wisdem/pyframe3dd/src/py_eig.c
+[8/16] arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_frame3dd.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_frame3dd.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_frame3dd.c.o -c ../wisdem/pyframe3dd/src/py_frame3dd.c
+../wisdem/pyframe3dd/src/py_frame3dd.c:101:3: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+  101 |                 res=0,
+      |                 ^
+../wisdem/pyframe3dd/src/py_frame3dd.c:700:5: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  700 |                 **dmatrix();
+      |                   ^
+../wisdem/pyframe3dd/src/NRutil.h:63:10: note: conflicting prototype is here
+   63 | double **dmatrix(long nrl, long nrh, long ncl, long nch);
+      |          ^
+../wisdem/pyframe3dd/src/py_frame3dd.c:702:5: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  702 |                 **imatrix(),
+      |                   ^
+../wisdem/pyframe3dd/src/NRutil.h:64:7: note: conflicting prototype is here
+   64 | int **imatrix(long nrl, long nrh, long ncl, long nch);
+      |       ^
+../wisdem/pyframe3dd/src/py_frame3dd.c:703:3: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+  703 |                 res=0,
+      |                 ^
+../wisdem/pyframe3dd/src/py_frame3dd.c:1112:7: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+ 1112 |         void    free();
+      |                 ^
+5 warnings generated.
+[9/16] arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_HPGmatrix.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_HPGmatrix.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_HPGmatrix.c.o -c ../wisdem/pyframe3dd/src/py_HPGmatrix.c
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:307:4: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  307 |                 *dvector();     /* allocate memory for a vector of doubles */
+      |                  ^
+../wisdem/pyframe3dd/src/NRutil.h:61:9: note: conflicting prototype is here
+   61 | double *dvector(long nl, long nh);
+      |         ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:309:7: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  309 |         void    ldl_dcmp(),
+      |                 ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:227:6: note: conflicting prototype is here
+  227 | void ldl_dcmp (
+      |      ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:310:3: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  310 |                 free_dvector();
+      |                 ^
+../wisdem/pyframe3dd/src/NRutil.h:73:6: note: conflicting prototype is here
+   73 | void free_dvector(double *v, long nl, long nh);
+      |      ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:500:4: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  500 |                 *dvector();     // allocate memory for a vector of doubles
+      |                  ^
+../wisdem/pyframe3dd/src/NRutil.h:61:9: note: conflicting prototype is here
+   61 | double *dvector(long nl, long nh);
+      |         ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:502:7: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  502 |         void    ldl_dcmp(),
+      |                 ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:227:6: note: conflicting prototype is here
+  227 | void ldl_dcmp (
+      |      ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:503:3: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  503 |                 free_dvector();
+      |                 ^
+../wisdem/pyframe3dd/src/NRutil.h:73:6: note: conflicting prototype is here
+   73 | void free_dvector(double *v, long nl, long nh);
+      |      ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:589:4: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  589 |                 *dvector(), **dmatrix(), error;
+      |                  ^
+../wisdem/pyframe3dd/src/NRutil.h:61:9: note: conflicting prototype is here
+   61 | double *dvector(long nl, long nh);
+      |         ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:589:17: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  589 |                 *dvector(), **dmatrix(), error;
+      |                               ^
+../wisdem/pyframe3dd/src/NRutil.h:63:10: note: conflicting prototype is here
+   63 | double **dmatrix(long nrl, long nrh, long ncl, long nch);
+      |          ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:591:7: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  591 |         void    ldl_dcmp(), ldl_mprove(), free_dvector(), free_dmatrix();
+      |                 ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:227:6: note: conflicting prototype is here
+  227 | void ldl_dcmp (
+      |      ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:591:19: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  591 |         void    ldl_dcmp(), ldl_mprove(), free_dvector(), free_dmatrix();
+      |                             ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:300:6: note: conflicting prototype is here
+  300 | void ldl_mprove(
+      |      ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:591:33: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  591 |         void    ldl_dcmp(), ldl_mprove(), free_dvector(), free_dmatrix();
+      |                                           ^
+../wisdem/pyframe3dd/src/NRutil.h:73:6: note: conflicting prototype is here
+   73 | void free_dvector(double *v, long nl, long nh);
+      |      ^
+../wisdem/pyframe3dd/src/py_HPGmatrix.c:591:49: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+  591 |         void    ldl_dcmp(), ldl_mprove(), free_dvector(), free_dmatrix();
+      |                                                           ^
+../wisdem/pyframe3dd/src/NRutil.h:75:6: note: conflicting prototype is here
+   75 | void free_dmatrix(double **m, long nrl, long nrh, long ncl, long nch);
+      |      ^
+12 warnings generated.
+[10/16] arm64-apple-darwin20.0.0-clang -Iwisdem/pyframe3dd/_pyframe3dd.dylib.p -Iwisdem/pyframe3dd -I../wisdem/pyframe3dd -I../wisdem/pyframe3dd/src -I../wisdem/pyframe3dd/src/microstran -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_io.c.o -MF wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_io.c.o.d -o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_io.c.o -c ../wisdem/pyframe3dd/src/py_io.c
+[11/16] arm64-apple-darwin20.0.0-clang  -o wisdem/pyframe3dd/_pyframe3dd.dylib wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_HPGutil.c.o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_coordtrans.c.o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_NRutil.c.o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_io.c.o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_eig.c.o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_HPGmatrix.c.o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_frame3dd.c.o wisdem/pyframe3dd/_pyframe3dd.dylib.p/src_py_main.c.o -L/opt/anaconda3/envs/wisdem-env/lib -Wl,-dead_strip_dylibs -Wl,-headerpad_max_install_names -shared -install_name @rpath/_pyframe3dd.dylib -lm -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/opt/anaconda3/envs/wisdem-env/lib -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include
+[12/16] /opt/anaconda3/envs/wisdem-env/bin/python -m numpy.f2py ../wisdem/ccblade/src/bem.f90 -m _bem --lower --build-dir wisdem/ccblade
+Reading fortran codes...
+	Reading file '../wisdem/ccblade/src/bem.f90' (format:free)
+Post-processing...
+	Block: _bem
+			Block: inductionfactors
+In: :_bem:../wisdem/ccblade/src/bem.f90:inductionfactors
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: relativewind
+In: :_bem:../wisdem/ccblade/src/bem.f90:relativewind
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: definecurvature
+In: :_bem:../wisdem/ccblade/src/bem.f90:definecurvature
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: windcomponents
+In: :_bem:../wisdem/ccblade/src/bem.f90:windcomponents
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: thrusttorque
+In: :_bem:../wisdem/ccblade/src/bem.f90:thrusttorque
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: inductionfactors_dv
+In: :_bem:../wisdem/ccblade/src/bem.f90:inductionfactors_dv
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: relativewind_dv
+In: :_bem:../wisdem/ccblade/src/bem.f90:relativewind_dv
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: windcomponents_dv
+In: :_bem:../wisdem/ccblade/src/bem.f90:windcomponents_dv
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: definecurvature_dv
+In: :_bem:../wisdem/ccblade/src/bem.f90:definecurvature_dv
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: thrusttorque_bv
+In: :_bem:../wisdem/ccblade/src/bem.f90:thrusttorque_bv
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: definecurvature_bv
+In: :_bem:../wisdem/ccblade/src/bem.f90:definecurvature_bv
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+			Block: definecurvature_dv2
+In: :_bem:../wisdem/ccblade/src/bem.f90:definecurvature_dv2
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 8
+Applying post-processing hooks...
+  character_backward_compatibility_hook
+Post-processing (stage 2)...
+Building modules...
+    Building module "_bem"...
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "inductionfactors"...
+          fzero,a,ap = inductionfactors(r,chord,rhub,rtip,phi,cl,cd,b,vx,vy,[usecd,hubloss,tiploss,wakerotation])
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "relativewind"...
+          alpha,w,re = relativewind(phi,a,ap,vx,vy,pitch,chord,theta,rho,mu)
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "definecurvature"...
+          x_az,y_az,z_az,cone,s = definecurvature(r,precurve,presweep,precone,[n])
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "windcomponents"...
+          vx,vy = windcomponents(r,precurve,presweep,precone,yaw,tilt,azimuth,uinf,omegarpm,hubht,shearexp,[n])
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "thrusttorque"...
+          t,y,z,q,m = thrusttorque(np,tp,r,precurve,presweep,precone,rhub,rtip,precurvetip,presweeptip,[n])
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "inductionfactors_dv"...
+          fzero,fzerod,a,ad,ap,apd = inductionfactors_dv(r,rd,chord,chordd,rhub,rhubd,rtip,rtipd,phi,phid,cl,cld,cd,cdd,b,vx,vxd,vy,vyd,[usecd,hubloss,tiploss,wakerotation,nbdirs])
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "relativewind_dv"...
+          alpha,alphad,w,wd,re,red = relativewind_dv(phi,phid,a,ad,ap,apd,vx,vxd,vy,vyd,pitch,pitchd,chord,chordd,theta,thetad,rho,mu,[nbdirs])
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "windcomponents_dv"...
+          vx,vxd,vy,vyd = windcomponents_dv(r,rd,precurve,precurved,presweep,presweepd,precone,preconed,yaw,yawd,tilt,tiltd,azimuth,azimuthd,uinf,uinfd,omegarpm,omegarpmd,hubht,hubhtd,shearexp,shearexpd,[n,nbdirs])
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "definecurvature_dv"...
+          x_az,x_azd,y_az,y_azd,z_az,z_azd,cone,coned,s = definecurvature_dv(r,rd,precurve,precurved,presweep,presweepd,precone,preconed,[n,nbdirs])
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "thrusttorque_bv"...
+          npb,tpb,rb,precurveb,presweepb,preconeb,rhubb,rtipb,precurvetipb,presweeptipb = thrusttorque_bv(np,tp,r,precurve,presweep,precone,rhub,rtip,precurvetip,presweeptip,tb,yb,zb,qb,mb,[n,nbdirs])
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "definecurvature_bv"...
+          definecurvature_bv(r,rb,precurve,precurveb,presweep,presweepb,precone,preconeb,x_az,x_azb,y_az,z_az,z_azb,cone,coneb,s,sb,[n,nbdirs])
+    Generating possibly empty wrappers"
+    Maybe empty "_bem-f2pywrappers.f"
+        Constructing wrapper function "definecurvature_dv2"...
+          x_az,x_azd,y_az,y_azd,z_az,z_azd,cone,coned,s,sd = definecurvature_dv2(r,rd,precurve,precurved,presweep,presweepd,precone,preconed,[n,nbdirs])
+    Wrote C/API module "_bem" to file "wisdem/ccblade/_bemmodule.c"
+[13/16] /private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/bin/meson --internal depscan wisdem/ccblade/_bem.cpython-312-darwin.so.p/_bem.cpython-312-darwin.dat wisdem/ccblade/_bem.cpython-312-darwin.so.p/depscan.dd /Users/nriccobo/GitHub/WISDEM/meson_build/wisdem/ccblade/_bem.cpython-312-darwin.so.p/_bem.cpython-312-darwin-deps.json
+[14/16] arm64-apple-darwin20.0.0-clang -Iwisdem/ccblade/_bem.cpython-312-darwin.so.p -Iwisdem/ccblade -I../wisdem/ccblade -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/core/include -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/f2py/src -I/opt/anaconda3/envs/wisdem-env/include/python3.12 -fvisibility=hidden -fdiagnostics-color=always -Wall -Winvalid-pch -std=c11 -O3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -D_FORTIFY_SOURCE=2 -isystem /opt/anaconda3/envs/wisdem-env/include -MD -MQ wisdem/ccblade/_bem.cpython-312-darwin.so.p/meson-generated_..__bemmodule.c.o -MF wisdem/ccblade/_bem.cpython-312-darwin.so.p/meson-generated_..__bemmodule.c.o.d -o wisdem/ccblade/_bem.cpython-312-darwin.so.p/meson-generated_..__bemmodule.c.o -c wisdem/ccblade/_bemmodule.c
+wisdem/ccblade/_bemmodule.c:311:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+  311 |         f2py_success = double_from_pyobj(&r,r_capi,"_bem.inductionfactors() 1st argument (r) can't be converted to double");
+      |         ^
+wisdem/ccblade/_bemmodule.c:305:5: note: previous statement is here
+  305 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+wisdem/ccblade/_bemmodule.c:492:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+  492 |         f2py_success = double_from_pyobj(&phi,phi_capi,"_bem.relativewind() 1st argument (phi) can't be converted to double");
+      |         ^
+wisdem/ccblade/_bemmodule.c:486:5: note: previous statement is here
+  486 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+wisdem/ccblade/_bemmodule.c:1522:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+ 1522 |         f2py_success = int_from_pyobj(&b,b_capi,"_bem.inductionfactors_dv() 15th argument (b) can't be converted to int");
+      |         ^
+wisdem/ccblade/_bemmodule.c:1516:5: note: previous statement is here
+ 1516 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+wisdem/ccblade/_bemmodule.c:1999:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+ 1999 |         f2py_success = double_from_pyobj(&phi,phi_capi,"_bem.relativewind_dv() 1st argument (phi) can't be converted to double");
+      |         ^
+wisdem/ccblade/_bemmodule.c:1993:5: note: previous statement is here
+ 1993 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+4 warnings generated.
+[15/16] /opt/anaconda3/envs/wisdem-env/bin/arm64-apple-darwin20.0.0-gfortran -Iwisdem/ccblade/_bem.cpython-312-darwin.so.p -Iwisdem/ccblade -I../wisdem/ccblade -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/core/include -I/private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/lib/python3.12/site-packages/numpy/f2py/src -Iwisdem/lib_fortranobject.a.p -I/opt/anaconda3/envs/wisdem-env/include/python3.12 -fvisibility=hidden -fdiagnostics-color=always -Wall -O3 -march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include -Jwisdem/ccblade/_bem.cpython-312-darwin.so.p -o wisdem/ccblade/_bem.cpython-312-darwin.so.p/src_bem.f90.o -c ../wisdem/ccblade/src/bem.f90
+../wisdem/ccblade/src/bem.f90:1099:68:
+
+ 1099 | & presweepb, precone, preconeb, x_az, x_azb, y_az, z_az, z_azb, cone, &
+      |                                                                    1
+Warning: Unused dummy argument ‘cone’ at (1) [-Wunused-dummy-argument]
+../wisdem/ccblade/src/bem.f90:1100:10:
+
+ 1100 | & coneb, s, sb, nbdirs)
+      |          1
+Warning: Unused dummy argument ‘s’ at (1) [-Wunused-dummy-argument]
+../wisdem/ccblade/src/bem.f90:1099:49:
+
+ 1099 | & presweepb, precone, preconeb, x_az, x_azb, y_az, z_az, z_azb, cone, &
+      |                                                 1
+Warning: Unused dummy argument ‘y_az’ at (1) [-Wunused-dummy-argument]
+[16/16] /opt/anaconda3/envs/wisdem-env/bin/arm64-apple-darwin20.0.0-gfortran  -o wisdem/ccblade/_bem.cpython-312-darwin.so wisdem/ccblade/_bem.cpython-312-darwin.so.p/meson-generated_..__bemmodule.c.o wisdem/ccblade/_bem.cpython-312-darwin.so.p/src_bem.f90.o -L/opt/anaconda3/envs/wisdem-env/lib/gcc/arm64-apple-darwin20.0.0/13.2.0 -L/opt/anaconda3/envs/wisdem-env/lib/gcc/arm64-apple-darwin20.0.0/13.2.0/../../.. -L/opt/anaconda3/envs/wisdem-env/lib -Wl,-dead_strip_dylibs -Wl,-headerpad_max_install_names -Wl,-undefined,dynamic_lookup -bundle -Wl,-undefined,dynamic_lookup -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/opt/anaconda3/envs/wisdem-env/lib -march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -O2 -pipe -isystem /opt/anaconda3/envs/wisdem-env/include wisdem/lib_fortranobject.a -lgfortran -lm
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /private/var/folders/90/1lkt657x3n1cw5x65j3lfgd5406fb8/T/pip-build-env-ms5mgroi/overlay/bin/ninja -C /Users/nriccobo/GitHub/WISDEM/meson_build -v

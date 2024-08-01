@@ -6,7 +6,7 @@ WISDEM:
     RotorSE:
         flag: False
     DriveSE:
-        flag: True
+        flag: False
     TowerSE:             # Options of TowerSE module
         flag: True
         wind: PowerWind  # Wind used

@@ -2,6 +2,10 @@
 import os
 import shutil
 import numpy as np
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+import pandas as pd
+
 import matplotlib.pyplot as plt
 from wisdem import run_wisdem
 from helper_functions import load_yaml, write_yaml, init_fig_axis, fig_format, save
@@ -12,8 +16,8 @@ import time
 ### USER OPTIONS FOR SCRIPT ###
 
 # Should we go through and run the design optimizations?
-run_optimization = True #True
-overwrite_geometry = True
+run_optimization = False #True
+overwrite_geometry = False
 
 # Should we just evaluate the current design and generate WISDEM outputs? (always run if optimizing)
 run_evaluation = True
@@ -22,22 +26,23 @@ run_evaluation = True
 run_fatigue_openfast = False
 
 # Should we generate output plots
-make_plots = False
+make_plots = True
 
-# Direct-drive or gear box system
+# Gearbox or Direct-drive
 gear_box = False
+
 # Which machine ratings should we run [in MW] (choices are 15, 20, 22, 25)?
-ratings = [15] #, 15, 22] # [15, 20, 22, 25]
+ratings = [15] # , 20, 22] # [15, 20, 22, 25]
 
 # Which depths should we run [in m] (choices are 20, 30, 40, 50, 60)?
-depths  = [20] #, 30, 40, 50, 60]
+depths  = [20, 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
 max_diam = 10. * np.ones( (len(ratings), len(depths)) )
 if len(ratings) > 1:
-    max_diam[1,:] = 11. # 20 mw
-#    max_diam[2,:] = 11. # 22 mw
-#    max_diam[3,:] = 12. # 25 mw
+    max_diam[1,:] = 11. # 20 m
+    max_diam[2,:] = 11. # 22 m
+    #max_diam[3,:] = 12. # 25 m
 
 # Set the first natural frequency [in Hz] of the monopile-tower structure (with the nacelle+rotor on top)
 freq_lower = 0.22 * np.ones( (len(ratings), len(depths)) )
@@ -53,22 +58,22 @@ mydir         = os.path.dirname(os.path.realpath(__file__))  # get path to this 
 fanalysis     = os.path.join(mydir, 'analysis_options.yaml')
 fanalysis_opt = os.path.join(mydir, 'analysis_options_monopile.yaml')
 fmodeling     = os.path.join(mydir, 'modeling_options_monopile.yaml')
-fmodeling_10mw = os.path.join(mydir, 'modeling_options_monopile_10mw.yaml')
 fanalysis_tmp = 'analysis_options_temp.yaml'
 ftmp          = 'optimized.yaml'
-
-# Specify yamls for 15 and 22MW's
-fdrivetrain_15mw = os.path.join(mydir, '15_gen_dd.yaml')
-fdrivetrain_22mw = os.path.join(mydir, '22_gen_dd.yaml')
 
 # Load in optimization analysis options for edits later
 analysis_opt_yaml = load_yaml(fanalysis_opt)
 
 # Loop over all ratings, and descend into folder
 for ri, r in enumerate(ratings):
+
     # Declare WISDEM and WEIS input files that vary by machine rating:
     # The turbine definition file
-    fgeometry = f'modified_{r}.yaml'
+    if gear_box:
+        fgeometry = f'modified_{r}_gen.yaml'
+
+    else:
+        fgeometry = f'modified_{r}.yaml'
 
     # The shortened WISDEM simulation that only runs the tower-monopile modules for quicker optimization
     fmodeling_opt  = os.path.join(mydir, f'{r}mw', 'modeling_options_monopile_noRNA.yaml')
@@ -78,55 +83,6 @@ for ri, r in enumerate(ratings):
     for di, d in enumerate(depths):
 
         os.chdir(f'{d}m')
-
-        tmpgeo = load_yaml(fgeometry)
-        tmpans = load_yaml(fanalysis)
-        # Direct-drive or gearbox, rewrites geometry file with a gear_ratio != 1
-        if gear_box:
-
-            tmpgeo['assembly']['drivetrain'] = 'Geared'
-
-            if r==15:
-                gbgeom = load_yaml(fdrivetrain_15mw)
-                #fgeometry = os.path.join(mydir, '15MW_MSPMSG_FB.yaml')
-                tmpgeo['components']['nacelle']['drivetrain'] = gbgeom['drivetrain_gen']
-                #tmpgeo['components']['nacelle']['generator'] = gbgeom['generator_gen']
-
-            elif r==22:
-                gbgeom = load_yaml(fdrivetrain_22mw)
-
-                tmpgeo['components']['nacelle']['drivetrain'] = gbgeom['drivetrain_gen']
-
-            # Use simple drivetrain/gen for 10MW
-            else:
-                tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 120.0
-
-            tmpans['general']['fname_output'] = 'turb_gen_output'
-
-
-        else:
-            tmpgeo['assembly']['drivetrain'] = 'direct_drive'
-
-            # Use entire drivetrain/gen from 15_gen_dd.yaml
-            if r==15:
-                gbgeom = load_yaml(fdrivetrain_15mw)
-                tmpgeo['components']['nacelle']['drivetrain'] = gbgeom['drivetrain_dd']
-                tmpgeo['components']['nacelle']['generator'] = gbgeom['generator_dd']
-            # Use entire drivetrain/gen from 22_gen_dd.yaml
-            elif r==22:
-                gbgeom = load_yaml(fdrivetrain_22mw)
-                tmpgeo['components']['nacelle']['drivetrain'] = gbgeom['drivetrain_dd']
-                tmpgeo['components']['nacelle']['generator'] = gbgeom['generator_dd']
-
-            # Use simple drivetrain/gen for 10MW
-            else:
-
-                tmpgeo['components']['nacelle']['drivetrain']['gear_ratio'] = 1.0
-
-            tmpans['general']['fname_output'] = 'turb_dd_output'
-
-        write_yaml(tmpgeo, fgeometry)
-        write_yaml(tmpans, fanalysis)
 
         # Run optimization
         if run_optimization:
@@ -144,7 +100,7 @@ for ri, r in enumerate(ratings):
             wt_opt, _, _ = run_wisdem(fgeometry, fmodeling_opt, fanalysis_tmp)
 
             # Read output
-            fopt_path = os.path.join('outputs', 'monotow_output.yaml')
+            fopt_path = os.path.join('outputs_gen', 'monotow_output.yaml')
             if not os.path.exists(fopt_path): continue
 
             # Overwrite orignal file
@@ -157,24 +113,14 @@ for ri, r in enumerate(ratings):
         if run_evaluation or run_optimization:
 
             t2 = time.time()
-            if r == 10:
-                tmp = load_yaml(fmodeling)
-                tmp['WISDEM']['RotorSE']['spar_cap_ss'] = 'DP13_DP10_uniax'           # Name in the yaml of the spar cap laminate on the suction side for 10mw
-                tmp['WISDEM']['RotorSE']['spar_cap_ps'] = 'DP07_DP04_uniax'           # Name in the yaml of the spar cap laminate on the pressure side for 10mw
-                tmp['WISDEM']['RotorSE']['te_ss'] = 'DP13_DP10_triax'           # Name in the yaml of the spar cap laminate on the suction side for 10mw
-                tmp['WISDEM']['RotorSE']['te_ps'] = 'DP07_DP04_uniax'           # Name in the yaml of the spar cap laminate on the pressure side for 10mw
-                write_yaml(tmp, fmodeling_10mw)
-
-                wt_run, _, _ = run_wisdem(fgeometry, fmodeling_10mw, fanalysis)
-
-            else:
-                wt_run, _, _ = run_wisdem(fgeometry, fmodeling, fanalysis)
+            wt_run, _, _ = run_wisdem(fgeometry, fmodeling, fanalysis)
 
             print(f"{r}mw {d}m Eval Elapsed Time: {time.time() - t2:.2f}")
         if run_fatigue_openfast:
             wt_run, _, _ = run_weis(fgeometry, fmodeling, fanalysis)
 
         os.chdir('..')
+
     os.chdir('..')
 
 if make_plots:

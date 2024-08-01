@@ -1,12 +1,12 @@
 general:
-        folder_output: outputs
-        fname_output: monotow_opt_output
+        folder_output: outputs_gen
+        fname_output: monotow_output
 design_variables:
 
     tower:
         outer_diameter:
             flag: True
-            lower_bound: 6.0
+            lower_bound: 5.999
             upper_bound: 10.0
         layer_thickness:
             flag: True
@@ -15,7 +15,7 @@ design_variables:
     monopile:
         outer_diameter:
             flag: True
-            lower_bound: 6.0
+            lower_bound: 5.999
             upper_bound: 10.0
         layer_thickness:
             flag: True
@@ -80,13 +80,12 @@ constraints:
 driver:
     optimization:
         flag: True            # Flag to enable optimization
-        tol: 1.e-8            # Optimality tolerance
+        tol: 1.e-9            # Optimality tolerance
         max_major_iter: 10    # Maximum number of major design iterations (SNOPT)
         max_minor_iter: 100   # Maximum number of minor design iterations (SNOPT)
         max_iter: 500         # Maximum number of iterations (SLSQP)
         step_size: 1.e-4      # Step size for finite differencing
         solver: SLSQP         # Optimization solver. Other options are 'SLSQP' - 'CONMIN'
-        iprint: 1             # SLSQP.out file
         form: central         # Finite differencing mode, either forward or central
     design_of_experiments:
         flag: False           # Flag to enable design of experiments

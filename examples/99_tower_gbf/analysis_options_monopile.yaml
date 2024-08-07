@@ -1,5 +1,5 @@
 general:
-        folder_output: outputs_gen
+        folder_output: outputs_grav
         fname_output: monotow_output
 design_variables:
 
@@ -9,7 +9,7 @@ design_variables:
             lower_bound: 5.999
             upper_bound: 10.0
         layer_thickness:
-            flag: True
+            flag: False
             lower_bound: 4e-3
             upper_bound: 2e-1
     monopile:
@@ -19,8 +19,8 @@ design_variables:
             upper_bound: 10.0
         layer_thickness:
             flag: True
-            lower_bound: 4e-3
-            upper_bound: 2e-1
+            lower_bound: 77.0e-3
+            upper_bound: 130.0e-3
 
 merit_figure: structural_mass
 
@@ -61,7 +61,7 @@ constraints:
         d_to_t:
             flag: False
             lower_bound: 120.0
-            upper_bound: 2000.0
+            upper_bound: 130.0
         taper:
             flag: False
             lower_bound: 0.2
@@ -80,7 +80,7 @@ constraints:
 driver:
     optimization:
         flag: True            # Flag to enable optimization
-        tol: 1.e-9            # Optimality tolerance
+        tol: 1.e-6            # Optimality tolerance
         max_major_iter: 10    # Maximum number of major design iterations (SNOPT)
         max_minor_iter: 100   # Maximum number of minor design iterations (SNOPT)
         max_iter: 500         # Maximum number of iterations (SLSQP)

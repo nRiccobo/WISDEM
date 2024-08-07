@@ -16,8 +16,8 @@ import time
 ### USER OPTIONS FOR SCRIPT ###
 
 # Should we go through and run the design optimizations?
-run_optimization = False #True
-overwrite_geometry = False
+run_optimization = True #True
+overwrite_geometry = True
 
 # Should we just evaluate the current design and generate WISDEM outputs? (always run if optimizing)
 run_evaluation = True
@@ -26,7 +26,7 @@ run_evaluation = True
 run_fatigue_openfast = False
 
 # Should we generate output plots
-make_plots = True
+make_plots = False
 
 # Gearbox or Direct-drive
 gear_box = False
@@ -38,7 +38,7 @@ ratings = [15] # , 20, 22] # [15, 20, 22, 25]
 depths  = [20, 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
-max_diam = 10. * np.ones( (len(ratings), len(depths)) )
+max_diam = 13. * np.ones( (len(ratings), len(depths)) )
 if len(ratings) > 1:
     max_diam[1,:] = 11. # 20 m
     max_diam[2,:] = 11. # 22 m
@@ -100,7 +100,7 @@ for ri, r in enumerate(ratings):
             wt_opt, _, _ = run_wisdem(fgeometry, fmodeling_opt, fanalysis_tmp)
 
             # Read output
-            fopt_path = os.path.join('outputs_gen', 'monotow_output.yaml')
+            fopt_path = os.path.join('outputs_mono', 'monotow_output.yaml')
             if not os.path.exists(fopt_path): continue
 
             # Overwrite orignal file

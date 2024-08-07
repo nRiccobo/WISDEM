@@ -1,0 +1,3112 @@
+variables,type,units,values,description
+fixedse.yaw,input,deg,[0.],
+fixedse.rho_water,input,kg/m**3,[1025.],
+fixedse.z0,input,m,[0.],
+fixedse.water_depth,input,m,[-20.],
+fixedse.Uc,input,m/s,[0.],mean current speed
+fixedse.Hsig_wave,input,m,[4.52],
+fixedse.Tsig_wave,input,s,[9.45],
+fixedse.beta_wave,input,deg,[0.],
+fixedse.mu_water,input,kg/m/s,[0.0013351],
+fixedse.ca_usr,input,,[-1.],
+fixedse.cd_usr,input,,[-1.],
+fixedse.env.Uref,input,m/s,[0.],
+fixedse.shearExp,input,,[0.12],
+fixedse.beta_wind,input,deg,[0.],
+fixedse.rho_air,input,kg/m**3,[1.225],
+fixedse.mu_air,input,kg/m/s,[1.81e-05],
+fixedse.s_all,input,,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.member.s_ghost1,input,,[0.],
+fixedse.member.s_ghost2,input,,[1.],
+fixedse.s_const2,input,,[0.],
+fixedse.monopile_layer_thickness,input,m,[[0.077 0.077 0.077 0.077 0.077 0.077 0.077]],
+fixedse.monopile_outer_diameter_in,input,m,"[12.43319258 12.4331927  12.4331927  12.43319276 12.43319278 12.43319278
+ 12.43319278]",
+fixedse.E_mat,input,Pa,"[[3.440e+09 3.440e+09 3.440e+09]
+ [2.000e+11 2.000e+11 2.000e+11]
+ [2.050e+11 2.050e+11 2.050e+11]
+ [1.180e+11 1.180e+11 1.180e+11]
+ [4.460e+10 1.700e+10 1.670e+10]
+ [1.145e+11 8.390e+09 8.390e+09]
+ [1.110e+10 1.110e+10 1.670e+10]
+ [2.870e+10 1.660e+10 1.670e+10]
+ [1.292e+08 1.292e+08 1.292e+08]
+ [1.000e+06 1.000e+06 1.000e+06]
+ [4.560e+06 4.560e+06 4.560e+06]]",
+fixedse.E_user,input,Pa,[0.],
+fixedse.G_mat,input,Pa,"[[1.32300000e+09 1.32300000e+09 1.32300000e+09]
+ [7.93000000e+10 7.93000000e+10 7.93000000e+10]
+ [8.00000000e+10 8.00000000e+10 8.00000000e+10]
+ [4.76000000e+10 4.76000000e+10 4.76000000e+10]
+ [3.27000000e+09 3.48000000e+09 3.50000000e+09]
+ [5.99000000e+09 5.99000000e+09 5.99000000e+09]
+ [1.35300000e+10 3.49000000e+09 3.49000000e+09]
+ [8.40000000e+09 3.49000000e+09 3.49000000e+09]
+ [4.89469697e+07 4.89469697e+07 4.89469697e+07]
+ [3.12500000e+05 3.12500000e+05 3.12500000e+05]
+ [1.52000000e+06 1.52000000e+06 1.52000000e+06]]",
+fixedse.sigma_y_mat,input,Pa,"[0.00e+00 3.45e+08 4.85e+08 2.65e+08 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ 0.00e+00 0.00e+00 0.00e+00]",
+fixedse.sigma_ult_mat,input,Pa,"[[7.400e+01 7.400e+01 7.400e+01]
+ [4.500e+08 4.500e+08 4.500e+08]
+ [8.140e+08 8.140e+08 8.140e+08]
+ [3.100e+08 3.100e+08 3.100e+08]
+ [6.092e+08 3.810e+07 1.529e+07]
+ [1.546e+09 0.000e+00 0.000e+00]
+ [4.290e+07 4.260e+07 1.530e+07]
+ [3.960e+08 7.640e+07 1.530e+07]
+ [2.083e+06 2.083e+06 2.083e+06]
+ [0.000e+00 0.000e+00 0.000e+00]
+ [6.900e+05 6.900e+05 6.900e+05]]",
+fixedse.wohler_exp_mat,input,,[ 1.   3.   3.   3.  10.  16.1 10.  10.   1.   1.   1. ],
+fixedse.wohler_A_mat,input,,"[8.70000000e+01 3.55346484e+10 3.55346484e+10 3.55346484e+10
+ 6.09200000e+08 1.54600000e+09 1.13200000e+08 4.48900000e+08
+ 2.08300000e+06 0.00000000e+00 6.90000000e+05]",
+fixedse.rho_mat,input,kg/m**3,[1235. 7800. 7850. 7200. 1940. 1220. 1940. 1940.  130. 1150. 1100.],
+fixedse.unit_cost_mat,input,USD/kg,[ 7.23  0.7   0.9   0.5   1.87 30.    3.    2.86 13.    3.63  9.  ],
+fixedse.outfitting_factor_in,input,,[1.07],
+fixedse.monopile_layer_materials,input,Unavailable,['steel'],
+fixedse.member.ballast_materials,input,Unavailable,[],
+fixedse.material_names,input,Unavailable,"['Gelcoat', 'steel', 'steel_drive', 'cast_iron', 'glass_uni', 'CarbonUD', 'glass_biax', 'glass_triax', 'medium_density_foam', 'resin', 'adhesive']",
+fixedse.labor_cost_rate,input,USD/min,[0.98],
+fixedse.painting_cost_rate,input,USD/m**2,[30.],
+fixedse.transition_piece_mass,input,kg,[100000.],
+fixedse.transition_piece_cost,input,USD,[500000.],
+fixedse.gravity_foundation_mass,input,kg,[0.],
+fixedse.monopile.rna_F,input,N,"[[ 2427925.55809699]
+ [   29094.73368413]
+ [-7074256.2758736 ]]",
+fixedse.monopile.rna_M,input,N*m,"[[  -278500.68674037]
+ [-12634193.44789813]
+ [  1299461.07383137]]",
+fixedse.rna_mass,input,kg,[967074.89012356],
+fixedse.rna_I,input,kg*m**2,"[4.13558635e+08 2.76071589e+08 2.57350933e+08 7.86163621e+02
+ 1.35359722e+07 1.70976373e+05]",
+fixedse.rna_cg,input,m,[-6.61477744 -0.09771873  4.53683107],
+fixedse.post.section_L,input,m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.post_monopile_tower.section_rho,input,kg/m**3,"[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0.]",
+fixedse.post_monopile_tower.section_E,input,Pa,"[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0.]",
+fixedse.post_monopile_tower.section_G,input,Pa,"[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0.]",
+fixedse.post_monopile_tower.section_L,input,m,"[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0.]",
+fixedse.tower_base_diameter,input,m,[12.43319278],
+fixedse.monopile_top_diameter,input,m,[12.43319278],
+fixedse.G_soil,input,Pa,[1.4e+08],
+fixedse.nu_soil,input,,[0.4],
+fixedse.soil.k_usr,input,N/m,[-1. -1. -1. -1. -1. -1.],
+tcc.main_bearing_mass,input,kg,[0.],
+tcc.bearing_mass_cost_coeff,input,USD/kg,[4.5],
+tcc.bedplate_mass,input,kg,[0.],
+tcc.bedplate_mass_cost_coeff,input,USD/kg,[2.9],
+tcc.blade_mass,input,kg,[0.],
+tcc.blade_mass_cost_coeff,input,USD/kg,[14.6],
+tcc.blade_cost_external,input,USD,[0.],
+tcc.brake_mass,input,kg,[0.],
+tcc.brake_mass_cost_coeff,input,USD/kg,[3.6254],
+tcc.machine_rating,input,kW,[15000.],
+tcc.controls_machine_rating_cost_coeff,input,USD/kW,[21.15],
+tcc.converter_mass,input,kg,[0.],
+tcc.converter_mass_cost_coeff,input,USD/kg,[18.8],
+tcc.cover_mass,input,kg,[0.],
+tcc.cover_mass_cost_coeff,input,USD/kg,[5.7],
+tcc.elec_connec_machine_rating_cost_coeff,input,USD/kW,[41.85],
+tcc.gearbox_mass,input,kg,[0.],
+tcc.gearbox_torque_density,input,N*m/kg,[200.],"In 2024, modern 5-7MW gearboxes are able to reach 200 Nm/kg"
+tcc.gearbox_torque_cost,input,USD/kN/m,[50.],"In 2024, modern 5-7MW gearboxes cost approx $50/kNm"
+tcc.generator_mass,input,kg,[0.],
+tcc.generator_mass_cost_coeff,input,USD/kg,[12.4],
+tcc.generator_cost_external,input,USD,[0.],
+tcc.hss_mass,input,kg,[0.],
+tcc.hss_mass_cost_coeff,input,USD/kg,[6.8],
+tcc.hub_mass,input,kg,[0.],
+tcc.pitch_system_mass,input,kg,[0.],
+tcc.spinner_mass,input,kg,[0.],
+tcc.hub_assemblyCostMultiplier,input,,[0.],
+tcc.hub_overheadCostMultiplier,input,,[0.],
+tcc.hub_profitMultiplier,input,,[0.],
+tcc.hub_transportMultiplier,input,,[0.],
+tcc.hub_mass_cost_coeff,input,USD/kg,[3.9],
+tcc.hvac_mass,input,kg,[0.],
+tcc.hvac_mass_cost_coeff,input,USD/kg,[124.],
+tcc.lss_mass,input,kg,[0.],
+tcc.lss_mass_cost_coeff,input,USD/kg,[11.9],
+tcc.yaw_mass,input,kg,[0.],
+tcc.platforms_mass,input,kg,[0.],
+tcc.transformer_mass,input,kg,[0.],
+tcc.nacelle_assemblyCostMultiplier,input,,[0.],
+tcc.nacelle_overheadCostMultiplier,input,,[0.],
+tcc.nacelle_profitMultiplier,input,,[0.],
+tcc.nacelle_transportMultiplier,input,,[0.],
+tcc.main_bearing_number,input,Unavailable,2,
+tcc.pitch_system_mass_cost_coeff,input,USD/kg,[22.1],
+tcc.platforms_mass_cost_coeff,input,USD/kg,[17.1],
+tcc.crane_cost,input,USD,[12000.],
+tcc.crane,input,Unavailable,False,
+tcc.blade_number,input,Unavailable,3,
+tcc.spinner_mass_cost_coeff,input,USD/kg,[11.1],
+tcc.tower_assemblyCostMultiplier,input,,[0.],
+tcc.tower_overheadCostMultiplier,input,,[0.],
+tcc.tower_profitMultiplier,input,,[0.],
+tcc.tower_transportMultiplier,input,,[0.],
+tcc.tower_mass_cost_coeff,input,USD/kg,[3.29001049],
+tcc.transformer_mass_cost_coeff,input,USD/kg,[18.8],
+tcc.turbine_assemblyCostMultiplier,input,,[0.],
+tcc.turbine_overheadCostMultiplier,input,,[0.],
+tcc.turbine_profitMultiplier,input,,[0.],
+tcc.turbine_transportMultiplier,input,,[0.],
+tcc.yaw_mass_cost_coeff,input,USD/kg,[8.3],
+towerse.env.distLoads.waveLoads_Px,input,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.distLoads.waveLoads_Py,input,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.distLoads.waveLoads_Pz,input,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.distLoads.waveLoads_qdyn,input,N/m**2,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.distLoads.waveLoads_z,input,m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.distLoads.waveLoads_beta,input,deg,[0.],
+towerse.yaw,input,deg,[0.],
+towerse.env.Uref,input,m/s,[11.73732],
+towerse.z0,input,m,[0.],
+towerse.shearExp,input,,[0.12],
+towerse.beta_wind,input,deg,[0.],
+towerse.rho_air,input,kg/m**3,[1.225],
+towerse.mu_air,input,kg/m/s,[1.81e-05],
+towerse.cd_usr,input,,[-1.],
+towerse.s_all,input,,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.rho_water,input,kg/m**3,[0.],
+towerse.member.s_ghost1,input,,[0.],
+towerse.member.s_ghost2,input,,[1.],
+towerse.member.s_const1,input,,[0.],
+towerse.member.s_const2,input,,[0.],
+towerse.tower_layer_thickness,input,m,[[0.02921938 0.01614151 0.01226288 0.01122482 0.01163286]],
+towerse.tower_outer_diameter_in,input,m,[12.43319278 12.43319278 11.42989152  8.90073352  6.01183391],
+towerse.E_mat,input,Pa,"[[3.440e+09 3.440e+09 3.440e+09]
+ [2.000e+11 2.000e+11 2.000e+11]
+ [2.050e+11 2.050e+11 2.050e+11]
+ [1.180e+11 1.180e+11 1.180e+11]
+ [4.460e+10 1.700e+10 1.670e+10]
+ [1.145e+11 8.390e+09 8.390e+09]
+ [1.110e+10 1.110e+10 1.670e+10]
+ [2.870e+10 1.660e+10 1.670e+10]
+ [1.292e+08 1.292e+08 1.292e+08]
+ [1.000e+06 1.000e+06 1.000e+06]
+ [4.560e+06 4.560e+06 4.560e+06]]",
+towerse.E_user,input,Pa,[0.],
+towerse.G_mat,input,Pa,"[[1.32300000e+09 1.32300000e+09 1.32300000e+09]
+ [7.93000000e+10 7.93000000e+10 7.93000000e+10]
+ [8.00000000e+10 8.00000000e+10 8.00000000e+10]
+ [4.76000000e+10 4.76000000e+10 4.76000000e+10]
+ [3.27000000e+09 3.48000000e+09 3.50000000e+09]
+ [5.99000000e+09 5.99000000e+09 5.99000000e+09]
+ [1.35300000e+10 3.49000000e+09 3.49000000e+09]
+ [8.40000000e+09 3.49000000e+09 3.49000000e+09]
+ [4.89469697e+07 4.89469697e+07 4.89469697e+07]
+ [3.12500000e+05 3.12500000e+05 3.12500000e+05]
+ [1.52000000e+06 1.52000000e+06 1.52000000e+06]]",
+towerse.sigma_y_mat,input,Pa,"[0.00e+00 3.45e+08 4.85e+08 2.65e+08 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ 0.00e+00 0.00e+00 0.00e+00]",
+towerse.sigma_ult_mat,input,Pa,"[[7.400e+01 7.400e+01 7.400e+01]
+ [4.500e+08 4.500e+08 4.500e+08]
+ [8.140e+08 8.140e+08 8.140e+08]
+ [3.100e+08 3.100e+08 3.100e+08]
+ [6.092e+08 3.810e+07 1.529e+07]
+ [1.546e+09 0.000e+00 0.000e+00]
+ [4.290e+07 4.260e+07 1.530e+07]
+ [3.960e+08 7.640e+07 1.530e+07]
+ [2.083e+06 2.083e+06 2.083e+06]
+ [0.000e+00 0.000e+00 0.000e+00]
+ [6.900e+05 6.900e+05 6.900e+05]]",
+towerse.wohler_exp_mat,input,,[ 1.   3.   3.   3.  10.  16.1 10.  10.   1.   1.   1. ],
+towerse.wohler_A_mat,input,,"[8.70000000e+01 3.55346484e+10 3.55346484e+10 3.55346484e+10
+ 6.09200000e+08 1.54600000e+09 1.13200000e+08 4.48900000e+08
+ 2.08300000e+06 0.00000000e+00 6.90000000e+05]",
+towerse.rho_mat,input,kg/m**3,[1235. 7800. 7850. 7200. 1940. 1220. 1940. 1940.  130. 1150. 1100.],
+towerse.unit_cost_mat,input,USD/kg,[ 7.23  0.7   0.9   0.5   1.87 30.    3.    2.86 13.    3.63  9.  ],
+towerse.outfitting_factor_in,input,,[1.07],
+towerse.tower_layer_materials,input,Unavailable,['steel'],
+towerse.member.ballast_materials,input,Unavailable,[],
+towerse.material_names,input,Unavailable,"['Gelcoat', 'steel', 'steel_drive', 'cast_iron', 'glass_uni', 'CarbonUD', 'glass_biax', 'glass_triax', 'medium_density_foam', 'resin', 'adhesive']",
+towerse.labor_cost_rate,input,USD/min,[0.98],
+towerse.painting_cost_rate,input,USD/m**2,[30.],
+towerse.post.section_L,input,m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.rna_mass,input,kg,[967074.89012356],
+towerse.rna_I,input,kg*m**2,"[4.13558635e+08 2.76071589e+08 2.57350933e+08 7.86163621e+02
+ 1.35359722e+07 1.70976373e+05]",
+towerse.rna_cg,input,m,[-6.61477744 -0.09771873  4.53683107],
+towerse.tower.rna_F,input,N,"[[ 2427925.55809699]
+ [   29094.73368413]
+ [-7074256.2758736 ]]",
+towerse.tower.rna_M,input,N*m,"[[  -278500.68674037]
+ [-12634193.44789813]
+ [  1299461.07383137]]",
+high_level_tower_props.tower_ref_axis_user,input,m,"[[  0.   0.  15.]
+ [  0.   0.  50.]
+ [  0.   0. 100.]
+ [  0.   0. 130.]
+ [  0.   0. 158.]]","2D array of the coordinates (x,y,z) of the tower reference axis. The coordinate system is the global coordinate system of OpenFAST: it is placed at tower base with x pointing downwind, y pointing on the side and z pointing vertically upwards. A standard tower configuration will have zero x and y values and positive z values."
+high_level_tower_props.distance_tt_hub,input,m,[0.],Vertical distance from tower top to hub center.
+high_level_tower_props.hub_height_user,input,m,[162.96],Height of the hub specified by the user.
+high_level_tower_props.rotor_diameter,input,m,[0.],Diameter of the rotor used in WISDEM. It is defined as two times the blade length plus the hub diameter.
+materials.rho_fiber,output,kg/m**3,"[   0.     0.     0.     0.  2535.5 1800.  2535.5 2535.5    0.     0.
+    0. ]",1D array of the density of the fibers of the materials.
+materials.rho,output,kg/m**3,[1235. 7800. 7850. 7200. 1940. 1220. 1940. 1940.  130. 1150. 1100.],"1D array of the density of the materials. For composites, this is the density of the laminate."
+materials.rho_area_dry,output,kg/m**2,"[0.         0.         0.         0.         7.22716222 1.
+ 1.44543244 1.44543244 0.         0.         0.        ]",1D array of the dry aerial density of the composite fabrics. Non-composite materials are kept at 0.
+materials.ply_t_from_yaml,output,m,"[0.0005     0.         0.         0.         0.005      0.00515873
+ 0.001      0.001      0.         0.         0.        ]",1D array of the ply thicknesses of the materials. Non-composite materials are kept at 0.
+materials.fvf_from_yaml,output,,"[0.         0.         0.         0.         0.57       0.10769231
+ 0.57       0.57       0.         0.         0.        ]",1D array of the non-dimensional fiber volume fraction of the composite materials. Non-composite materials are kept at 0.
+materials.fwf_from_yaml,output,,"[0.         0.         0.         0.         0.74506827 0.15889029
+ 0.74506827 0.74506827 0.         0.         0.        ]",1D array of the non-dimensional fiber weight- fraction of the composite materials. Non-composite materials are kept at 0.
+materials.name,output,Unavailable,"['Gelcoat', 'steel', 'steel_drive', 'cast_iron', 'glass_uni', 'CarbonUD', 'glass_biax', 'glass_triax', 'medium_density_foam', 'resin', 'adhesive']",1D array of names of materials.
+materials.component_id,output,Unavailable,[ 0. -1. -1. -1.  5.  4.  3.  2.  1. -1. -1.],"1D array of flags to set whether a material is used in a blade: 0 - coating, 1 - sandwich filler , 2 - shell skin, 3 - shear webs, 4 - spar caps, 5 - TE/LE reinf."
+monopile.ref_axis,input,m,"[[  0.   0. -50.]
+ [  0.   0. -20.]
+ [  0.   0. -15.]
+ [  0.   0. -10.]
+ [  0.   0.   0.]
+ [  0.   0.  10.]
+ [  0.   0.  15.]]","2D array of the coordinates (x,y,z) of the tower reference axis. The coordinate system is the global coordinate system of OpenFAST: it is placed at tower base with x pointing downwind, y pointing on the side and z pointing vertically upwards. A standard tower configuration will have zero x and y values and positive z values."
+fixedse.env.distLoads.windLoads_Px,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.distLoads.windLoads_Py,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.distLoads.windLoads_Pz,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.distLoads.windLoads_qdyn,intermediate,N/m**2,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.distLoads.windLoads_z,intermediate,m,"[-50.         -40.         -30.         -20.         -18.33333333
+ -16.66666667 -15.         -13.33333333 -11.66666667 -10.
+  -6.66666667  -3.33333333   0.           3.33333333   6.66666667
+  10.          11.66666667  13.33333333  15.        ]",
+fixedse.env.distLoads.windLoads_beta,intermediate,deg,[0.],
+fixedse.env.distLoads.waveLoads_Px,intermediate,N/m,"[     0.              0.              0.          96476.17864374
+  96918.90641228  98252.45317392 100493.08222435 103668.49141771
+ 107818.75539867 112997.76167827 126739.70475695 145701.26866961
+ 171147.80374315      0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.env.distLoads.waveLoads_Py,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.distLoads.waveLoads_Pz,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.distLoads.waveLoads_qdyn,intermediate,N/m**2,"[     0.              0.              0.         215074.03703686
+ 198385.21636611 181824.40881455 165393.70619294 149096.63154741
+ 132938.19513974 116924.97472565  85368.99861158  54517.47521521
+  24494.41918693      0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.env.distLoads.waveLoads_z,intermediate,m,"[-50.         -40.         -30.         -20.         -18.33333333
+ -16.66666667 -15.         -13.33333333 -11.66666667 -10.
+  -6.66666667  -3.33333333   0.           3.33333333   6.66666667
+  10.          11.66666667  13.33333333  15.        ]",
+fixedse.env.distLoads.waveLoads_beta,intermediate,deg,[0.],
+fixedse.z_global,output,m,"[-50.         -40.         -30.         -20.         -18.33333333
+ -16.66666667 -15.         -13.33333333 -11.66666667 -10.
+  -6.66666667  -3.33333333   0.           3.33333333   6.66666667
+  10.          11.66666667  13.33333333  15.        ]",
+fixedse.env.waveLoads.U,intermediate,m/s,"[0.         0.         0.         1.1006516  1.10542853 1.11980079
+ 1.14389313 1.17791467 1.22216074 1.2770154  1.42055127 1.61351678
+ 1.86262639 0.         0.         0.         0.         0.
+ 0.        ]",
+fixedse.env.waveLoads.A,intermediate,m/s**2,"[0.         0.         0.         0.7318093  0.73498543 0.74454136
+ 0.76056005 0.78318055 0.8125992  0.84907136 0.94450655 1.07280687
+ 1.23843669 0.         0.         0.         0.         0.
+ 0.        ]",
+fixedse.env.waveLoads.p,intermediate,N/m**2,"[     0.              0.              0.         214453.17714555
+ 197758.95559944 181181.75749242 164723.10430788 148385.54652143
+ 132172.68573952 116089.20596202  84334.79108333  53183.21405341
+  22716.363445        0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.outer_diameter_full,output,m,"[12.43319258 12.43319262 12.43319266 12.4331927  12.4331927  12.4331927
+ 12.4331927  12.43319272 12.43319274 12.43319276 12.43319277 12.43319277
+ 12.43319278 12.43319278 12.43319278 12.43319278 12.43319278 12.43319278
+ 12.43319278]",
+fixedse.wind_reference_height,intermediate,m,[162.96],
+fixedse.env.windLoads.U,intermediate,m/s,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.joint1,output,m,[  0.   0. -50.],
+fixedse.joint2,output,m,[ 0.  0. 15.],
+fixedse.s_full,output,m,"[0.         0.15384615 0.30769231 0.46153846 0.48717949 0.51282051
+ 0.53846154 0.56410256 0.58974359 0.61538462 0.66666667 0.71794872
+ 0.76923077 0.82051282 0.87179487 0.92307692 0.94871795 0.97435897
+ 1.        ]",
+fixedse.g2e.Px_global,intermediate,N/m,"[     0.              0.              0.          96476.17864374
+  96918.90641228  98252.45317392 100493.08222435 103668.49141771
+ 107818.75539867 112997.76167827 126739.70475695 145701.26866961
+ 171147.80374315      0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.g2e.Py_global,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.g2e.Pz_global,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.g2e.qdyn_global,intermediate,Pa,"[     0.              0.              0.         215074.03703686
+ 198385.21636611 181824.40881455 165393.70619294 149096.63154741
+ 132938.19513974 116924.97472565  85368.99861158  54517.47521521
+  24494.41918693      0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.lc:Px,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.lc:Py,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.lc:Pz,intermediate,N/m,"[      0.               0.               0.          -96476.17864374
+  -96918.90641228  -98252.45317392 -100493.08222435 -103668.49141771
+ -107818.75539867 -112997.76167827 -126739.70475695 -145701.26866961
+ -171147.80374315       0.               0.               0.
+       0.               0.               0.        ]",
+fixedse.lc:qdyn,intermediate,Pa,"[     0.              0.              0.         215074.03703686
+ 198385.21636611 181824.40881455 165393.70619294 149096.63154741
+ 132938.19513974 116924.97472565  85368.99861158  54517.47521521
+  24494.41918693      0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.member.gc.d,intermediate,m,"[12.43319258 12.4331927  12.4331927  12.43319276 12.43319278 12.43319278
+ 12.43319278]",
+fixedse.member.gc.t,intermediate,m,[0.077 0.077 0.077 0.077 0.077 0.077],
+fixedse.member.s,output,,"[0.         0.46153846 0.53846154 0.61538462 0.76923077 0.92307692
+ 1.        ]",
+fixedse.member.height,output,m,[65.],
+fixedse.monopile_outer_diameter,output,m,"[12.43319258 12.4331927  12.4331927  12.43319276 12.43319278 12.43319278
+ 12.43319278]",
+fixedse.monopile_wall_thickness,output,m,[0.077 0.077 0.077 0.077 0.077 0.077],
+fixedse.member.E,output,Pa,[2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11],
+fixedse.member.G,output,Pa,[7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10],
+fixedse.member.sigma_y,output,Pa,[3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08],
+fixedse.member.rho,output,kg/m**3,[7800. 7800. 7800. 7800. 7800. 7800.],
+fixedse.member.unit_cost,output,USD/kg,[0.7 0.7 0.7 0.7 0.7 0.7],
+fixedse.member.outfitting_factor,output,,[1.07 1.07 1.07 1.07 1.07 1.07],
+fixedse.nodes_xyz,output,m,"[[  0.           0.         -50.        ]
+ [  0.           0.         -40.        ]
+ [  0.           0.         -30.        ]
+ [  0.           0.         -20.        ]
+ [  0.           0.         -18.33333333]
+ [  0.           0.         -16.66666667]
+ [  0.           0.         -15.        ]
+ [  0.           0.         -13.33333333]
+ [  0.           0.         -11.66666667]
+ [  0.           0.         -10.        ]
+ [  0.           0.          -6.66666667]
+ [  0.           0.          -3.33333333]
+ [  0.           0.           0.        ]
+ [  0.           0.           3.33333333]
+ [  0.           0.           6.66666667]
+ [  0.           0.          10.        ]
+ [  0.           0.          11.66666667]
+ [  0.           0.          13.33333333]
+ [  0.           0.          15.        ]]",
+fixedse.z_full,output,m,"[ 0.         10.         20.         30.         31.66666667 33.33333333
+ 35.         36.66666667 38.33333333 40.         43.33333333 46.66666667
+ 50.         53.33333333 56.66666667 60.         61.66666667 63.33333333
+ 65.        ]",
+fixedse.monopile_s,intermediate,,"[0.         0.46153846 0.53846154 0.61538462 0.76923077 0.92307692
+ 1.        ]",
+fixedse.s_const1,output,,[0.46153846],
+fixedse.t_full,output,m,"[0.077 0.077 0.077 0.077 0.077 0.077 0.077 0.077 0.077 0.077 0.077 0.077
+ 0.077 0.077 0.077 0.077 0.077 0.077]",
+fixedse.E_full,output,Pa,"[2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11
+ 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11]",
+fixedse.G_full,output,Pa,"[7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10]",
+fixedse.sigma_y_full,output,Pa,"[3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08]",
+fixedse.rho_full,output,kg/m**3,"[7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800.
+ 7800. 7800. 7800. 7800. 7800. 7800.]",
+fixedse.outfitting_full,output,,"[1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07
+ 1.07 1.07 1.07 1.07]",
+fixedse.member.unit_cost_full,output,USD/kg,[0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7],
+fixedse.mono.cylinder_mass,intermediate,kg,[1621500.22424683],
+fixedse.mono.cylinder_cost,intermediate,USD,[3961795.23695627],
+fixedse.mono.cylinder_z_cg,intermediate,m,[32.4999999],
+fixedse.mono.cylinder_I_base,intermediate,kg*m**2,"[2.31455943e+09 2.31455943e+09 6.18932421e+07 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00]",
+fixedse.tower_mass,intermediate,kg,[658532.04559183],
+fixedse.tower_cost,intermediate,USD,[2150911.87879668],
+fixedse.monopile.z_soil,intermediate,N/m,"[-30.         -26.66666667 -23.33333333 -20.         -16.66666667
+ -13.33333333 -10.          -6.66666667  -3.33333333  -0.        ]",
+fixedse.monopile.k_soil,intermediate,N/m,"[[2.30719502e+10 6.04489020e+12 2.30719502e+10 6.04489020e+12
+  1.58821565e+10 1.79384436e+11]
+ [2.09970029e+10 4.38691536e+12 2.09970029e+10 4.38691536e+12
+  1.47621565e+10 1.79384436e+11]
+ [1.89220555e+10 3.08291584e+12 1.89220555e+10 3.08291584e+12
+  1.36421565e+10 1.79384436e+11]
+ [1.68471081e+10 2.08864470e+12 1.68471081e+10 2.08864470e+12
+  1.25221565e+10 1.79384436e+11]
+ [1.47721607e+10 1.35985505e+12 1.47721607e+10 1.35985505e+12
+  1.14021565e+10 1.79384436e+11]
+ [1.26972134e+10 8.52299963e+11 1.26972134e+10 8.52299963e+11
+  1.02821565e+10 1.79384436e+11]
+ [1.06222660e+10 5.21732532e+11 1.06222660e+10 5.21732532e+11
+  9.16215654e+09 1.79384436e+11]
+ [8.54731864e+09 3.23905842e+11 8.54731864e+09 3.23905842e+11
+  8.04215654e+09 1.79384436e+11]
+ [6.47237127e+09 2.14572979e+11 6.47237127e+09 2.14572979e+11
+  6.92215654e+09 1.79384436e+11]
+ [4.39742390e+09 1.49487030e+11 4.39742390e+09 1.49487030e+11
+  5.80215654e+09 1.79384436e+11]]",
+fixedse.section_A,output,m**2,"[3.19822531 3.19822532 3.19822533 3.19822529 3.19822529 3.19822529
+ 3.19822526 3.19822526 3.19822527 3.19822527 3.19822527 3.19822527
+ 3.19822527 3.19822527 3.19822527 3.19822527 3.19822527 3.19822527]",
+fixedse.section_Asx,output,m**2,"[1.81995474 1.81995474 1.81995475 1.81995473 1.81995472 1.81995472
+ 1.81995471 1.81995471 1.81995471 1.81995471 1.81995472 1.81995472
+ 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472]",
+fixedse.section_Asy,output,m**2,"[1.81995474 1.81995474 1.81995475 1.81995473 1.81995472 1.81995472
+ 1.81995471 1.81995471 1.81995471 1.81995471 1.81995472 1.81995472
+ 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472]",
+fixedse.section_Ixx,output,kg*m**2,"[61.03869951 61.03870008 61.03870064 61.03870009 61.03870008 61.03870008
+ 61.03869957 61.0386999  61.03870023 61.03870043 61.03870051 61.0387006
+ 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064]",
+fixedse.section_Iyy,output,kg*m**2,"[61.03869951 61.03870008 61.03870064 61.03870009 61.03870008 61.03870008
+ 61.03869957 61.0386999  61.03870023 61.03870043 61.03870051 61.0387006
+ 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064]",
+fixedse.section_J0,output,kg*m**2,"[122.07739902 122.07740015 122.07740128 122.07740017 122.07740017
+ 122.07740016 122.07739914 122.07739979 122.07740045 122.07740086
+ 122.07740103 122.07740119 122.07740128 122.07740128 122.07740128
+ 122.07740128 122.07740128 122.07740128]",
+fixedse.section_rho,output,kg/m**3,"[7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800.
+ 7800. 7800. 7800. 7800. 7800. 7800.]",
+fixedse.section_E,output,Pa,"[2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11
+ 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11]",
+fixedse.section_G,output,Pa,"[7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10]",
+fixedse.qdyn,output,Pa,"[[     0.        ]
+ [     0.        ]
+ [     0.        ]
+ [215074.03703686]
+ [198385.21636611]
+ [181824.40881455]
+ [165393.70619294]
+ [149096.63154741]
+ [132938.19513974]
+ [116924.97472565]
+ [ 85368.99861158]
+ [ 54517.47521521]
+ [ 24494.41918693]
+ [     0.        ]
+ [     0.        ]
+ [     0.        ]
+ [     0.        ]
+ [     0.        ]
+ [     0.        ]]",
+fixedse.bending_height,output,m,[35.],
+fixedse.tower_xyz,intermediate,m,"[[  0.           0.          15.        ]
+ [  0.           0.          27.07132867]
+ [  0.           0.          39.14265734]
+ [  0.           0.          51.21398601]
+ [  0.           0.          68.45874126]
+ [  0.           0.          85.7034965 ]
+ [  0.           0.         102.94825175]
+ [  0.           0.         113.2951049 ]
+ [  0.           0.         123.64195804]
+ [  0.           0.         133.98881119]
+ [  0.           0.         143.64587413]
+ [  0.           0.         153.30293706]
+ [  0.           0.         162.96      ]]",
+fixedse.tower_A,intermediate,m**2,"[0.94618249 0.94618249 0.94618249 0.58490872 0.5689426  0.55297649
+ 0.43411361 0.40083242 0.36755123 0.32301245 0.28601711 0.24902177]",
+fixedse.tower_Asx,intermediate,m**2,"[0.53736216 0.53736216 0.53736216 0.33208718 0.32302691 0.31396663
+ 0.246462   0.22757595 0.20868991 0.1834094  0.16241572 0.14142205]",
+fixedse.tower_Asy,intermediate,m**2,"[0.53736216 0.53736216 0.53736216 0.33208718 0.32302691 0.31396663
+ 0.246462   0.22757595 0.20868991 0.1834094  0.16241572 0.14142205]",
+fixedse.tower_Ixx,intermediate,kg*m**2,"[18.21653576 18.21653576 18.21653576 10.97480022 10.10038065  9.27368651
+  6.5619429   5.16548199  3.98268614  2.85428299  1.98159786  1.30783145]",
+fixedse.tower_Iyy,intermediate,kg*m**2,"[18.21653576 18.21653576 18.21653576 10.97480022 10.10038065  9.27368651
+  6.5619429   5.16548199  3.98268614  2.85428299  1.98159786  1.30783145]",
+fixedse.tower_J0,intermediate,kg*m**2,"[36.43307152 36.43307152 36.43307152 21.94960044 20.2007613  18.54737303
+ 13.12388581 10.33096399  7.96537229  5.70856597  3.96319571  2.6156629 ]",
+fixedse.tower_rho,intermediate,kg/m**3,[7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800.],
+fixedse.tower_E,intermediate,Pa,"[2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11
+ 2.e+11 2.e+11]",
+fixedse.tower_G,intermediate,Pa,"[7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10]",
+fixedse.tower_outer_diameter_full,intermediate,m,"[12.43319278 12.43319278 12.43319278 12.43319278 12.09875903 11.76432528
+ 11.42989152 10.58683885  9.74378618  8.90073352  7.93776698  6.97480044
+  6.01183391]",
+fixedse.tower_t_full,intermediate,m,"[0.02268044 0.02268044 0.02268044 0.0142022  0.0142022  0.0142022
+ 0.01174385 0.01174385 0.01174385 0.01142884 0.01142884 0.01142884]",
+fixedse.tower_sigma_y_full,intermediate,Pa,"[3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08]",
+fixedse.tower_qdyn,intermediate,Pa,"[[47.59994398]
+ [54.84623708]
+ [59.92121528]
+ [63.91426489]
+ [68.52475283]
+ [72.32096112]
+ [75.57411909]
+ [77.33128279]
+ [78.97040208]
+ [80.50836142]
+ [81.86436491]
+ [83.15275706]
+ [84.38086698]]",
+fixedse.tower_bending_height,intermediate,m,[147.96],
+fixedse.turbine_F,intermediate,N,"[[  2427925.55809716]
+ [    29094.73368413]
+ [-13609523.83933535]]",
+fixedse.turbine_M,intermediate,N*m,"[[-4.71357613e+06]
+ [ 3.55687256e+08]
+ [ 1.29946107e+06]]",
+fixedse.transition_piece_I,output,kg*m**2,"[1932303.53344269 1932303.53344269 3864607.06688539       0.
+       0.               0.        ]",
+fixedse.gravity_foundation_I,output,kg*m**2,[0. 0. 0. 0. 0. 0.],
+fixedse.transition_piece_height,output,m,[15.],
+fixedse.suctionpile_depth,output,m,[30.],
+fixedse.turbine_mass,intermediate,kg,[1625606.93571539],
+fixedse.turbine_cg,intermediate,m,[-3.93513649e+00 -5.81329521e-02  1.22745569e+02],
+fixedse.turbine_I,intermediate,kg*m**2,"[2.93222946e+10 2.91848076e+10 2.79277543e+08 7.86163621e+02
+ 1.35359722e+07 1.70976373e+05]",
+fixedse.Px,output,N/m,"[[0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]]",
+fixedse.Py,output,N/m,"[[0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]]",
+fixedse.Pz,output,N/m,"[[      0.        ]
+ [      0.        ]
+ [      0.        ]
+ [ -96476.17864374]
+ [ -96918.90641228]
+ [ -98252.45317392]
+ [-100493.08222435]
+ [-103668.49141771]
+ [-107818.75539867]
+ [-112997.76167827]
+ [-126739.70475695]
+ [-145701.26866961]
+ [-171147.80374315]
+ [      0.        ]
+ [      0.        ]
+ [      0.        ]
+ [      0.        ]
+ [      0.        ]
+ [      0.        ]]",
+fixedse.tower_Px,intermediate,N/m,"[[0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]]",
+fixedse.tower_Py,intermediate,N/m,"[[0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]]",
+fixedse.tower_Pz,intermediate,N/m,"[[-417.76067857]
+ [-480.09738431]
+ [-523.65058445]
+ [-557.91160668]
+ [-581.92125008]
+ [-597.20357718]
+ [-606.4643562 ]
+ [-576.1548744 ]
+ [-542.98427067]
+ [-506.9184334 ]
+ [-460.2271512 ]
+ [-409.29061826]
+ [-353.04163049]]",
+fixedse.post.cylinder_Fz,intermediate,N,"[[-31179435.72038715]
+ [-28733133.38425641]
+ [-25809273.9770739 ]
+ [-25242005.971014  ]
+ [-24673272.54583432]
+ [-24101590.42890056]
+ [-23525440.07335947]
+ [-22943246.03860893]
+ [-22353355.35982918]
+ [-21142354.43006401]
+ [-19877392.72607838]
+ [-18539157.66846403]
+ [-17441329.69565723]
+ [-16625895.58361371]
+ [-15810461.47157015]
+ [-15402744.41554845]
+ [-14995027.35952632]
+ [-14587310.30350392]]",
+fixedse.post.cylinder_Vx,intermediate,N,"[[-3630432.17990122]
+ [-8198899.84274795]
+ [-7770118.21064171]
+ [ 2428056.98943542]
+ [ 2428073.38905587]
+ [ 2428090.12906986]
+ [ 2428107.34313002]
+ [ 2428125.1727663 ]
+ [ 2428143.77066976]
+ [ 2428420.43316857]
+ [ 2428507.89136093]
+ [ 2428608.99916826]
+ [ 2428599.3996326 ]
+ [ 2428426.01496882]
+ [ 2428465.30683914]
+ [ 2428209.88216267]
+ [ 2428219.36397806]
+ [ 2428228.73207834]]",
+fixedse.post.cylinder_Vy,intermediate,N,"[[ -47410.92596769]
+ [-107349.00461938]
+ [-102767.23478233]
+ [  29096.4415081 ]
+ [  29096.65584818]
+ [  29096.87478316]
+ [  29097.10006327]
+ [  29097.3335442 ]
+ [  29097.57723025]
+ [  29101.18729044]
+ [  29102.33512868]
+ [  29103.66334132]
+ [  29103.54613785]
+ [  29101.28472521]
+ [  29101.80566794]
+ [  29098.46161373]
+ [  29098.58775759]
+ [  29098.7125375 ]]",
+fixedse.post.cylinder_Mxx,intermediate,N*m,"[[ -671569.38927988]
+ [-2556545.26945517]
+ [-4649408.3173616 ]
+ [-5412555.49602903]
+ [-5363780.52488637]
+ [-5314981.82955081]
+ [-5266161.10671832]
+ [-5217320.06743728]
+ [-5168460.44500652]
+ [-5070681.72287733]
+ [-4972848.36671396]
+ [-4874975.95141809]
+ [-4777081.15300104]
+ [-4679164.50009334]
+ [-4581220.77998569]
+ [-4532247.55915087]
+ [-4483271.00523964]
+ [-4434292.00104467]]",
+fixedse.post.cylinder_Myy,intermediate,N*m,"[[5.16435012e+07]
+ [1.96221076e+08]
+ [3.55840560e+08]
+ [4.14083720e+08]
+ [4.10015355e+08]
+ [4.05945179e+08]
+ [4.01873324e+08]
+ [3.97799923e+08]
+ [3.93725110e+08]
+ [3.85570964e+08]
+ [3.77412692e+08]
+ [3.69251492e+08]
+ [3.61088644e+08]
+ [3.52924192e+08]
+ [3.44757740e+08]
+ [3.40674436e+08]
+ [3.36590896e+08]
+ [3.32507186e+08]]",
+fixedse.post.cylinder_Mzz,intermediate,N*m,"[[ 214260.6777001 ]
+ [ 468224.68710593]
+ [ 808955.83756311]
+ [1299593.325459  ]
+ [1299590.41838053]
+ [1299587.50380529]
+ [1299584.57413213]
+ [1299581.62157415]
+ [1299578.63805818]
+ [1299575.61511389]
+ [1299569.40928209]
+ [1299562.92698901]
+ [1299556.06927721]
+ [1299550.44357231]
+ [1299546.26499681]
+ [1299542.08644818]
+ [1299539.99718394]
+ [1299537.90792641]]",
+fixedse.post_monopile_tower.z_full,intermediate,m,"[-50.         -40.         -30.         -20.         -18.33333333
+ -16.66666667 -15.         -13.33333333 -11.66666667 -10.
+  -6.66666667  -3.33333333   0.           3.33333333   6.66666667
+  10.          11.66666667  13.33333333  15.          27.07132867
+  39.14265734  51.21398601  68.45874126  85.7034965  102.94825175
+ 113.2951049  123.64195804 133.98881119 143.64587413 153.30293706
+ 162.96      ]",
+fixedse.post_monopile_tower.outer_diameter_full,intermediate,m,"[12.43319258 12.43319262 12.43319266 12.4331927  12.4331927  12.4331927
+ 12.4331927  12.43319272 12.43319274 12.43319276 12.43319277 12.43319277
+ 12.43319278 12.43319278 12.43319278 12.43319278 12.43319278 12.43319278
+ 12.43319278 12.43319278 12.43319278 12.43319278 12.09875903 11.76432528
+ 11.42989152 10.58683885  9.74378618  8.90073352  7.93776698  6.97480044
+  6.01183391]",
+fixedse.post_monopile_tower.t_full,intermediate,m,"[0.077      0.077      0.077      0.077      0.077      0.077
+ 0.077      0.077      0.077      0.077      0.077      0.077
+ 0.077      0.077      0.077      0.077      0.077      0.077
+ 0.02268044 0.02268044 0.02268044 0.0142022  0.0142022  0.0142022
+ 0.01174385 0.01174385 0.01174385 0.01142884 0.01142884 0.01142884]",
+fixedse.post_monopile_tower.bending_height,intermediate,m,[182.96],
+fixedse.post_monopile_tower.E_full,intermediate,Pa,"[2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11
+ 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11
+ 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11]",
+fixedse.post_monopile_tower.G_full,intermediate,Pa,"[7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10]",
+fixedse.post_monopile_tower.rho_full,intermediate,kg/m**3,"[7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800.
+ 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800.
+ 7800. 7800. 7800. 7800. 7800. 7800.]",
+fixedse.post_monopile_tower.sigma_y_full,intermediate,Pa,"[3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08]",
+fixedse.post_monopile_tower.section_A,intermediate,m**2,"[3.19822531 3.19822532 3.19822533 3.19822529 3.19822529 3.19822529
+ 3.19822526 3.19822526 3.19822527 3.19822527 3.19822527 3.19822527
+ 3.19822527 3.19822527 3.19822527 3.19822527 3.19822527 3.19822527
+ 0.94618249 0.94618249 0.94618249 0.58490872 0.5689426  0.55297649
+ 0.43411361 0.40083242 0.36755123 0.32301245 0.28601711 0.24902177]",
+fixedse.post_monopile_tower.section_Asx,intermediate,m**2,"[1.81995474 1.81995474 1.81995475 1.81995473 1.81995472 1.81995472
+ 1.81995471 1.81995471 1.81995471 1.81995471 1.81995472 1.81995472
+ 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472
+ 0.53736216 0.53736216 0.53736216 0.33208718 0.32302691 0.31396663
+ 0.246462   0.22757595 0.20868991 0.1834094  0.16241572 0.14142205]",
+fixedse.post_monopile_tower.section_Asy,intermediate,m**2,"[1.81995474 1.81995474 1.81995475 1.81995473 1.81995472 1.81995472
+ 1.81995471 1.81995471 1.81995471 1.81995471 1.81995472 1.81995472
+ 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472
+ 0.53736216 0.53736216 0.53736216 0.33208718 0.32302691 0.31396663
+ 0.246462   0.22757595 0.20868991 0.1834094  0.16241572 0.14142205]",
+fixedse.post_monopile_tower.section_Ixx,intermediate,kg*m**2,"[61.03869951 61.03870008 61.03870064 61.03870009 61.03870008 61.03870008
+ 61.03869957 61.0386999  61.03870023 61.03870043 61.03870051 61.0387006
+ 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064
+ 18.21653576 18.21653576 18.21653576 10.97480022 10.10038065  9.27368651
+  6.5619429   5.16548199  3.98268614  2.85428299  1.98159786  1.30783145]",
+fixedse.post_monopile_tower.section_Iyy,intermediate,kg*m**2,"[61.03869951 61.03870008 61.03870064 61.03870009 61.03870008 61.03870008
+ 61.03869957 61.0386999  61.03870023 61.03870043 61.03870051 61.0387006
+ 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064
+ 18.21653576 18.21653576 18.21653576 10.97480022 10.10038065  9.27368651
+  6.5619429   5.16548199  3.98268614  2.85428299  1.98159786  1.30783145]",
+fixedse.post_monopile_tower.section_J0,intermediate,kg*m**2,"[122.07739902 122.07740015 122.07740128 122.07740017 122.07740017
+ 122.07740016 122.07739914 122.07739979 122.07740045 122.07740086
+ 122.07740103 122.07740119 122.07740128 122.07740128 122.07740128
+ 122.07740128 122.07740128 122.07740128  36.43307152  36.43307152
+  36.43307152  21.94960044  20.2007613   18.54737303  13.12388581
+  10.33096399   7.96537229   5.70856597   3.96319571   2.6156629 ]",
+fixedse.post_monopile_tower.cylinder_Fz,intermediate,N,"[[-3.11794357e+07]
+ [-2.87331334e+07]
+ [-2.58092740e+07]
+ [-2.52420060e+07]
+ [-2.46732725e+07]
+ [-2.41015904e+07]
+ [-2.35254401e+07]
+ [-2.29432460e+07]
+ [-2.23533554e+07]
+ [-2.11423544e+07]
+ [-1.98773927e+07]
+ [-1.85391577e+07]
+ [-1.74413297e+07]
+ [-1.66258956e+07]
+ [-1.58104615e+07]
+ [-1.54027444e+07]
+ [-1.49950274e+07]
+ [-1.45873103e+07]
+ [-1.27305439e+07]
+ [-1.18515418e+07]
+ [-1.09719070e+07]
+ [-1.01911563e+07]
+ [-9.43096813e+06]
+ [-8.69150452e+06]
+ [-8.34177167e+06]
+ [-8.01848614e+06]
+ [-7.72186527e+06]
+ [-7.47824924e+06]
+ [-7.26235587e+06]
+ [ 1.31112756e-08]]",
+fixedse.post_monopile_tower.cylinder_Vx,intermediate,N,"[[-3.63043218e+06]
+ [-8.19889984e+06]
+ [-7.77011821e+06]
+ [ 2.42805699e+06]
+ [ 2.42807339e+06]
+ [ 2.42809013e+06]
+ [ 2.42810734e+06]
+ [ 2.42812517e+06]
+ [ 2.42814377e+06]
+ [ 2.42842043e+06]
+ [ 2.42850789e+06]
+ [ 2.42860900e+06]
+ [ 2.42859940e+06]
+ [ 2.42842601e+06]
+ [ 2.42846531e+06]
+ [ 2.42820988e+06]
+ [ 2.42821936e+06]
+ [ 2.42822873e+06]
+ [ 2.42883824e+06]
+ [ 2.42928308e+06]
+ [ 2.42968212e+06]
+ [ 2.43001408e+06]
+ [ 2.43058263e+06]
+ [ 2.43102787e+06]
+ [ 2.42957454e+06]
+ [ 2.42957782e+06]
+ [ 2.42954745e+06]
+ [ 2.42932438e+06]
+ [ 2.42919063e+06]
+ [ 1.07860585e+03]]",
+fixedse.post_monopile_tower.cylinder_Vy,intermediate,N,"[[-4.74109260e+04]
+ [-1.07349005e+05]
+ [-1.02767235e+05]
+ [ 2.90964415e+04]
+ [ 2.90966558e+04]
+ [ 2.90968748e+04]
+ [ 2.90971001e+04]
+ [ 2.90973335e+04]
+ [ 2.90975772e+04]
+ [ 2.91011873e+04]
+ [ 2.91023351e+04]
+ [ 2.91036633e+04]
+ [ 2.91035461e+04]
+ [ 2.91012847e+04]
+ [ 2.91018057e+04]
+ [ 2.90984616e+04]
+ [ 2.90985878e+04]
+ [ 2.90987125e+04]
+ [ 2.91067528e+04]
+ [ 2.91127423e+04]
+ [ 2.91181795e+04]
+ [ 2.91228650e+04]
+ [ 2.91309879e+04]
+ [ 2.91376687e+04]
+ [ 2.91178825e+04]
+ [ 2.91183035e+04]
+ [ 2.91183766e+04]
+ [ 2.91157463e+04]
+ [ 2.91146263e+04]
+ [ 1.75412890e+01]]",
+fixedse.post_monopile_tower.cylinder_Mxx,intermediate,N*m,"[[-6.71569389e+05]
+ [-2.55654527e+06]
+ [-4.64940832e+06]
+ [-5.41255550e+06]
+ [-5.36378052e+06]
+ [-5.31498183e+06]
+ [-5.26616111e+06]
+ [-5.21732007e+06]
+ [-5.16846045e+06]
+ [-5.07068172e+06]
+ [-4.97284837e+06]
+ [-4.87497595e+06]
+ [-4.77708115e+06]
+ [-4.67916450e+06]
+ [-4.58122078e+06]
+ [-4.53224756e+06]
+ [-4.48327101e+06]
+ [-4.43429200e+06]
+ [-4.07857587e+06]
+ [-3.72106632e+06]
+ [-3.36222737e+06]
+ [-2.84687235e+06]
+ [-2.32838009e+06]
+ [-1.80776549e+06]
+ [-1.49481546e+06]
+ [-1.18119602e+06]
+ [-8.66936826e+05]
+ [-5.73109442e+05]
+ [-2.78840152e+05]
+ [-4.49704115e-04]]",
+fixedse.post_monopile_tower.cylinder_Myy,intermediate,N*m,"[[ 5.16435012e+07]
+ [ 1.96221076e+08]
+ [ 3.55840560e+08]
+ [ 4.14083720e+08]
+ [ 4.10015355e+08]
+ [ 4.05945179e+08]
+ [ 4.01873324e+08]
+ [ 3.97799923e+08]
+ [ 3.93725110e+08]
+ [ 3.85570964e+08]
+ [ 3.77412692e+08]
+ [ 3.69251492e+08]
+ [ 3.61088644e+08]
+ [ 3.52924192e+08]
+ [ 3.44757740e+08]
+ [ 3.40674436e+08]
+ [ 3.36590896e+08]
+ [ 3.32507186e+08]
+ [ 3.02856876e+08]
+ [ 2.73073876e+08]
+ [ 2.43194183e+08]
+ [ 2.00313765e+08]
+ [ 1.57216393e+08]
+ [ 1.13983004e+08]
+ [ 8.80131860e+07]
+ [ 6.20098904e+07]
+ [ 3.59815986e+07]
+ [ 1.16790315e+07]
+ [-1.26133766e+07]
+ [ 2.76522860e-02]]",
+fixedse.post_monopile_tower.cylinder_Mzz,intermediate,N*m,"[[ 214260.6777001 ]
+ [ 468224.68710593]
+ [ 808955.83756311]
+ [1299593.325459  ]
+ [1299590.41838053]
+ [1299587.50380529]
+ [1299584.57413213]
+ [1299581.62157415]
+ [1299578.63805818]
+ [1299575.61511389]
+ [1299569.40928209]
+ [1299562.92698901]
+ [1299556.06927721]
+ [1299550.44357231]
+ [1299546.26499681]
+ [1299542.08644818]
+ [1299539.99718394]
+ [1299537.90792641]
+ [1299696.76647942]
+ [1299681.58766421]
+ [1299666.35950518]
+ [1299768.53255836]
+ [1299754.66513967]
+ [1299740.60683059]
+ [1299789.23811668]
+ [1299802.18781541]
+ [1299818.66277765]
+ [1299852.92757498]
+ [1299889.66301773]
+ [      0.        ]]",
+fixedse.post_monopile_tower.qdyn,intermediate,Pa,"[[0.00000000e+00]
+ [0.00000000e+00]
+ [0.00000000e+00]
+ [2.15074037e+05]
+ [1.98385216e+05]
+ [1.81824409e+05]
+ [1.65393706e+05]
+ [1.49096632e+05]
+ [1.32938195e+05]
+ [1.16924975e+05]
+ [8.53689986e+04]
+ [5.45174752e+04]
+ [2.44944192e+04]
+ [0.00000000e+00]
+ [0.00000000e+00]
+ [0.00000000e+00]
+ [0.00000000e+00]
+ [0.00000000e+00]
+ [4.75999440e+01]
+ [5.48462371e+01]
+ [5.99212153e+01]
+ [6.39142649e+01]
+ [6.85247528e+01]
+ [7.23209611e+01]
+ [7.55741191e+01]
+ [7.73312828e+01]
+ [7.89704021e+01]
+ [8.05083614e+01]
+ [8.18643649e+01]
+ [8.31527571e+01]
+ [8.43808670e+01]]",
+fixedse.monopile_height,intermediate,m,[65.],
+fixedse.tower_foundation_height,intermediate,m,[15.],
+fixedse.monopile_foundation_height,intermediate,m,[-50.],
+fixedse.soil.d0,intermediate,m,[12.43319258],
+tcc.hub_cost,output,USD,[0.],
+tcc.pitch_system_cost,output,USD,[0.],
+tcc.spinner_cost,output,USD,[0.],
+tcc.lss_cost,output,USD,[0.],
+tcc.main_bearing_cost,output,USD,[0.],
+tcc.gearbox_cost,output,USD,[0.],
+tcc.hss_cost,output,USD,[0.],
+tcc.brake_cost,output,USD,[0.],
+tcc.generator_cost,output,USD,[0.],
+tcc.bedplate_cost,output,USD,[0.],
+tcc.yaw_system_cost,output,USD,[0.],
+tcc.converter_cost,output,USD,[0.],
+tcc.hvac_cost,output,USD,[0.],
+tcc.cover_cost,output,USD,[0.],
+tcc.elec_cost,output,USD,[627750.],
+tcc.controls_cost,output,USD,[317250.],
+tcc.platforms_cost,output,USD,[0.],
+tcc.transformer_cost,output,USD,[0.],
+tcc.blade_cost,output,USD,[0.],
+tcc.rotor_cost,output,USD,[0.],
+tcc.rotor_mass_tcc,output,kg,[0.],
+tcc.nacelle_cost,output,USD,[945000.],
+tcc.nacelle_mass_tcc,output,kg,[0.],
+tcc.tower_cost,output,USD,[2150911.87879668],
+tcc.tower_mass,intermediate,kg,[658532.04559183],
+tcc.turbine_cost,output,USD,[3095911.87879668],
+tcc.turbine_cost_kW,output,USD/kW,[206.39412525],
+tcc.turbine_mass_tcc,output,kg,[658532.04559183],
+tcc.hub_system_cost,output,USD,[0.],
+tcc.hub_system_mass_tcc,output,kg,[0.],
+tcc.tower_parts_cost,output,USD,[2150911.87879668],
+tcc.tower_cost_external,intermediate,USD,[2150911.87879668],
+towerse.env.distLoads.windLoads_Px,intermediate,N/m,"[417.76067857 480.09738431 523.65058445 557.91160668 581.92125008
+ 597.20357718 606.4643562  576.1548744  542.98427067 506.9184334
+ 460.2271512  409.29061826 353.04163049]",
+towerse.env.distLoads.windLoads_Py,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.distLoads.windLoads_Pz,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.distLoads.windLoads_qdyn,intermediate,N/m**2,"[47.59994398 54.84623708 59.92121528 63.91426489 68.52475283 72.32096112
+ 75.57411909 77.33128279 78.97040208 80.50836142 81.86436491 83.15275706
+ 84.38086698]",
+towerse.env.distLoads.windLoads_z,intermediate,m,"[ 15.          27.07132867  39.14265734  51.21398601  68.45874126
+  85.7034965  102.94825175 113.2951049  123.64195804 133.98881119
+ 143.64587413 153.30293706 162.96      ]",
+towerse.env.distLoads.windLoads_beta,intermediate,deg,[0.],
+towerse.z_global,output,m,"[ 15.          27.07132867  39.14265734  51.21398601  68.45874126
+  85.7034965  102.94825175 113.2951049  123.64195804 133.98881119
+ 143.64587413 153.30293706 162.96      ]",
+towerse.wind_reference_height,intermediate,m,[162.96],
+towerse.env.windLoads.U,intermediate,m/s,"[ 8.81556545  9.46281548  9.890933   10.21517598 10.57719942 10.86623387
+ 11.10793936 11.23633195 11.35479056 11.46482546 11.5609734  11.65159231
+ 11.73732   ]",
+towerse.outer_diameter_full,output,m,"[12.43319278 12.43319278 12.43319278 12.43319278 12.09875903 11.76432528
+ 11.42989152 10.58683885  9.74378618  8.90073352  7.93776698  6.97480044
+  6.01183391]",
+towerse.joint1,output,m,[ 0.  0. 15.],
+towerse.joint2,output,m,[  0.     0.   162.96],
+towerse.s_full,output,m,"[0.         0.08158508 0.16317016 0.24475524 0.36130536 0.47785548
+ 0.59440559 0.66433566 0.73426573 0.8041958  0.86946387 0.93473193
+ 1.        ]",
+towerse.g2e.Px_global,intermediate,N/m,"[417.76067857 480.09738431 523.65058445 557.91160668 581.92125008
+ 597.20357718 606.4643562  576.1548744  542.98427067 506.9184334
+ 460.2271512  409.29061826 353.04163049]",
+towerse.g2e.Py_global,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.g2e.Pz_global,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.g2e.qdyn_global,intermediate,Pa,"[47.59994398 54.84623708 59.92121528 63.91426489 68.52475283 72.32096112
+ 75.57411909 77.33128279 78.97040208 80.50836142 81.86436491 83.15275706
+ 84.38086698]",
+towerse.lc:Px,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.lc:Py,intermediate,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.lc:Pz,intermediate,N/m,"[-417.76067857 -480.09738431 -523.65058445 -557.91160668 -581.92125008
+ -597.20357718 -606.4643562  -576.1548744  -542.98427067 -506.9184334
+ -460.2271512  -409.29061826 -353.04163049]",
+towerse.lc:qdyn,intermediate,Pa,"[47.59994398 54.84623708 59.92121528 63.91426489 68.52475283 72.32096112
+ 75.57411909 77.33128279 78.97040208 80.50836142 81.86436491 83.15275706
+ 84.38086698]",
+towerse.member.gc.d,intermediate,m,[12.43319278 12.43319278 11.42989152  8.90073352  6.01183391],
+towerse.member.gc.t,intermediate,m,[0.02268044 0.0142022  0.01174385 0.01142884],
+towerse.member.s,output,,[0.         0.24475524 0.59440559 0.8041958  1.        ],
+towerse.member.height,output,m,[147.96],
+towerse.tower_outer_diameter,output,m,[12.43319278 12.43319278 11.42989152  8.90073352  6.01183391],
+towerse.tower_wall_thickness,output,m,[0.02268044 0.0142022  0.01174385 0.01142884],
+towerse.member.E,output,Pa,[2.e+11 2.e+11 2.e+11 2.e+11],
+towerse.member.G,output,Pa,[7.93e+10 7.93e+10 7.93e+10 7.93e+10],
+towerse.member.sigma_y,output,Pa,[3.45e+08 3.45e+08 3.45e+08 3.45e+08],
+towerse.member.rho,output,kg/m**3,[7800. 7800. 7800. 7800.],
+towerse.member.unit_cost,output,USD/kg,[0.7 0.7 0.7 0.7],
+towerse.member.outfitting_factor,output,,[1.07 1.07 1.07 1.07],
+towerse.nodes_xyz,output,m,"[[  0.           0.          15.        ]
+ [  0.           0.          27.07132867]
+ [  0.           0.          39.14265734]
+ [  0.           0.          51.21398601]
+ [  0.           0.          68.45874126]
+ [  0.           0.          85.7034965 ]
+ [  0.           0.         102.94825175]
+ [  0.           0.         113.2951049 ]
+ [  0.           0.         123.64195804]
+ [  0.           0.         133.98881119]
+ [  0.           0.         143.64587413]
+ [  0.           0.         153.30293706]
+ [  0.           0.         162.96      ]]",
+towerse.z_full,output,m,"[  0.          12.07132867  24.14265734  36.21398601  53.45874126
+  70.7034965   87.94825175  98.2951049  108.64195804 118.98881119
+ 128.64587413 138.30293706 147.96      ]",
+towerse.tower_s,intermediate,,[0.         0.24475524 0.59440559 0.8041958  1.        ],
+towerse.t_full,output,m,"[0.02268044 0.02268044 0.02268044 0.0142022  0.0142022  0.0142022
+ 0.01174385 0.01174385 0.01174385 0.01142884 0.01142884 0.01142884]",
+towerse.E_full,output,Pa,"[2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11
+ 2.e+11 2.e+11]",
+towerse.G_full,output,Pa,"[7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10]",
+towerse.sigma_y_full,output,Pa,"[3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08]",
+towerse.rho_full,output,kg/m**3,[7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800.],
+towerse.outfitting_full,output,,[1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07 1.07],
+towerse.member.unit_cost_full,output,USD/kg,[0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7],
+towerse.tower_height,intermediate,m,[147.96],
+towerse.section_A,output,m**2,"[0.94618249 0.94618249 0.94618249 0.58490872 0.5689426  0.55297649
+ 0.43411361 0.40083242 0.36755123 0.32301245 0.28601711 0.24902177]",
+towerse.section_Asx,output,m**2,"[0.53736216 0.53736216 0.53736216 0.33208718 0.32302691 0.31396663
+ 0.246462   0.22757595 0.20868991 0.1834094  0.16241572 0.14142205]",
+towerse.section_Asy,output,m**2,"[0.53736216 0.53736216 0.53736216 0.33208718 0.32302691 0.31396663
+ 0.246462   0.22757595 0.20868991 0.1834094  0.16241572 0.14142205]",
+towerse.section_Ixx,output,kg*m**2,"[18.21653576 18.21653576 18.21653576 10.97480022 10.10038065  9.27368651
+  6.5619429   5.16548199  3.98268614  2.85428299  1.98159786  1.30783145]",
+towerse.section_Iyy,output,kg*m**2,"[18.21653576 18.21653576 18.21653576 10.97480022 10.10038065  9.27368651
+  6.5619429   5.16548199  3.98268614  2.85428299  1.98159786  1.30783145]",
+towerse.section_J0,output,kg*m**2,"[36.43307152 36.43307152 36.43307152 21.94960044 20.2007613  18.54737303
+ 13.12388581 10.33096399  7.96537229  5.70856597  3.96319571  2.6156629 ]",
+towerse.section_rho,output,kg/m**3,[7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800.],
+towerse.section_E,output,Pa,"[2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11
+ 2.e+11 2.e+11]",
+towerse.section_G,output,Pa,"[7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10]",
+towerse.post.cylinder_Fz,intermediate,N,"[[-12730521.72143568]
+ [-11850886.87887046]
+ [-10970787.07175203]
+ [-10189538.98252747]
+ [ -9429015.43524477]
+ [ -8689342.32671024]
+ [ -8339717.27880802]
+ [ -8016756.87143007]
+ [ -7720490.61221403]
+ [ -7477270.18058252]
+ [ -7261843.49422376]
+ [ -7074256.2758736 ]]",
+towerse.post.cylinder_Vx,intermediate,N,"[[2428202.60258269]
+ [2428678.38301451]
+ [2429111.49063849]
+ [2429560.06791994]
+ [2430215.49135759]
+ [2430750.37827718]
+ [2429479.23253397]
+ [2429523.57455143]
+ [2429538.88915186]
+ [2429361.17520323]
+ [2429276.72132152]
+ [2429134.03768572]]",
+towerse.post.cylinder_Vy,intermediate,N,"[[29098.38222475]
+ [29104.74146934]
+ [29110.58948486]
+ [29116.76283907]
+ [29125.95242289]
+ [29133.73436025]
+ [29116.45599326]
+ [29117.39204292]
+ [29118.03862504]
+ [29115.99795827]
+ [29115.49432309]
+ [29114.44234276]]",
+towerse.post.cylinder_Mxx,intermediate,N*m,"[[-4361007.15030931]
+ [-4006298.04736741]
+ [-3649931.2024322 ]
+ [-3137543.02001618]
+ [-2621388.15215144]
+ [-2102512.96128891]
+ [-1790296.78649906]
+ [-1477154.77232377]
+ [-1163071.91054673]
+ [ -869072.3886961 ]
+ [ -574194.72779434]
+ [ -278501.85530974]]",
+towerse.post.cylinder_Myy,intermediate,N*m,"[[ 3.26275934e+08]
+ [ 2.96704586e+08]
+ [ 2.67010748e+08]
+ [ 2.24351073e+08]
+ [ 1.81424129e+08]
+ [ 1.38313439e+08]
+ [ 1.12392639e+08]
+ [ 8.64176612e+07]
+ [ 6.03932815e+07]
+ [ 3.60669741e+07]
+ [ 1.17151829e+07]
+ [-1.26341964e+07]]",
+towerse.post.cylinder_Mzz,intermediate,N*m,"[[1299696.81579559]
+ [1299681.58727972]
+ [1299666.34815927]
+ [1299768.50116918]
+ [1299754.61853755]
+ [1299740.54894056]
+ [1299789.15645825]
+ [1299802.10378469]
+ [1299818.58563886]
+ [1299852.85779559]
+ [1299889.60688801]
+ [1299939.10849629]]",
+towerse.qdyn,output,Pa,"[[47.59994398]
+ [54.84623708]
+ [59.92121528]
+ [63.91426489]
+ [68.52475283]
+ [72.32096112]
+ [75.57411909]
+ [77.33128279]
+ [78.97040208]
+ [80.50836142]
+ [81.86436491]
+ [83.15275706]
+ [84.38086698]]",
+towerse.hub_height,intermediate,m,[162.96],
+towerse.foundation_height,intermediate,m,[15.],
+towerse.Px,output,N/m,"[[0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]]",
+towerse.Py,output,N/m,"[[0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]]",
+towerse.Pz,output,N/m,"[[-417.76067857]
+ [-480.09738431]
+ [-523.65058445]
+ [-557.91160668]
+ [-581.92125008]
+ [-597.20357718]
+ [-606.4643562 ]
+ [-576.1548744 ]
+ [-542.98427067]
+ [-506.9184334 ]
+ [-460.2271512 ]
+ [-409.29061826]
+ [-353.04163049]]",
+towerse.tower_mass,output,kg,[658532.04559183],
+towerse.tower_center_of_mass,output,m,[57.02694138],
+towerse.tower_I_base,output,kg*m**2,"[3.22713234e+09 3.22713234e+09 2.19266101e+07 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00]",
+tower_grid.ref_axis,intermediate,m,"[[  0.           0.          15.        ]
+ [  0.           0.          51.21398601]
+ [  0.           0.         102.94825175]
+ [  0.           0.         133.98881119]
+ [  0.           0.         162.96      ]]","2D array of the coordinates (x,y,z) of the tower reference axis. The coordinate system is the global coordinate system of OpenFAST: it is placed at tower base with x pointing downwind, y pointing on the side and z pointing vertically upwards. A standard tower configuration will have zero x and y values and positive z values."
+fixedse.env.Px,output,N/m,"[     0.              0.              0.          96476.17864374
+  96918.90641228  98252.45317392 100493.08222435 103668.49141771
+ 107818.75539867 112997.76167827 126739.70475695 145701.26866961
+ 171147.80374315      0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.env.Py,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.Pz,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.qdyn,output,N/m**2,"[     0.              0.              0.         215074.03703686
+ 198385.21636611 181824.40881455 165393.70619294 149096.63154741
+ 132938.19513974 116924.97472565  85368.99861158  54517.47521521
+  24494.41918693      0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.env.wave.U,output,m/s,"[0.         0.         0.         1.1006516  1.10542853 1.11980079
+ 1.14389313 1.17791467 1.22216074 1.2770154  1.42055127 1.61351678
+ 1.86262639 0.         0.         0.         0.         0.
+ 0.        ]",
+fixedse.env.wave.W,output,m/s,"[ 0.          0.          0.         -0.         -0.10265619 -0.20620346
+ -0.31154061 -0.41958199 -0.53126542 -0.64756033 -0.89807125 -1.17983155
+ -1.50264538  0.          0.          0.          0.          0.
+  0.        ]",
+fixedse.env.wave.V,output,m/s,"[0.         0.         0.         1.1006516  1.1101849  1.13862797
+ 1.18555853 1.25041274 1.33263642 1.43181797 1.68062425 1.9988594
+ 2.39318202 0.         0.         0.         0.         0.
+ 0.        ]",
+fixedse.env.wave.A,output,m/s**2,"[0.         0.         0.         0.7318093  0.73498543 0.74454136
+ 0.76056005 0.78318055 0.8125992  0.84907136 0.94450655 1.07280687
+ 1.23843669 0.         0.         0.         0.         0.
+ 0.        ]",
+fixedse.env.wave.p,output,N/m**2,"[     0.              0.              0.         214453.17714555
+ 197758.95559944 181181.75749242 164723.10430788 148385.54652143
+ 132172.68573952 116089.20596202  84334.79108333  53183.21405341
+  22716.363445        0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.env.wave.phase_speed,output,m/s,[11.89841718],
+fixedse.env.waveLoads.waveLoads_Px,output,N/m,"[     0.              0.              0.          96476.17864374
+  96918.90641228  98252.45317392 100493.08222435 103668.49141771
+ 107818.75539867 112997.76167827 126739.70475695 145701.26866961
+ 171147.80374315      0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.env.waveLoads.waveLoads_Py,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.waveLoads.waveLoads_Pz,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.waveLoads.waveLoads_qdyn,output,N/m**2,"[   0.            0.            0.          620.85989131  626.26076667
+  642.65132213  670.60188506  711.08502599  765.50940023  835.76876363
+ 1034.20752825 1334.2611618  1778.05574193    0.            0.
+    0.            0.            0.            0.        ]",
+fixedse.env.waveLoads.waveLoads_pt,output,N/m**2,"[     0.              0.              0.         215074.03703686
+ 198385.21636611 181824.40881455 165393.70619294 149096.63154741
+ 132938.19513974 116924.97472565  85368.99861158  54517.47521521
+  24494.41918693      0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.env.waveLoads.waveLoads_z,output,m,"[-50.         -40.         -30.         -20.         -18.33333333
+ -16.66666667 -15.         -13.33333333 -11.66666667 -10.
+  -6.66666667  -3.33333333   0.           3.33333333   6.66666667
+  10.          11.66666667  13.33333333  15.        ]",
+fixedse.env.waveLoads.waveLoads_beta,output,deg,[0.],
+fixedse.env.wind.U,output,m/s,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.windLoads.windLoads_Px,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.windLoads.windLoads_Py,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.windLoads.windLoads_Pz,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.windLoads.windLoads_qdyn,output,N/m**2,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.env.windLoads.windLoads_z,output,m,"[-50.         -40.         -30.         -20.         -18.33333333
+ -16.66666667 -15.         -13.33333333 -11.66666667 -10.
+  -6.66666667  -3.33333333   0.           3.33333333   6.66666667
+  10.          11.66666667  13.33333333  15.        ]",
+fixedse.env.windLoads.windLoads_beta,output,deg,[0.],
+fixedse.g2e.Px,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.g2e.Py,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+fixedse.g2e.Pz,output,N/m,"[      0.               0.               0.          -96476.17864374
+  -96918.90641228  -98252.45317392 -100493.08222435 -103668.49141771
+ -107818.75539867 -112997.76167827 -126739.70475695 -145701.26866961
+ -171147.80374315       0.               0.               0.
+       0.               0.               0.        ]",
+fixedse.g2e.qdyn,output,Pa,"[     0.              0.              0.         215074.03703686
+ 198385.21636611 181824.40881455 165393.70619294 149096.63154741
+ 132938.19513974 116924.97472565  85368.99861158  54517.47521521
+  24494.41918693      0.              0.              0.
+      0.              0.              0.        ]",
+fixedse.constr_d_to_t,output,,"[161.4700302  161.47003319 161.47003544 161.47003598 161.47003609
+ 161.47003609]",
+fixedse.constr_taper,output,,[0.99999999 1.         0.99999999 1.         1.         1.        ],
+fixedse.slope,output,,[1.00000001 1.         1.00000001 1.         1.         1.        ],
+fixedse.thickness_slope,output,,[0.99999999 0.99999999 1.         1.         1.        ],
+fixedse.member.nu_full,output,,"[0.26103405 0.26103405 0.26103405 0.26103405 0.26103405 0.26103405
+ 0.26103405 0.26103405 0.26103405 0.26103405 0.26103405 0.26103405
+ 0.26103405 0.26103405 0.26103405 0.26103405 0.26103405 0.26103405]",
+fixedse.member.nodes_r,output,m,"[6.21659629 6.21659631 6.21659633 6.21659635 6.21659635 6.21659635
+ 6.21659635 6.21659636 6.21659637 6.21659638 6.21659638 6.21659639
+ 6.21659639 6.21659639 6.21659639 6.21659639 6.21659639 6.21659639
+ 6.21659639]",
+fixedse.member.center_of_buoyancy,output,m,[  0.           0.         -24.99999986],
+fixedse.member.displacement,output,m**3,[6070.51048865],
+fixedse.member.buoyancy_force,output,N,[61017664.84818722],
+fixedse.member.idx_cb,output,,[3.],
+fixedse.member.Awater,output,m**2,[121.4102117],
+fixedse.member.Iwaterx,output,m**4,[1173.00690535],
+fixedse.member.Iwatery,output,m**4,[1173.00690535],
+fixedse.member.added_mass,output,kg,"[6.22227325e+06 6.22227325e+06 3.28337599e+05 1.29637240e+09
+ 1.29637240e+09 0.00000000e+00]",
+fixedse.member.waterline_centroid,output,m,[0. 0.],
+fixedse.member.z_dim,output,m,"[-50.         -40.         -30.         -20.         -18.33333333
+ -16.66666667 -15.         -13.33333333 -11.66666667 -10.
+  -6.66666667  -3.33333333   0.           3.33333333   6.66666667
+  10.          11.66666667  13.33333333  15.        ]",
+fixedse.member.d_eff,output,m,"[12.43319258 12.43319262 12.43319266 12.4331927  12.4331927  12.4331927
+ 12.4331927  12.43319272 12.43319274 12.43319276 12.43319277 12.43319277
+ 12.43319278 12.43319278 12.43319278 12.43319278 12.43319278 12.43319278
+ 12.43319278]",
+fixedse.monopile_section_height,output,m,[30.  5.  5. 10. 10.  5.],
+fixedse.member.sigma_ult,output,Pa,[4.5e+08 4.5e+08 4.5e+08 4.5e+08 4.5e+08 4.5e+08],
+fixedse.member.wohler_exp,output,,[3. 3. 3. 3. 3. 3.],
+fixedse.member.wohler_A,output,,"[3.55346484e+10 3.55346484e+10 3.55346484e+10 3.55346484e+10
+ 3.55346484e+10 3.55346484e+10]",
+fixedse.member.ballast_density,output,kg/m**3,[],
+fixedse.member.ballast_unit_cost,output,USD/kg,[],
+fixedse.z_param,output,m,[-50. -20. -15. -10.   0.  10.  15.],
+fixedse.member.sec_loc,output,,[0.         0.36842105 0.47368421 0.63157895 0.84210526 1.        ],normalized sectional location
+fixedse.member.str_tw,output,deg,[0. 0. 0. 0. 0. 0.],structural twist of section
+fixedse.member.tw_iner,output,deg,[0. 0. 0. 0. 0. 0.],inertial twist of section
+fixedse.member.mass_den,output,kg/m,"[24946.15748256 24946.15725121 24946.15703844 24946.15712251
+ 24946.15713978 24946.15713979]",sectional mass per unit length
+fixedse.member.foreaft_iner,output,kg*m,"[476101.86060254 476101.86064991 476101.85919272 476101.86400614
+ 476101.86499502 476101.8649954 ]",sectional fore-aft intertia per unit length about the Y_G inertia axis
+fixedse.member.sideside_iner,output,kg*m,"[476101.86060254 476101.86064991 476101.85919272 476101.86400614
+ 476101.86499502 476101.8649954 ]",sectional side-side intertia per unit length about the Y_G inertia axis
+fixedse.member.foreaft_stff,output,N*m**2,"[1.14091028e+13 1.14091028e+13 1.14091028e+13 1.14091029e+13
+ 1.14091029e+13 1.14091029e+13]",sectional fore-aft bending stiffness per unit length about the Y_E elastic axis
+fixedse.member.sideside_stff,output,N*m**2,"[1.14091028e+13 1.14091028e+13 1.14091028e+13 1.14091029e+13
+ 1.14091029e+13 1.14091029e+13]",sectional side-side bending stiffness per unit length about the Y_E elastic axis
+fixedse.member.tor_stff,output,N*m**2,"[9.04741853e+12 9.04741854e+12 9.04741851e+12 9.04741860e+12
+ 9.04741862e+12 9.04741862e+12]",sectional torsional stiffness
+fixedse.member.axial_stff,output,N,"[5.97799125e+11 5.97799119e+11 5.97799114e+11 5.97799116e+11
+ 5.97799117e+11 5.97799117e+11]",sectional axial stiffness
+fixedse.member.cg_offst,output,m,[0. 0. 0. 0. 0. 0.],offset from the sectional center of mass
+fixedse.member.sc_offst,output,m,[0. 0. 0. 0. 0. 0.],offset from the sectional shear center
+fixedse.member.tc_offst,output,m,[0. 0. 0. 0. 0. 0.],offset from the sectional tension center
+fixedse.member.axial_load2stress,output,m**2,"[[0.         0.         0.33456054 0.10897608 0.10897608 0.        ]
+ [0.         0.         0.33456055 0.10897608 0.10897608 0.        ]
+ [0.         0.         0.33456055 0.10897608 0.10897608 0.        ]
+ [0.         0.         0.33456055 0.10897608 0.10897608 0.        ]
+ [0.         0.         0.33456055 0.10897608 0.10897608 0.        ]
+ [0.         0.         0.33456055 0.10897608 0.10897608 0.        ]]",
+fixedse.member.shear_load2stress,output,m**2,"[[0.54946421 0.54946421 0.         0.         0.         0.05448804]
+ [0.54946422 0.54946422 0.         0.         0.         0.05448804]
+ [0.54946422 0.54946422 0.         0.         0.         0.05448804]
+ [0.54946422 0.54946422 0.         0.         0.         0.05448804]
+ [0.54946422 0.54946422 0.         0.         0.         0.05448804]
+ [0.54946422 0.54946422 0.         0.         0.         0.05448804]]",
+fixedse.member.labor_hours,output,h,[1189.99671226],
+fixedse.member.shell_cost,output,USD,[3961795.23695627],
+fixedse.member.shell_mass,output,kg,[1621500.22424683],
+fixedse.member.shell_z_cg,output,m,[32.4999999],
+fixedse.member.shell_I_base,output,kg*m**2,"[2.31455943e+09 2.31455943e+09 6.18932421e+07 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00]",
+fixedse.member.section_D,output,m,"[12.4331926  12.43319264 12.43319268 12.4331927  12.4331927  12.4331927
+ 12.43319271 12.43319273 12.43319275 12.43319276 12.43319277 12.43319278
+ 12.43319278 12.43319278 12.43319278 12.43319278 12.43319278 12.43319278]",
+fixedse.member.section_t,output,m,"[0.08239 0.08239 0.08239 0.08239 0.08239 0.08239 0.08239 0.08239 0.08239
+ 0.08239 0.08239 0.08239 0.08239 0.08239 0.08239 0.08239 0.08239 0.08239]",
+fixedse.member.section_sigma_y,output,Pa,"[3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08]",
+fixedse.monopile_mass,output,kg,[1721500.22424683],
+fixedse.monopile_cost,output,USD,[4461795.23695627],
+fixedse.monopile_z_cg,output,m,[34.38788813],
+fixedse.monopile_I_base,output,kg*m**2,"[2.73899173e+09 2.73899173e+09 6.57578491e+07 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00]",
+fixedse.structural_mass,output,kg,[2380032.26983866],
+fixedse.structural_cost,output,USD,[6612707.11575295],
+fixedse.monopile.section_L,output,m,"[10.         10.         10.          1.66666667  1.66666667  1.66666667
+  1.66666667  1.66666667  1.66666667  3.33333333  3.33333333  3.33333333
+  3.33333333  3.33333333  3.33333333  1.66666667  1.66666667  1.66666667
+ 12.07132867 12.07132867 12.07132867 17.24475524 17.24475524 17.24475524
+ 10.34685315 10.34685315 10.34685315  9.65706294  9.65706294  9.65706294]",
+fixedse.f1,output,Hz,[0.22],
+fixedse.f2,output,Hz,[0.22187621],
+fixedse.structural_frequencies,output,Hz,[0.22       0.22187621 0.8304938  1.01982627 1.1957237  2.45336155],
+fixedse.fore_aft_freqs,output,Hz,[0.22187621 1.1957237  2.5212143 ],
+fixedse.side_side_freqs,output,Hz,[0.22       1.01982627 2.45336155],
+fixedse.torsion_freqs,output,Hz,[3.84637857 0.         0.        ],
+fixedse.fore_aft_modes,output,,"[[  0.37195323   0.44274994   1.81489166  -2.55169117   0.92209633]
+ [ -2.3257177   -1.2980874    0.63935322   3.44434889   0.540103  ]
+ [ -4.94508763   0.73564094  12.0638034    4.71771665 -11.57207337]]",
+fixedse.side_side_modes,output,,"[[  0.36733967   0.43876625   1.81385353  -2.55230905   0.93234961]
+ [ -2.48645309  -1.57703816   0.58940192   2.28884613   2.18524321]
+ [ -4.64271728   0.50653213  10.23441017   6.24768797 -11.34591299]]",
+fixedse.torsion_modes,output,,"[[ 0.10077492  3.53829425 -6.2784073   6.71388701 -3.07454888]
+ [ 0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.        ]]",
+fixedse.tower_fore_aft_modes,output,,"[[ 0.8487975   0.86885388 -1.77323241  1.75064156 -0.69506053]
+ [-1.84147874  5.05088091 -9.34476388 10.26518831 -3.12982659]
+ [-0.18103748  0.48469651  6.09960071 -5.80520536  0.40194563]]",
+fixedse.tower_side_side_modes,output,,"[[  0.83611019   0.89088762  -1.81922801   1.79722771  -0.70499752]
+ [ -2.0746146    5.58143877 -10.76823679  11.53535361  -3.27394098]
+ [ -0.31040172   0.80428658   4.94779187  -4.41959713  -0.0220796 ]]",
+fixedse.tower_torsion_modes,output,,"[[  -6.71232786   52.32449332 -130.13143115  139.35258536  -53.83331968]
+ [   0.            0.            0.            0.            0.        ]
+ [   0.            0.            0.            0.            0.        ]]",
+fixedse.monopile.monopile_deflection,output,m,"[[1.57365443e-04]
+ [2.71198640e-04]
+ [4.03424702e-05]
+ [2.31936051e-03]
+ [3.08972854e-03]
+ [3.95433963e-03]
+ [4.91226708e-03]
+ [5.96258378e-03]
+ [7.10436223e-03]
+ [8.33667456e-03]
+ [1.10691936e-02]
+ [1.41527063e-02]
+ [1.75797787e-02]
+ [2.13429734e-02]
+ [2.54348599e-02]
+ [2.98480095e-02]
+ [3.21727303e-02]
+ [3.45749776e-02]
+ [3.70538215e-02]
+ [6.22262976e-02]
+ [9.95156093e-02]
+ [1.47729798e-01]
+ [2.39976563e-01]
+ [3.60508565e-01]
+ [5.05178099e-01]
+ [6.02740823e-01]
+ [7.08471424e-01]
+ [8.21581945e-01]
+ [9.32434871e-01]
+ [1.04554166e+00]
+ [1.15623590e+00]]",
+fixedse.monopile.top_deflection,output,m,[1.1562359],
+fixedse.monopile.monopile_Fz,output,N,"[[-31179435.72038715]
+ [-28733133.38425641]
+ [-25809273.9770739 ]
+ [-25242005.971014  ]
+ [-24673272.54583432]
+ [-24101590.42890056]
+ [-23525440.07335947]
+ [-22943246.03860893]
+ [-22353355.35982918]
+ [-21142354.43006401]
+ [-19877392.72607838]
+ [-18539157.66846403]
+ [-17441329.69565723]
+ [-16625895.58361371]
+ [-15810461.47157015]
+ [-15402744.41554845]
+ [-14995027.35952632]
+ [-14587310.30350392]]",
+fixedse.monopile.monopile_Vx,output,N,"[[-3630432.17990122]
+ [-8198899.84274795]
+ [-7770118.21064171]
+ [ 2428056.98943542]
+ [ 2428073.38905587]
+ [ 2428090.12906986]
+ [ 2428107.34313002]
+ [ 2428125.1727663 ]
+ [ 2428143.77066976]
+ [ 2428420.43316857]
+ [ 2428507.89136093]
+ [ 2428608.99916826]
+ [ 2428599.3996326 ]
+ [ 2428426.01496882]
+ [ 2428465.30683914]
+ [ 2428209.88216267]
+ [ 2428219.36397806]
+ [ 2428228.73207834]]",
+fixedse.monopile.monopile_Vy,output,N,"[[ -47410.92596769]
+ [-107349.00461938]
+ [-102767.23478233]
+ [  29096.4415081 ]
+ [  29096.65584818]
+ [  29096.87478316]
+ [  29097.10006327]
+ [  29097.3335442 ]
+ [  29097.57723025]
+ [  29101.18729044]
+ [  29102.33512868]
+ [  29103.66334132]
+ [  29103.54613785]
+ [  29101.28472521]
+ [  29101.80566794]
+ [  29098.46161373]
+ [  29098.58775759]
+ [  29098.7125375 ]]",
+fixedse.monopile.monopile_Mxx,output,N*m,"[[ -671569.38927988]
+ [-2556545.26945517]
+ [-4649408.3173616 ]
+ [-5412555.49602903]
+ [-5363780.52488637]
+ [-5314981.82955081]
+ [-5266161.10671832]
+ [-5217320.06743728]
+ [-5168460.44500652]
+ [-5070681.72287733]
+ [-4972848.36671396]
+ [-4874975.95141809]
+ [-4777081.15300104]
+ [-4679164.50009334]
+ [-4581220.77998569]
+ [-4532247.55915087]
+ [-4483271.00523964]
+ [-4434292.00104467]]",
+fixedse.monopile.monopile_Myy,output,N*m,"[[5.16435012e+07]
+ [1.96221076e+08]
+ [3.55840560e+08]
+ [4.14083720e+08]
+ [4.10015355e+08]
+ [4.05945179e+08]
+ [4.01873324e+08]
+ [3.97799923e+08]
+ [3.93725110e+08]
+ [3.85570964e+08]
+ [3.77412692e+08]
+ [3.69251492e+08]
+ [3.61088644e+08]
+ [3.52924192e+08]
+ [3.44757740e+08]
+ [3.40674436e+08]
+ [3.36590896e+08]
+ [3.32507186e+08]]",
+fixedse.monopile.monopile_Mzz,output,N*m,"[[ 214260.6777001 ]
+ [ 468224.68710593]
+ [ 808955.83756311]
+ [1299593.325459  ]
+ [1299590.41838053]
+ [1299587.50380529]
+ [1299584.57413213]
+ [1299581.62157415]
+ [1299578.63805818]
+ [1299575.61511389]
+ [1299569.40928209]
+ [1299562.92698901]
+ [1299556.06927721]
+ [1299550.44357231]
+ [1299546.26499681]
+ [1299542.08644818]
+ [1299539.99718394]
+ [1299537.90792641]]",
+fixedse.monopile.mudline_F,output,N,"[[  2428056.98943542]
+ [    29096.4415081 ]
+ [-25809273.97707409]]",
+fixedse.monopile.mudline_M,output,N*m,"[[-5.46130505e+06]
+ [ 4.18150144e+08]
+ [ 1.29959333e+06]]",
+fixedse.monopile.monopile_tower_z_full,output,m,"[-50.         -40.         -30.         -20.         -18.33333333
+ -16.66666667 -15.         -13.33333333 -11.66666667 -10.
+  -6.66666667  -3.33333333   0.           3.33333333   6.66666667
+  10.          11.66666667  13.33333333  15.          27.07132867
+  39.14265734  51.21398601  68.45874126  85.7034965  102.94825175
+ 113.2951049  123.64195804 133.98881119 143.64587413 153.30293706
+ 162.96      ]",
+fixedse.monopile.monopile_tower_outer_diameter_full,output,m,"[12.43319258 12.43319262 12.43319266 12.4331927  12.4331927  12.4331927
+ 12.4331927  12.43319272 12.43319274 12.43319276 12.43319277 12.43319277
+ 12.43319278 12.43319278 12.43319278 12.43319278 12.43319278 12.43319278
+ 12.43319278 12.43319278 12.43319278 12.43319278 12.09875903 11.76432528
+ 11.42989152 10.58683885  9.74378618  8.90073352  7.93776698  6.97480044
+  6.01183391]",
+fixedse.monopile.monopile_tower_t_full,output,m,"[0.077      0.077      0.077      0.077      0.077      0.077
+ 0.077      0.077      0.077      0.077      0.077      0.077
+ 0.077      0.077      0.077      0.077      0.077      0.077
+ 0.02268044 0.02268044 0.02268044 0.0142022  0.0142022  0.0142022
+ 0.01174385 0.01174385 0.01174385 0.01142884 0.01142884 0.01142884]",
+fixedse.monopile.monopile_tower_rho_sec,output,kg/m**3,"[7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800.
+ 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800. 7800.
+ 7800. 7800. 7800. 7800. 7800. 7800.]",
+fixedse.monopile.monopile_tower_E_sec,output,Pa,"[2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11
+ 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11
+ 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11 2.e+11]",
+fixedse.monopile.monopile_tower_G_sec,output,Pa,"[7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10
+ 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10 7.93e+10]",
+fixedse.monopile.monopile_tower_A_sec,output,m**2,"[3.19822531 3.19822532 3.19822533 3.19822529 3.19822529 3.19822529
+ 3.19822526 3.19822526 3.19822527 3.19822527 3.19822527 3.19822527
+ 3.19822527 3.19822527 3.19822527 3.19822527 3.19822527 3.19822527
+ 0.94618249 0.94618249 0.94618249 0.58490872 0.5689426  0.55297649
+ 0.43411361 0.40083242 0.36755123 0.32301245 0.28601711 0.24902177]",
+fixedse.monopile.monopile_tower_Asx_sec,output,m**2,"[1.81995474 1.81995474 1.81995475 1.81995473 1.81995472 1.81995472
+ 1.81995471 1.81995471 1.81995471 1.81995471 1.81995472 1.81995472
+ 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472
+ 0.53736216 0.53736216 0.53736216 0.33208718 0.32302691 0.31396663
+ 0.246462   0.22757595 0.20868991 0.1834094  0.16241572 0.14142205]",
+fixedse.monopile.monopile_tower_Asy_sec,output,m**2,"[1.81995474 1.81995474 1.81995475 1.81995473 1.81995472 1.81995472
+ 1.81995471 1.81995471 1.81995471 1.81995471 1.81995472 1.81995472
+ 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472 1.81995472
+ 0.53736216 0.53736216 0.53736216 0.33208718 0.32302691 0.31396663
+ 0.246462   0.22757595 0.20868991 0.1834094  0.16241572 0.14142205]",
+fixedse.monopile.monopile_tower_J0_sec,output,kg*m**2,"[122.07739902 122.07740015 122.07740128 122.07740017 122.07740017
+ 122.07740016 122.07739914 122.07739979 122.07740045 122.07740086
+ 122.07740103 122.07740119 122.07740128 122.07740128 122.07740128
+ 122.07740128 122.07740128 122.07740128  36.43307152  36.43307152
+  36.43307152  21.94960044  20.2007613   18.54737303  13.12388581
+  10.33096399   7.96537229   5.70856597   3.96319571   2.6156629 ]",
+fixedse.monopile.monopile_tower_Ixx_sec,output,kg*m**2,"[61.03869951 61.03870008 61.03870064 61.03870009 61.03870008 61.03870008
+ 61.03869957 61.0386999  61.03870023 61.03870043 61.03870051 61.0387006
+ 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064
+ 18.21653576 18.21653576 18.21653576 10.97480022 10.10038065  9.27368651
+  6.5619429   5.16548199  3.98268614  2.85428299  1.98159786  1.30783145]",
+fixedse.monopile.monopile_tower_Iyy_sec,output,kg*m**2,"[61.03869951 61.03870008 61.03870064 61.03870009 61.03870008 61.03870008
+ 61.03869957 61.0386999  61.03870023 61.03870043 61.03870051 61.0387006
+ 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064 61.03870064
+ 18.21653576 18.21653576 18.21653576 10.97480022 10.10038065  9.27368651
+  6.5619429   5.16548199  3.98268614  2.85428299  1.98159786  1.30783145]",
+fixedse.monopile.monopile_tower_sigma_y_full,output,Pa,"[3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08]",
+fixedse.monopile.monopile_tower_bending_height,output,m,[182.96],
+fixedse.monopile.monopile_tower_qdyn,output,Pa,"[[0.00000000e+00]
+ [0.00000000e+00]
+ [0.00000000e+00]
+ [2.15074037e+05]
+ [1.98385216e+05]
+ [1.81824409e+05]
+ [1.65393706e+05]
+ [1.49096632e+05]
+ [1.32938195e+05]
+ [1.16924975e+05]
+ [8.53689986e+04]
+ [5.45174752e+04]
+ [2.44944192e+04]
+ [0.00000000e+00]
+ [0.00000000e+00]
+ [0.00000000e+00]
+ [0.00000000e+00]
+ [0.00000000e+00]
+ [4.75999440e+01]
+ [5.48462371e+01]
+ [5.99212153e+01]
+ [6.39142649e+01]
+ [6.85247528e+01]
+ [7.23209611e+01]
+ [7.55741191e+01]
+ [7.73312828e+01]
+ [7.89704021e+01]
+ [8.05083614e+01]
+ [8.18643649e+01]
+ [8.31527571e+01]
+ [8.43808670e+01]]",
+fixedse.monopile.monopile_tower_Fz,output,N,"[[-3.11794357e+07]
+ [-2.87331334e+07]
+ [-2.58092740e+07]
+ [-2.52420060e+07]
+ [-2.46732725e+07]
+ [-2.41015904e+07]
+ [-2.35254401e+07]
+ [-2.29432460e+07]
+ [-2.23533554e+07]
+ [-2.11423544e+07]
+ [-1.98773927e+07]
+ [-1.85391577e+07]
+ [-1.74413297e+07]
+ [-1.66258956e+07]
+ [-1.58104615e+07]
+ [-1.54027444e+07]
+ [-1.49950274e+07]
+ [-1.45873103e+07]
+ [-1.27305439e+07]
+ [-1.18515418e+07]
+ [-1.09719070e+07]
+ [-1.01911563e+07]
+ [-9.43096813e+06]
+ [-8.69150452e+06]
+ [-8.34177167e+06]
+ [-8.01848614e+06]
+ [-7.72186527e+06]
+ [-7.47824924e+06]
+ [-7.26235587e+06]
+ [ 1.31112756e-08]]",
+fixedse.monopile.monopile_tower_Vx,output,N,"[[-3.63043218e+06]
+ [-8.19889984e+06]
+ [-7.77011821e+06]
+ [ 2.42805699e+06]
+ [ 2.42807339e+06]
+ [ 2.42809013e+06]
+ [ 2.42810734e+06]
+ [ 2.42812517e+06]
+ [ 2.42814377e+06]
+ [ 2.42842043e+06]
+ [ 2.42850789e+06]
+ [ 2.42860900e+06]
+ [ 2.42859940e+06]
+ [ 2.42842601e+06]
+ [ 2.42846531e+06]
+ [ 2.42820988e+06]
+ [ 2.42821936e+06]
+ [ 2.42822873e+06]
+ [ 2.42883824e+06]
+ [ 2.42928308e+06]
+ [ 2.42968212e+06]
+ [ 2.43001408e+06]
+ [ 2.43058263e+06]
+ [ 2.43102787e+06]
+ [ 2.42957454e+06]
+ [ 2.42957782e+06]
+ [ 2.42954745e+06]
+ [ 2.42932438e+06]
+ [ 2.42919063e+06]
+ [ 1.07860585e+03]]",
+fixedse.monopile.monopile_tower_Vy,output,N,"[[-4.74109260e+04]
+ [-1.07349005e+05]
+ [-1.02767235e+05]
+ [ 2.90964415e+04]
+ [ 2.90966558e+04]
+ [ 2.90968748e+04]
+ [ 2.90971001e+04]
+ [ 2.90973335e+04]
+ [ 2.90975772e+04]
+ [ 2.91011873e+04]
+ [ 2.91023351e+04]
+ [ 2.91036633e+04]
+ [ 2.91035461e+04]
+ [ 2.91012847e+04]
+ [ 2.91018057e+04]
+ [ 2.90984616e+04]
+ [ 2.90985878e+04]
+ [ 2.90987125e+04]
+ [ 2.91067528e+04]
+ [ 2.91127423e+04]
+ [ 2.91181795e+04]
+ [ 2.91228650e+04]
+ [ 2.91309879e+04]
+ [ 2.91376687e+04]
+ [ 2.91178825e+04]
+ [ 2.91183035e+04]
+ [ 2.91183766e+04]
+ [ 2.91157463e+04]
+ [ 2.91146263e+04]
+ [ 1.75412890e+01]]",
+fixedse.monopile.monopile_tower_Mxx,output,N*m,"[[-6.71569389e+05]
+ [-2.55654527e+06]
+ [-4.64940832e+06]
+ [-5.41255550e+06]
+ [-5.36378052e+06]
+ [-5.31498183e+06]
+ [-5.26616111e+06]
+ [-5.21732007e+06]
+ [-5.16846045e+06]
+ [-5.07068172e+06]
+ [-4.97284837e+06]
+ [-4.87497595e+06]
+ [-4.77708115e+06]
+ [-4.67916450e+06]
+ [-4.58122078e+06]
+ [-4.53224756e+06]
+ [-4.48327101e+06]
+ [-4.43429200e+06]
+ [-4.07857587e+06]
+ [-3.72106632e+06]
+ [-3.36222737e+06]
+ [-2.84687235e+06]
+ [-2.32838009e+06]
+ [-1.80776549e+06]
+ [-1.49481546e+06]
+ [-1.18119602e+06]
+ [-8.66936826e+05]
+ [-5.73109442e+05]
+ [-2.78840152e+05]
+ [-4.49704115e-04]]",
+fixedse.monopile.monopile_tower_Myy,output,N*m,"[[ 5.16435012e+07]
+ [ 1.96221076e+08]
+ [ 3.55840560e+08]
+ [ 4.14083720e+08]
+ [ 4.10015355e+08]
+ [ 4.05945179e+08]
+ [ 4.01873324e+08]
+ [ 3.97799923e+08]
+ [ 3.93725110e+08]
+ [ 3.85570964e+08]
+ [ 3.77412692e+08]
+ [ 3.69251492e+08]
+ [ 3.61088644e+08]
+ [ 3.52924192e+08]
+ [ 3.44757740e+08]
+ [ 3.40674436e+08]
+ [ 3.36590896e+08]
+ [ 3.32507186e+08]
+ [ 3.02856876e+08]
+ [ 2.73073876e+08]
+ [ 2.43194183e+08]
+ [ 2.00313765e+08]
+ [ 1.57216393e+08]
+ [ 1.13983004e+08]
+ [ 8.80131860e+07]
+ [ 6.20098904e+07]
+ [ 3.59815986e+07]
+ [ 1.16790315e+07]
+ [-1.26133766e+07]
+ [ 2.76522860e-02]]",
+fixedse.monopile.monopile_tower_Mzz,output,N*m,"[[ 214260.6777001 ]
+ [ 468224.68710593]
+ [ 808955.83756311]
+ [1299593.325459  ]
+ [1299590.41838053]
+ [1299587.50380529]
+ [1299584.57413213]
+ [1299581.62157415]
+ [1299578.63805818]
+ [1299575.61511389]
+ [1299569.40928209]
+ [1299562.92698901]
+ [1299556.06927721]
+ [1299550.44357231]
+ [1299546.26499681]
+ [1299542.08644818]
+ [1299539.99718394]
+ [1299537.90792641]
+ [1299696.76647942]
+ [1299681.58766421]
+ [1299666.35950518]
+ [1299768.53255836]
+ [1299754.66513967]
+ [1299740.60683059]
+ [1299789.23811668]
+ [1299802.18781541]
+ [1299818.66277765]
+ [1299852.92757498]
+ [1299889.66301773]
+ [      0.        ]]",
+fixedse.post.axial_stress,output,Pa,"[[-4488810.2618741 ]
+ [11002098.29228969]
+ [28174442.27678555]
+ [34284200.86725761]
+ [34047649.16495978]
+ [33811835.03296962]
+ [33577247.29757702]
+ [33344391.31707139]
+ [33113798.03190549]
+ [32661912.96192548]
+ [32226479.74316878]
+ [31813658.94097381]
+ [31325501.42574162]
+ [30748883.4714948 ]
+ [30172061.91752999]
+ [29883643.21271906]
+ [29595200.39531134]
+ [29306740.36121462]]",
+fixedse.post.shear_stress,output,Pa,"[[2005873.54325258]
+ [4529231.77077679]
+ [4310970.05428396]
+ [1400405.93552247]
+ [1400414.79928067]
+ [1400423.84970801]
+ [1400433.174244  ]
+ [1400442.81884385]
+ [1400452.88403938]
+ [1400604.75745632]
+ [1400652.50002855]
+ [1400707.72914658]
+ [1400702.10459646]
+ [1400606.54138291]
+ [1400627.91993754]
+ [1400487.34848946]
+ [1400492.45248646]
+ [1400497.49399693]]",
+fixedse.post.hoop_stress,output,Pa,"[[       -0.        ]
+ [       -0.        ]
+ [ -8628234.33126603]
+ [-16586955.02965773]
+ [-15253062.79322555]
+ [-13929525.60982153]
+ [-12616568.88796056]
+ [-11314534.65838669]
+ [-10023887.94880238]
+ [ -8115530.29132211]
+ [ -5611896.87202155]
+ [ -3169760.3858186 ]
+ [  -982655.08272861]
+ [       -0.        ]
+ [       -0.        ]
+ [       -0.        ]
+ [       -0.        ]
+ [       -0.        ]]",
+fixedse.post.hoop_stress_euro,output,Pa,"[[0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]]",
+fixedse.post.constr_stress,output,,"[[0.02887492]
+ [0.06873756]
+ [0.17378451]
+ [0.22891798]
+ [0.22273161]
+ [0.21666722]
+ [0.21073282]
+ [0.20493725]
+ [0.19929023]
+ [0.19058215]
+ [0.18033792]
+ [0.17091598]
+ [0.16237839]
+ [0.15690428]
+ [0.15397929]
+ [0.15251678]
+ [0.15105435]
+ [0.14959192]]",
+fixedse.post.constr_shell_buckling,output,,"[[0.05479743]
+ [0.06732037]
+ [0.17191571]
+ [0.06201918]
+ [0.0579533 ]
+ [0.05398549]
+ [0.05013057]
+ [0.04640758]
+ [0.04284092]
+ [0.05607102]
+ [0.04559774]
+ [0.03690084]
+ [0.0303443 ]
+ [0.02753895]
+ [0.02641933]
+ [0.02308523]
+ [0.02256537]
+ [0.02204721]]",
+fixedse.post.constr_global_buckling,output,,"[[0.0780364 ]
+ [0.14621045]
+ [0.22103653]
+ [0.2491743 ]
+ [0.2461717 ]
+ [0.24316352]
+ [0.24014724]
+ [0.23712024]
+ [0.23407978]
+ [0.22794451]
+ [0.22171679]
+ [0.21536445]
+ [0.20942197]
+ [0.20396032]
+ [0.19849868]
+ [0.19576819]
+ [0.19303783]
+ [0.19030764]]",
+fixedse.post_monopile_tower.axial_stress,output,Pa,"[[-4.48881026e+06]
+ [ 1.10020983e+07]
+ [ 2.81744423e+07]
+ [ 3.42842009e+07]
+ [ 3.40476492e+07]
+ [ 3.38118350e+07]
+ [ 3.35772473e+07]
+ [ 3.33443913e+07]
+ [ 3.31137980e+07]
+ [ 3.26619130e+07]
+ [ 3.22264797e+07]
+ [ 3.18136589e+07]
+ [ 3.13255014e+07]
+ [ 3.07488835e+07]
+ [ 3.01720619e+07]
+ [ 2.98836432e+07]
+ [ 2.95952004e+07]
+ [ 2.93067404e+07]
+ [ 8.99080258e+07]
+ [ 8.06725224e+07]
+ [ 7.14046904e+07]
+ [ 9.45280584e+07]
+ [ 7.62934453e+07]
+ [ 5.55613947e+07]
+ [ 5.46207991e+07]
+ [ 4.10220787e+07]
+ [ 2.11142740e+07]
+ [-5.90609418e+06]
+ [-1.65496023e+06]
+ [ 6.86552322e-02]]",
+fixedse.post_monopile_tower.shear_stress,output,Pa,"[[2.00587354e+06]
+ [4.52923177e+06]
+ [4.31097005e+06]
+ [1.40040594e+06]
+ [1.40041480e+06]
+ [1.40042385e+06]
+ [1.40043317e+06]
+ [1.40044282e+06]
+ [1.40045288e+06]
+ [1.40060476e+06]
+ [1.40065250e+06]
+ [1.40070773e+06]
+ [1.40070210e+06]
+ [1.40060654e+06]
+ [1.40062792e+06]
+ [1.40048735e+06]
+ [1.40049245e+06]
+ [1.40049749e+06]
+ [4.74202053e+06]
+ [4.74284583e+06]
+ [4.74358589e+06]
+ [7.68109472e+06]
+ [7.90878603e+06]
+ [8.14985004e+06]
+ [1.04036477e+07]
+ [1.13161457e+07]
+ [1.24033583e+07]
+ [1.42048568e+07]
+ [1.61804915e+07]
+ [7.62786603e+03]]",
+fixedse.post_monopile_tower.hoop_stress,output,Pa,"[[-0.00000000e+00]
+ [-0.00000000e+00]
+ [-8.62823433e+06]
+ [-1.65869550e+07]
+ [-1.52530628e+07]
+ [-1.39295256e+07]
+ [-1.26165689e+07]
+ [-1.13145347e+07]
+ [-1.00238879e+07]
+ [-8.11553029e+06]
+ [-5.61189687e+06]
+ [-3.16976039e+06]
+ [-9.82655083e+05]
+ [-0.00000000e+00]
+ [-0.00000000e+00]
+ [-0.00000000e+00]
+ [-0.00000000e+00]
+ [-1.90959118e+03]
+ [-1.40143819e+04]
+ [-1.56999011e+04]
+ [-1.69403846e+04]
+ [-2.85627126e+04]
+ [-2.95465989e+04]
+ [-3.01547547e+04]
+ [-3.57941152e+04]
+ [-3.37840649e+04]
+ [-3.16086642e+04]
+ [-2.98630692e+04]
+ [-2.68734315e+04]
+ [-2.37542547e+04]]",
+fixedse.post_monopile_tower.hoop_stress_euro,output,Pa,"[[0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]]",
+fixedse.post_monopile_tower.constr_stress,output,,"[[2.88749219e-02]
+ [6.87375625e-02]
+ [1.73784514e-01]
+ [2.28917984e-01]
+ [2.22731609e-01]
+ [2.16667223e-01]
+ [2.10732823e-01]
+ [2.04937255e-01]
+ [1.99290230e-01]
+ [1.90582147e-01]
+ [1.80337921e-01]
+ [1.70915978e-01]
+ [1.62378386e-01]
+ [1.56904280e-01]
+ [1.53979291e-01]
+ [1.52516783e-01]
+ [1.51054347e-01]
+ [1.49596760e-01]
+ [4.59298191e-01]
+ [4.12539517e-01]
+ [3.65672024e-01]
+ [4.85671224e-01]
+ [3.94381591e-01]
+ [2.91691831e-01]
+ [2.92670065e-01]
+ [2.31351038e-01]
+ [1.53286372e-01]
+ [1.28695007e-01]
+ [1.42808552e-01]
+ [1.38269735e-04]]",
+fixedse.post_monopile_tower.constr_shell_buckling,output,,"[[0.05479743]
+ [0.06732037]
+ [0.17191571]
+ [0.06201918]
+ [0.0579533 ]
+ [0.05398549]
+ [0.05013057]
+ [0.04640758]
+ [0.04284092]
+ [0.05607102]
+ [0.04559774]
+ [0.03690084]
+ [0.0303443 ]
+ [0.02753895]
+ [0.02641933]
+ [0.02308523]
+ [0.02256537]
+ [0.02204618]
+ [0.29141785]
+ [0.28000723]
+ [0.26855619]
+ [0.81550366]
+ [0.78695206]
+ [0.75971712]
+ [1.        ]
+ [0.98098993]
+ [0.96599022]
+ [0.99764311]
+ [0.99383902]
+ [0.00474795]]",
+fixedse.post_monopile_tower.constr_global_buckling,output,,"[[1.34541781e-01]
+ [2.29460327e-01]
+ [3.32487812e-01]
+ [3.71617972e-01]
+ [3.66687338e-01]
+ [3.61750747e-01]
+ [3.56802856e-01]
+ [3.51838142e-01]
+ [3.46850854e-01]
+ [3.36779705e-01]
+ [3.26538153e-01]
+ [3.16059988e-01]
+ [3.06461298e-01]
+ [2.97882653e-01]
+ [2.89318754e-01]
+ [2.85042784e-01]
+ [2.80770659e-01]
+ [2.76502421e-01]
+ [8.73523649e-01]
+ [7.88205868e-01]
+ [7.03411012e-01]
+ [9.96614020e-01]
+ [8.52824322e-01]
+ [6.90423770e-01]
+ [7.78821624e-01]
+ [7.31096492e-01]
+ [6.53075041e-01]
+ [5.69060901e-01]
+ [8.26513438e-01]
+ [4.56932686e-10]]",
+fixedse.z_start,output,m,[-50.],
+fixedse.constr_diam_consistency,output,,[1.],
+fixedse.soil.z_k,output,N/m,"[-30.         -26.66666667 -23.33333333 -20.         -16.66666667
+ -13.33333333 -10.          -6.66666667  -3.33333333  -0.        ]",
+fixedse.soil.k,output,N/m,"[[2.30719502e+10 6.04489020e+12 2.30719502e+10 6.04489020e+12
+  1.58821565e+10 1.79384436e+11]
+ [2.09970029e+10 4.38691536e+12 2.09970029e+10 4.38691536e+12
+  1.47621565e+10 1.79384436e+11]
+ [1.89220555e+10 3.08291584e+12 1.89220555e+10 3.08291584e+12
+  1.36421565e+10 1.79384436e+11]
+ [1.68471081e+10 2.08864470e+12 1.68471081e+10 2.08864470e+12
+  1.25221565e+10 1.79384436e+11]
+ [1.47721607e+10 1.35985505e+12 1.47721607e+10 1.35985505e+12
+  1.14021565e+10 1.79384436e+11]
+ [1.26972134e+10 8.52299963e+11 1.26972134e+10 8.52299963e+11
+  1.02821565e+10 1.79384436e+11]
+ [1.06222660e+10 5.21732532e+11 1.06222660e+10 5.21732532e+11
+  9.16215654e+09 1.79384436e+11]
+ [8.54731864e+09 3.23905842e+11 8.54731864e+09 3.23905842e+11
+  8.04215654e+09 1.79384436e+11]
+ [6.47237127e+09 2.14572979e+11 6.47237127e+09 2.14572979e+11
+  6.92215654e+09 1.79384436e+11]
+ [4.39742390e+09 1.49487030e+11 4.39742390e+09 1.49487030e+11
+  5.80215654e+09 1.79384436e+11]]",
+towerse.env.Px,output,N/m,"[417.76067857 480.09738431 523.65058445 557.91160668 581.92125008
+ 597.20357718 606.4643562  576.1548744  542.98427067 506.9184334
+ 460.2271512  409.29061826 353.04163049]",
+towerse.env.Py,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.Pz,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.qdyn,output,N/m**2,"[47.59994398 54.84623708 59.92121528 63.91426489 68.52475283 72.32096112
+ 75.57411909 77.33128279 78.97040208 80.50836142 81.86436491 83.15275706
+ 84.38086698]",
+towerse.env.wind.U,output,m/s,"[ 8.81556545  9.46281548  9.890933   10.21517598 10.57719942 10.86623387
+ 11.10793936 11.23633195 11.35479056 11.46482546 11.5609734  11.65159231
+ 11.73732   ]",
+towerse.env.windLoads.windLoads_Px,output,N/m,"[417.76067857 480.09738431 523.65058445 557.91160668 581.92125008
+ 597.20357718 606.4643562  576.1548744  542.98427067 506.9184334
+ 460.2271512  409.29061826 353.04163049]",
+towerse.env.windLoads.windLoads_Py,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.windLoads.windLoads_Pz,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.env.windLoads.windLoads_qdyn,output,N/m**2,"[47.59994398 54.84623708 59.92121528 63.91426489 68.52475283 72.32096112
+ 75.57411909 77.33128279 78.97040208 80.50836142 81.86436491 83.15275706
+ 84.38086698]",
+towerse.env.windLoads.windLoads_z,output,m,"[ 15.          27.07132867  39.14265734  51.21398601  68.45874126
+  85.7034965  102.94825175 113.2951049  123.64195804 133.98881119
+ 143.64587413 153.30293706 162.96      ]",
+towerse.env.windLoads.windLoads_beta,output,deg,[0.],
+towerse.g2e.Px,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.g2e.Py,output,N/m,[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.],
+towerse.g2e.Pz,output,N/m,"[-417.76067857 -480.09738431 -523.65058445 -557.91160668 -581.92125008
+ -597.20357718 -606.4643562  -576.1548744  -542.98427067 -506.9184334
+ -460.2271512  -409.29061826 -353.04163049]",
+towerse.g2e.qdyn,output,Pa,"[47.59994398 54.84623708 59.92121528 63.91426489 68.52475283 72.32096112
+ 75.57411909 77.33128279 78.97040208 80.50836142 81.86436491 83.15275706
+ 84.38086698]",
+towerse.constr_d_to_t,output,,[548.19001728 840.11957466 865.58606981 652.40952981],
+towerse.constr_taper,output,,[1.         0.91930462 0.77872423 0.67543129],
+towerse.slope,output,,[1.         0.91930462 0.77872423 0.67543129],
+towerse.thickness_slope,output,,[0.62618683 0.82690382 0.97317659],
+towerse.member.nu_full,output,,"[0.26103405 0.26103405 0.26103405 0.26103405 0.26103405 0.26103405
+ 0.26103405 0.26103405 0.26103405 0.26103405 0.26103405 0.26103405]",
+towerse.member.nodes_r,output,m,"[6.21659639 6.21659639 6.21659639 6.21659639 6.04937951 5.88216264
+ 5.71494576 5.29341943 4.87189309 4.45036676 3.96888349 3.48740022
+ 3.00591695]",
+towerse.member.center_of_buoyancy,output,m,[0. 0. 0.],
+towerse.member.displacement,output,m**3,[0.],
+towerse.member.buoyancy_force,output,N,[0.],
+towerse.member.idx_cb,output,,[0.],
+towerse.member.Awater,output,m**2,[0.],
+towerse.member.Iwaterx,output,m**4,[0.],
+towerse.member.Iwatery,output,m**4,[0.],
+towerse.member.added_mass,output,kg,[0. 0. 0. 0. 0. 0.],
+towerse.member.waterline_centroid,output,m,[0. 0.],
+towerse.member.z_dim,output,m,"[ 15.          27.07132867  39.14265734  51.21398601  68.45874126
+  85.7034965  102.94825175 113.2951049  123.64195804 133.98881119
+ 143.64587413 153.30293706 162.96      ]",
+towerse.member.d_eff,output,m,"[12.43319278 12.43319278 12.43319278 12.43319278 12.09875903 11.76432528
+ 11.42989152 10.58683885  9.74378618  8.90073352  7.93776698  6.97480044
+  6.01183391]",
+towerse.tower_section_height,output,m,[36.21398601 51.73426573 31.04055944 28.97118881],
+towerse.member.sigma_ult,output,Pa,[4.5e+08 4.5e+08 4.5e+08 4.5e+08],
+towerse.member.wohler_exp,output,,[3. 3. 3. 3.],
+towerse.member.wohler_A,output,,[3.55346484e+10 3.55346484e+10 3.55346484e+10 3.55346484e+10],
+towerse.member.ballast_density,output,kg/m**3,[],
+towerse.member.ballast_unit_cost,output,USD/kg,[],
+towerse.z_param,output,m,[ 15.          51.21398601 102.94825175 133.98881119 162.96      ],
+towerse.member.sec_loc,output,,[0.         0.38116592 0.73991031 1.        ],normalized sectional location
+towerse.member.str_tw,output,deg,[0. 0. 0. 0.],structural twist of section
+towerse.member.tw_iner,output,deg,[0. 0. 0. 0.],inertial twist of section
+towerse.member.mass_den,output,kg/m,[7380.22340843 4437.75229644 3126.49285032 2230.93346263],sectional mass per unit length
+towerse.member.foreaft_iner,output,kg*m,[142088.97893518  78782.96905178  40290.75954232  15456.46328398],sectional fore-aft intertia per unit length about the Y_G inertia axis
+towerse.member.sideside_iner,output,kg*m,[142088.97893518  78782.96905178  40290.75954232  15456.46328398],sectional side-side intertia per unit length about the Y_G inertia axis
+towerse.member.foreaft_stff,output,N*m**2,[3.40495996e+12 1.88792162e+12 9.65510653e+11 3.70392123e+11],sectional fore-aft bending stiffness per unit length about the Y_E elastic axis
+towerse.member.sideside_stff,output,N*m**2,[3.40495996e+12 1.88792162e+12 9.65510653e+11 3.70392123e+11],sectional side-side bending stiffness per unit length about the Y_E elastic axis
+towerse.member.tor_stff,output,N*m**2,[2.70013324e+12 1.49712184e+12 7.65649948e+11 2.93720953e+11],sectional torsional stiffness
+towerse.member.axial_stff,output,N,[1.76856540e+11 1.06344412e+11 7.49219470e+10 5.34611422e+10],sectional axial stiffness
+towerse.member.cg_offst,output,m,[0. 0. 0. 0.],offset from the sectional center of mass
+towerse.member.sc_offst,output,m,[0. 0. 0. 0.],offset from the sectional shear center
+towerse.member.tc_offst,output,m,[0. 0. 0. 0.],offset from the sectional tension center
+towerse.member.axial_load2stress,output,m**2,"[[0.         0.         1.13086008 0.36514946 0.36514946 0.        ]
+ [0.         0.         1.88068181 0.63199351 0.63199351 0.        ]
+ [0.         0.         2.66944477 1.05284312 1.05284312 0.        ]
+ [0.         0.         3.74103493 2.01307837 2.01307837 0.        ]]",
+towerse.member.shear_load2stress,output,m**2,"[[1.86094236 1.86094236 0.         0.         0.         0.18257473]
+ [3.09571733 3.09571733 0.         0.         0.         0.31599676]
+ [4.39413739 4.39413739 0.         0.         0.         0.52642156]
+ [6.15703966 6.15703966 0.         0.         0.         1.00653919]]",
+towerse.member.labor_hours,output,h,[464.14503893],
+towerse.tower_cost,output,USD,[2150911.87879668],
+towerse.member.section_D,output,m,"[12.43319278 12.43319278 12.43319278 12.2659759  11.93154215 11.5971084
+ 11.00836519 10.16531252  9.32225985  8.41925025  7.45628371  6.49331718]",
+towerse.member.section_t,output,m,"[0.02426807 0.02426807 0.02426807 0.01519635 0.01519635 0.01519635
+ 0.01256592 0.01256592 0.01256592 0.01222886 0.01222886 0.01222886]",
+towerse.member.section_sigma_y,output,Pa,"[3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08 3.45e+08
+ 3.45e+08 3.45e+08 3.45e+08 3.45e+08]",
+towerse.post.axial_stress,output,Pa,"[[ 9.79006382e+07]
+ [ 8.87380371e+07]
+ [ 7.95341247e+07]
+ [ 1.07964417e+08]
+ [ 9.05961339e+07]
+ [ 7.07794149e+07]
+ [ 7.50764220e+07]
+ [ 6.50441509e+07]
+ [ 4.96890701e+07]
+ [ 3.00600870e+07]
+ [-3.32235403e+06]
+ [ 2.96350962e+06]]",
+towerse.post.shear_stress,output,Pa,"[[ 4740837.5493982 ]
+ [ 4741720.42915094]
+ [ 4742523.88976027]
+ [ 7679727.44018502]
+ [ 7907649.33788322]
+ [ 8148966.10483214]
+ [10403260.98396178]
+ [11315907.29393051]
+ [12403317.19509637]
+ [14205057.34714487]
+ [16181021.57427453]
+ [18791253.60108348]]",
+towerse.post.hoop_stress,output,Pa,"[[-14014.38189606]
+ [-15699.90106053]
+ [-16940.38463472]
+ [-28562.71262839]
+ [-29546.59889714]
+ [-30154.75466364]
+ [-35794.11519753]
+ [-33784.064856  ]
+ [-31608.66420552]
+ [-29863.06924407]
+ [-26873.43145875]
+ [-23754.25469068]]",
+towerse.post.hoop_stress_euro,output,Pa,"[[0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]]",
+towerse.post.constr_stress,output,,"[[0.4998005 ]
+ [0.45337554]
+ [0.40678159]
+ [0.55343502]
+ [0.46616981]
+ [0.36721618]
+ [0.39284485]
+ [0.34565446]
+ [0.27545304]
+ [0.19766334]
+ [0.14355909]
+ [0.16625766]]",
+towerse.post.constr_shell_buckling,output,,"[[0.29138726]
+ [0.2799697 ]
+ [0.26851411]
+ [0.81536769]
+ [0.7868178 ]
+ [0.75959018]
+ [0.99986315]
+ [0.98088246]
+ [0.96591403]
+ [0.99759662]
+ [0.99383111]
+ [0.99808554]]",
+towerse.post.constr_global_buckling,output,,"[[3.92207714]
+ [3.56872823]
+ [3.21557995]
+ [4.53674587]
+ [3.93499514]
+ [3.25462659]
+ [3.66936598]
+ [3.44167137]
+ [3.05916221]
+ [2.62338504]
+ [1.68532965]
+ [2.36047832]]",
+towerse.height_constraint,output,m,[0.],
+towerse.transition_piece_height,output,m,[15.],
+towerse.z_start,output,m,[15.],
+towerse.tower.section_L,output,m,"[12.07132867 12.07132867 12.07132867 17.24475524 17.24475524 17.24475524
+ 10.34685315 10.34685315 10.34685315  9.65706294  9.65706294  9.65706294]",
+towerse.tower.f1,output,Hz,[0.22292286],
+towerse.tower.f2,output,Hz,[0.22546129],
+towerse.tower.structural_frequencies,output,Hz,[0.22292286 0.22546129 0.73298488 0.91691248 1.09108072 2.99985094],
+towerse.tower.fore_aft_modes,output,,"[[ 9.49413522e-01 -1.41882066e-02  2.47608632e-01 -3.05299281e-01
+   1.22465334e-01]
+ [ 2.38663040e+01  1.07429183e+01 -9.20258390e+01  1.27376642e+02
+  -6.89600249e+01]
+ [-1.01195462e+02  2.49131108e+02 -4.02083107e+02  4.70035874e+02
+  -2.14888413e+02]]",
+towerse.tower.side_side_modes,output,,"[[ 9.40664851e-01 -3.09581354e-02  3.20071407e-01 -4.02083207e-01
+   1.72305084e-01]
+ [ 1.21940429e+01  9.45572002e+00 -5.72969301e+01  7.81666259e+01
+  -4.15194588e+01]
+ [-9.88603449e+01  2.40765067e+02 -3.87648259e+02  4.53084675e+02
+  -2.06341138e+02]]",
+towerse.tower.torsion_modes,output,,"[[  5.30600273 -17.72928442  30.10491313 -24.26841271   7.58678128]
+ [  0.           0.           0.           0.           0.        ]
+ [  0.           0.           0.           0.           0.        ]]",
+towerse.tower.fore_aft_freqs,output,Hz,[0.22546129 1.09108072 3.04297678],
+towerse.tower.side_side_freqs,output,Hz,[0.22292286 0.91691248 2.99985094],
+towerse.tower.torsion_freqs,output,Hz,[3.92698209 0.         0.        ],
+towerse.tower.tower_deflection,output,m,"[[0.        ]
+ [0.00760812]
+ [0.02827031]
+ [0.06080304]
+ [0.13294296]
+ [0.23676733]
+ [0.36845331]
+ [0.46038808]
+ [0.56274937]
+ [0.67539685]
+ [0.7893445 ]
+ [0.91040975]
+ [1.0347329 ]]",
+towerse.tower.top_deflection,output,m,[1.0347329],
+towerse.tower.tower_Fz,output,N,"[[-12730521.72143568]
+ [-11850886.87887046]
+ [-10970787.07175203]
+ [-10189538.98252747]
+ [ -9429015.43524477]
+ [ -8689342.32671024]
+ [ -8339717.27880802]
+ [ -8016756.87143007]
+ [ -7720490.61221403]
+ [ -7477270.18058252]
+ [ -7261843.49422376]
+ [ -7074256.2758736 ]]",
+towerse.tower.tower_Vx,output,N,"[[2428202.60258269]
+ [2428678.38301451]
+ [2429111.49063849]
+ [2429560.06791994]
+ [2430215.49135759]
+ [2430750.37827718]
+ [2429479.23253397]
+ [2429523.57455143]
+ [2429538.88915186]
+ [2429361.17520323]
+ [2429276.72132152]
+ [2429134.03768572]]",
+towerse.tower.tower_Vy,output,N,"[[29098.38222475]
+ [29104.74146934]
+ [29110.58948486]
+ [29116.76283907]
+ [29125.95242289]
+ [29133.73436025]
+ [29116.45599326]
+ [29117.39204292]
+ [29118.03862504]
+ [29115.99795827]
+ [29115.49432309]
+ [29114.44234276]]",
+towerse.tower.tower_Mxx,output,N*m,"[[-4361007.15030931]
+ [-4006298.04736741]
+ [-3649931.2024322 ]
+ [-3137543.02001618]
+ [-2621388.15215144]
+ [-2102512.96128891]
+ [-1790296.78649906]
+ [-1477154.77232377]
+ [-1163071.91054673]
+ [ -869072.3886961 ]
+ [ -574194.72779434]
+ [ -278501.85530974]]",
+towerse.tower.tower_Myy,output,N*m,"[[ 3.26275934e+08]
+ [ 2.96704586e+08]
+ [ 2.67010748e+08]
+ [ 2.24351073e+08]
+ [ 1.81424129e+08]
+ [ 1.38313439e+08]
+ [ 1.12392639e+08]
+ [ 8.64176612e+07]
+ [ 6.03932815e+07]
+ [ 3.60669741e+07]
+ [ 1.17151829e+07]
+ [-1.26341964e+07]]",
+towerse.tower.tower_Mzz,output,N*m,"[[1299696.81579559]
+ [1299681.58727972]
+ [1299666.34815927]
+ [1299768.50116918]
+ [1299754.61853755]
+ [1299740.54894056]
+ [1299789.15645825]
+ [1299802.10378469]
+ [1299818.58563886]
+ [1299852.85779559]
+ [1299889.60688801]
+ [1299939.10849629]]",
+towerse.tower.turbine_F,output,N,"[[  2427925.55809716]
+ [    29094.73368413]
+ [-13609523.83933535]]",
+towerse.tower.turbine_M,output,N*m,"[[-4.71357613e+06]
+ [ 3.55687256e+08]
+ [ 1.29946107e+06]]",
+towerse.turbine_mass,output,kg,[1625606.93571539],
+towerse.turbine_center_of_mass,output,m,[-3.93513649e+00 -5.81329521e-02  1.22745569e+02],
+towerse.turbine_I_base,output,kg*m**2,"[2.93222946e+10 2.91848076e+10 2.79277543e+08 7.86163621e+02
+ 1.35359722e+07 1.70976373e+05]",
+airfoils.ac,output,,[0.275 0.5   0.275 0.275 0.275 0.275 0.275],1D array of the aerodynamic centers of each airfoil.
+airfoils.r_thick,output,,[0.4  1.   0.3  0.21 0.25 0.35 0.17],1D array of the relative thicknesses of each airfoil.
+airfoils.aoa,output,rad,"[-3.14159265 -3.08923278 -3.0368729  -2.98451302 -2.93215314 -2.87979327
+ -2.82743339 -2.77507351 -2.72271363 -2.67035376 -2.61799388 -2.565634
+ -2.51327412 -2.46091425 -2.40855437 -2.35619449 -2.30383461 -2.25147474
+ -2.19911486 -2.14675498 -2.0943951  -2.04203522 -1.98967535 -1.93731547
+ -1.88495559 -1.83259571 -1.78023584 -1.72787596 -1.67551608 -1.6231562
+ -1.57079633 -1.51843645 -1.46607657 -1.41371669 -1.36135682 -1.30899694
+ -1.25663706 -1.20427718 -1.15191731 -1.09955743 -1.04719755 -0.99483767
+ -0.9424778  -0.89011792 -0.83775804 -0.78539816 -0.73303829 -0.68067841
+ -0.62831853 -0.57595865 -0.52359878 -0.51302102 -0.50244327 -0.49186552
+ -0.48128776 -0.47071001 -0.46013226 -0.4495545  -0.43897675 -0.428399
+ -0.41782125 -0.40724349 -0.39666574 -0.38608799 -0.37551023 -0.36493248
+ -0.35435473 -0.34377697 -0.33319922 -0.32262147 -0.31204371 -0.30146596
+ -0.29088821 -0.28031046 -0.2697327  -0.25915495 -0.2485772  -0.23799944
+ -0.22742169 -0.21684394 -0.20626618 -0.19568843 -0.18511068 -0.17453293
+ -0.16395517 -0.15337742 -0.14279967 -0.13222191 -0.12164416 -0.11106641
+ -0.10048865 -0.0899109  -0.07933315 -0.06875539 -0.05817764 -0.04759989
+ -0.03702214 -0.02644438 -0.01586663 -0.00528888  0.00528888  0.01586663
+  0.02644438  0.03702214  0.04759989  0.05817764  0.06875539  0.07933315
+  0.0899109   0.10048865  0.11106641  0.12164416  0.13222191  0.14279967
+  0.15337742  0.16395517  0.17453293  0.18511068  0.19568843  0.20626618
+  0.21684394  0.22742169  0.23799944  0.2485772   0.25915495  0.2697327
+  0.28031046  0.29088821  0.30146596  0.31204371  0.32262147  0.33319922
+  0.34377697  0.35435473  0.36493248  0.37551023  0.38608799  0.39666574
+  0.40724349  0.41782125  0.428399    0.43897675  0.4495545   0.46013226
+  0.47071001  0.48128776  0.49186552  0.50244327  0.51302102  0.52359878
+  0.57595865  0.62831853  0.68067841  0.73303829  0.78539816  0.83775804
+  0.89011792  0.9424778   0.99483767  1.04719755  1.09955743  1.15191731
+  1.20427718  1.25663706  1.30899694  1.36135682  1.41371669  1.46607657
+  1.51843645  1.57079633  1.6231562   1.67551608  1.72787596  1.78023584
+  1.83259571  1.88495559  1.93731547  1.98967535  2.04203522  2.0943951
+  2.14675498  2.19911486  2.25147474  2.30383461  2.35619449  2.40855437
+  2.46091425  2.51327412  2.565634    2.61799388  2.67035376  2.72271363
+  2.77507351  2.82743339  2.87979327  2.93215314  2.98451302  3.0368729
+  3.08923278  3.14159265]",1D array of the angles of attack used to define the polars of the airfoils. All airfoils defined in openmdao share this grid.
+airfoils.Re,output,,[1000000.],1D array of the Reynolds numbers used to define the polars of the airfoils. All airfoils defined in openmdao share this grid.
+airfoils.cl,output,,"[[[[ 1.27742998e-02]]
+
+  [[ 1.42693272e-01]]
+
+  [[ 2.58637012e-01]]
+
+  ...
+
+  [[-2.66800672e-01]]
+
+  [[-1.38782724e-01]]
+
+  [[ 1.27742998e-02]]]
+
+
+ [[[ 0.00000000e+00]]
+
+  [[ 0.00000000e+00]]
+
+  [[ 0.00000000e+00]]
+
+  ...
+
+  [[ 0.00000000e+00]]
+
+  [[ 0.00000000e+00]]
+
+  [[ 0.00000000e+00]]]
+
+
+ [[[ 4.96420961e-02]]
+
+  [[ 1.87282479e-01]]
+
+  [[ 3.10020952e-01]]
+
+  ...
+
+  [[-3.20759911e-01]]
+
+  [[-1.62662921e-01]]
+
+  [[ 4.96420961e-02]]]
+
+
+ ...
+
+
+ [[[-2.61646824e-03]]
+
+  [[ 2.32069003e-01]]
+
+  [[ 4.60318188e-01]]
+
+  ...
+
+  [[-4.60746100e-01]]
+
+  [[-2.33089501e-01]]
+
+  [[-2.61646824e-03]]]
+
+
+ [[[ 1.80442976e-02]]
+
+  [[ 1.49402929e-01]]
+
+  [[ 2.66763118e-01]]
+
+  ...
+
+  [[-2.71122153e-01]]
+
+  [[-1.39129728e-01]]
+
+  [[ 1.80442976e-02]]]
+
+
+ [[[-1.53642952e-08]]
+
+  [[ 2.24280087e-01]]
+
+  [[ 4.60935912e-01]]
+
+  ...
+
+  [[-4.60935912e-01]]
+
+  [[-2.24280087e-01]]
+
+  [[ 1.53642952e-08]]]]","4D array with the lift coefficients of the airfoils. Dimension 0 is along the different airfoils defined in the yaml, dimension 1 is along the angles of attack, dimension 2 is along the Reynolds number, dimension 3 is along the number of tabs, which may describe multiple sets at the same station, for example in presence of a flap."
+airfoils.cd,output,,"[[[[0.06162547]]
+
+  [[0.06296798]]
+
+  [[0.06920074]]
+
+  ...
+
+  [[0.07156878]]
+
+  [[0.06373137]]
+
+  [[0.06162547]]]
+
+
+ [[[0.5       ]]
+
+  [[0.5       ]]
+
+  [[0.5       ]]
+
+  ...
+
+  [[0.5       ]]
+
+  [[0.5       ]]
+
+  [[0.5       ]]]
+
+
+ [[[0.02308492]]
+
+  [[0.03208652]]
+
+  [[0.05037982]]
+
+  ...
+
+  [[0.05179242]]
+
+  [[0.0324726 ]]
+
+  [[0.02308492]]]
+
+
+ ...
+
+
+ [[[0.01677446]]
+
+  [[0.02683965]]
+
+  [[0.04620442]]
+
+  ...
+
+  [[0.04768644]]
+
+  [[0.02744935]]
+
+  [[0.01677446]]]
+
+
+ [[[0.03773591]]
+
+  [[0.04508672]]
+
+  [[0.06158979]]
+
+  ...
+
+  [[0.05995048]]
+
+  [[0.04432275]]
+
+  [[0.03773591]]]
+
+
+ [[[0.0198    ]]
+
+  [[0.02572598]]
+
+  [[0.04114402]]
+
+  ...
+
+  [[0.04047996]]
+
+  [[0.02538511]]
+
+  [[0.0198    ]]]]","4D array with the drag coefficients of the airfoils. Dimension 0 is along the different airfoils defined in the yaml, dimension 1 is along the angles of attack, dimension 2 is along the Reynolds number, dimension 3 is along the number of tabs, which may describe multiple sets at the same station, for example in presence of a flap."
+airfoils.cm,output,,"[[[[ 3.70854259e-04]]
+
+  [[ 5.78906867e-02]]
+
+  [[ 1.09442053e-01]]
+
+  ...
+
+  [[-1.20140868e-01]]
+
+  [[-6.33445740e-02]]
+
+  [[ 3.70854259e-04]]]
+
+
+ [[[ 0.00000000e+00]]
+
+  [[ 0.00000000e+00]]
+
+  [[ 0.00000000e+00]]
+
+  ...
+
+  [[ 0.00000000e+00]]
+
+  [[ 0.00000000e+00]]
+
+  [[ 0.00000000e+00]]]
+
+
+ [[[-1.86042725e-07]]
+
+  [[ 8.25025552e-02]]
+
+  [[ 1.70228612e-01]]
+
+  ...
+
+  [[-1.69531819e-01]]
+
+  [[-8.25480839e-02]]
+
+  [[-1.86042725e-07]]]
+
+
+ ...
+
+
+ [[[-5.55629713e-07]]
+
+  [[ 1.10572981e-01]]
+
+  [[ 2.27490820e-01]]
+
+  ...
+
+  [[-2.27669873e-01]]
+
+  [[-1.10610368e-01]]
+
+  [[-5.55629713e-07]]]
+
+
+ [[[ 4.09061074e-04]]
+
+  [[ 5.80698162e-02]]
+
+  [[ 1.09744885e-01]]
+
+  ...
+
+  [[-1.18962339e-01]]
+
+  [[-6.27004305e-02]]
+
+  [[ 4.09061074e-04]]]
+
+
+ [[[-7.71299959e-09]]
+
+  [[ 1.12680187e-01]]
+
+  [[ 2.31783829e-01]]
+
+  ...
+
+  [[-2.31710912e-01]]
+
+  [[-1.12584318e-01]]
+
+  [[ 7.70271560e-09]]]]","4D array with the moment coefficients of the airfoils. Dimension 0 is along the different airfoils defined in the yaml, dimension 1 is along the angles of attack, dimension 2 is along the Reynolds number, dimension 3 is along the number of tabs, which may describe multiple sets at the same station, for example in presence of a flap."
+airfoils.coord_xy,output,,"[[[ 1.00000000e+00 -3.47000010e-03]
+  [ 9.82059782e-01  4.47998271e-04]
+  [ 9.63825795e-01  2.56230054e-03]
+  ...
+  [ 9.66589031e-01  1.42523879e-02]
+  [ 9.83283080e-01  8.83657527e-03]
+  [ 1.00000000e+00  3.47000010e-03]]
+
+ [[ 1.00000000e+00  0.00000000e+00]
+  [ 9.99310113e-01 -2.24586628e-02]
+  [ 9.97715675e-01 -4.48159779e-02]
+  ...
+  [ 9.97767307e-01  4.41944433e-02]
+  [ 9.99327246e-01  2.21465777e-02]
+  [ 1.00000000e+00 -5.92245437e-18]]
+
+ [[ 1.00000000e+00 -2.46000000e-03]
+  [ 9.79182514e-01  2.21522127e-03]
+  [ 9.58045687e-01  5.01713457e-03]
+  ...
+  [ 9.60781257e-01  1.32444951e-02]
+  [ 9.80406715e-01  7.93618866e-03]
+  [ 1.00000000e+00  2.46000000e-03]]
+
+ ...
+
+ [[ 1.00000000e+00 -2.13100000e-03]
+  [ 9.77589551e-01  1.91382544e-03]
+  [ 9.55115490e-01  5.46087449e-03]
+  ...
+  [ 9.57108237e-01  1.39643103e-02]
+  [ 9.78595852e-01  8.23338042e-03]
+  [ 1.00000000e+00  2.13100000e-03]]
+
+ [[ 1.00000000e+00 -2.83000000e-03]
+  [ 9.81183777e-01  1.62237678e-03]
+  [ 9.62006541e-01  4.01671112e-03]
+  ...
+  [ 9.64854654e-01  1.29112589e-02]
+  [ 9.82422420e-01  7.86900286e-03]
+  [ 1.00000000e+00  2.83000000e-03]]
+
+ [[ 1.00000000e+00 -1.56966672e-03]
+  [ 9.76316764e-01  1.02847187e-03]
+  [ 9.52601299e-01  3.04112178e-03]
+  ...
+  [ 9.53511819e-01  1.21364556e-02]
+  [ 9.76793838e-01  7.07018392e-03]
+  [ 1.00000000e+00  1.56966672e-03]]]",3D array of the x and y airfoil coordinates of the n_af airfoils.
+airfoils.name,output,Unavailable,"['DU40_A17', 'Cylinder', 'DU30_A17', 'DU21_A17', 'DU25_A17', 'DU35_A17', 'DU17_A17']",1D array of names of airfoils.
+configuration.rated_power,output,W,[15000000.],Electrical rated power of the generator.
+configuration.lifetime,output,year,[25.],Turbine design lifetime.
+configuration.rotor_diameter_user,output,m,[250.],Diameter of the rotor specified by the user. It is defined as two times the blade length plus the hub diameter.
+configuration.hub_height_user,output,m,[162.96],Height of the hub center over the ground (land-based) or the mean sea level (offshore) specified by the user.
+configuration.ws_class,output,Unavailable,I,"IEC wind turbine class. I - offshore, II coastal, III - land-based, IV - low wind speed site."
+configuration.turb_class,output,Unavailable,B,"IEC wind turbine category. A - high turbulence intensity (land-based), B - mid turbulence, C - low turbulence (offshore)."
+configuration.gearbox_type,output,Unavailable,direct_drive,"Gearbox configuration (geared, direct-drive, etc.)."
+configuration.rotor_orientation,output,Unavailable,upwind,"Rotor orientation, either upwind or downwind."
+configuration.upwind,output,Unavailable,True,Convenient boolean for upwind (True) or downwind (False).
+configuration.n_blades,output,Unavailable,3,Number of blades of the rotor.
+control.V_in,output,m/s,[3.],Cut in wind speed. This is the wind speed where region II begins.
+control.V_out,output,m/s,[25.],Cut out wind speed. This is the wind speed where region III ends.
+control.minOmega,output,rad/s,[0.52359878],Minimum allowed rotor speed.
+control.maxOmega,output,rad/s,[0.79168135],Maximum allowed rotor speed.
+control.max_TS,output,m/s,[95.],Maximum allowed blade tip speed.
+control.max_pitch_rate,output,rad/s,[0.03490659],Maximum allowed blade pitch rate
+control.max_torque_rate,output,N*m/s,[1500000.],Maximum allowed generator torque rate
+control.rated_TSR,output,,[9.],Constant tip speed ratio in region II.
+control.rated_pitch,output,rad,[0.],Constant pitch angle in region II.
+costs.offset_tcc_per_kW,output,USD/kW,[0.],Offset to turbine capital cost
+costs.bos_per_kW,output,USD/kW,[4053.],Balance of station/plant capital cost
+costs.opex_per_kW,output,USD/kW/year,[137.],Average annual operational expenditures of the turbine
+costs.wake_loss_factor,output,,[0.15],The losses in AEP due to waked conditions
+costs.fixed_charge_rate,output,,[0.056],Fixed charge rate for coe calculation
+costs.labor_rate,output,USD/h,[58.8],
+costs.painting_rate,output,USD/m**2,[30.],
+costs.blade_mass_cost_coeff,output,USD/kg,[14.6],
+costs.hub_mass_cost_coeff,output,USD/kg,[3.9],
+costs.pitch_system_mass_cost_coeff,output,USD/kg,[22.1],
+costs.spinner_mass_cost_coeff,output,USD/kg,[11.1],
+costs.lss_mass_cost_coeff,output,USD/kg,[11.9],
+costs.bearing_mass_cost_coeff,output,USD/kg,[4.5],
+costs.gearbox_torque_cost,output,USD/kN/m,[50.],
+costs.hss_mass_cost_coeff,output,USD/kg,[6.8],
+costs.generator_mass_cost_coeff,output,USD/kg,[12.4],
+costs.bedplate_mass_cost_coeff,output,USD/kg,[2.9],
+costs.yaw_mass_cost_coeff,output,USD/kg,[8.3],
+costs.converter_mass_cost_coeff,output,USD/kg,[18.8],
+costs.transformer_mass_cost_coeff,output,USD/kg,[18.8],
+costs.hvac_mass_cost_coeff,output,USD/kg,[124.],
+costs.cover_mass_cost_coeff,output,USD/kg,[5.7],
+costs.elec_connec_machine_rating_cost_coeff,output,USD/kW,[41.85],
+costs.platforms_mass_cost_coeff,output,USD/kg,[17.1],
+costs.tower_mass_cost_coeff,output,USD/kg,[3.29001049],
+costs.controls_machine_rating_cost_coeff,output,USD/kW,[21.15],
+costs.crane_cost,output,USD,[12000.],
+costs.electricity_price,output,USD/kW/h,[0.04],
+costs.reserve_margin_price,output,USD/kW/year,[120.],
+costs.capacity_credit,output,,[0.],
+costs.benchmark_price,output,USD/kW/h,[0.071],
+costs.turbine_number,output,Unavailable,40.0,Number of turbines at plant
+env.rho_air,output,kg/m**3,[1.225],Density of air
+env.mu_air,output,kg/m/s,[1.81e-05],Dynamic viscosity of air
+env.shear_exp,output,,[0.12],Shear exponent of the wind.
+env.speed_sound_air,output,m/s,[340.],Speed of sound in air.
+env.weibull_k,output,,[2.],Shape parameter of the Weibull probability density function of the wind.
+env.rho_water,output,kg/m**3,[1025.],Density of ocean water
+env.mu_water,output,kg/m/s,[0.0013351],Dynamic viscosity of ocean water
+env.water_depth,output,m,[20.],Water depth for analysis.  Values > 0 mean offshore
+env.Hsig_wave,output,m,[4.52],Significant wave height
+env.Tsig_wave,output,s,[9.45],Significant wave period
+env.G_soil,output,N/m**2,[1.4e+08],Shear stress of soil
+env.nu_soil,output,,[0.4],Poisson ratio of soil
+high_level_tower_props.tower_ref_axis,output,m,"[[  0.           0.          15.        ]
+ [  0.           0.          51.21398601]
+ [  0.           0.         102.94825175]
+ [  0.           0.         133.98881119]
+ [  0.           0.         162.96      ]]","2D array of the coordinates (x,y,z) of the tower reference axis. The coordinate system is the global coordinate system of OpenFAST: it is placed at tower base with x pointing downwind, y pointing on the side and z pointing vertically upwards. A standard tower configuration will have zero x and y values and positive z values."
+high_level_tower_props.hub_height,output,m,[162.96],"Height of the hub in the global reference system, i.e. distance rotor center to ground."
+materials.ply_t,output,m,"[0.         0.         0.         0.         0.005      0.00515873
+ 0.001      0.001      0.         0.         0.        ]",1D array of the ply thicknesses of the materials. Non-composite materials are kept at 0.
+materials.fvf,output,,"[0.         0.         0.         0.         0.57       0.10769231
+ 0.57       0.57       0.         0.         0.        ]",1D array of the non-dimensional fiber volume fraction of the composite materials. Non-composite materials are kept at 0.
+materials.fwf,output,,"[0.         0.         0.         0.         0.74506827 0.15889029
+ 0.74506827 0.74506827 0.         0.         0.        ]",1D array of the non-dimensional fiber weight- fraction of the composite materials. Non-composite materials are kept at 0.
+materials.E,output,Pa,"[[3.440e+09 3.440e+09 3.440e+09]
+ [2.000e+11 2.000e+11 2.000e+11]
+ [2.050e+11 2.050e+11 2.050e+11]
+ [1.180e+11 1.180e+11 1.180e+11]
+ [4.460e+10 1.700e+10 1.670e+10]
+ [1.145e+11 8.390e+09 8.390e+09]
+ [1.110e+10 1.110e+10 1.670e+10]
+ [2.870e+10 1.660e+10 1.670e+10]
+ [1.292e+08 1.292e+08 1.292e+08]
+ [1.000e+06 1.000e+06 1.000e+06]
+ [4.560e+06 4.560e+06 4.560e+06]]","2D array of the Youngs moduli of the materials. Each row represents a material, the three columns represent E11, E22 and E33."
+materials.G,output,Pa,"[[1.32300000e+09 1.32300000e+09 1.32300000e+09]
+ [7.93000000e+10 7.93000000e+10 7.93000000e+10]
+ [8.00000000e+10 8.00000000e+10 8.00000000e+10]
+ [4.76000000e+10 4.76000000e+10 4.76000000e+10]
+ [3.27000000e+09 3.48000000e+09 3.50000000e+09]
+ [5.99000000e+09 5.99000000e+09 5.99000000e+09]
+ [1.35300000e+10 3.49000000e+09 3.49000000e+09]
+ [8.40000000e+09 3.49000000e+09 3.49000000e+09]
+ [4.89469697e+07 4.89469697e+07 4.89469697e+07]
+ [3.12500000e+05 3.12500000e+05 3.12500000e+05]
+ [1.52000000e+06 1.52000000e+06 1.52000000e+06]]","2D array of the shear moduli of the materials. Each row represents a material, the three columns represent G12, G13 and G23."
+materials.nu,output,,"[[0.3   0.3   0.3  ]
+ [0.3   0.3   0.3  ]
+ [0.3   0.3   0.3  ]
+ [0.3   0.3   0.3  ]
+ [0.262 0.35  0.264]
+ [0.27  0.27  0.27 ]
+ [0.5   0.    0.066]
+ [0.5   0.    0.17 ]
+ [0.32  0.32  0.32 ]
+ [0.3   0.3   0.3  ]
+ [0.49  0.49  0.49 ]]","2D array of the Poisson ratio of the materials. Each row represents a material, the three columns represent nu12, nu13 and nu23."
+materials.Xt,output,Pa,"[[7.400e+01 7.400e+01 7.400e+01]
+ [4.500e+08 4.500e+08 4.500e+08]
+ [8.140e+08 8.140e+08 8.140e+08]
+ [3.100e+08 3.100e+08 3.100e+08]
+ [6.092e+08 3.810e+07 1.529e+07]
+ [1.546e+09 0.000e+00 0.000e+00]
+ [4.290e+07 4.260e+07 1.530e+07]
+ [3.960e+08 7.640e+07 1.530e+07]
+ [2.083e+06 2.083e+06 2.083e+06]
+ [0.000e+00 0.000e+00 0.000e+00]
+ [6.900e+05 6.900e+05 6.900e+05]]","2D array of the Ultimate Tensile Strength (UTS) of the materials. Each row represents a material, the three columns represent Xt12, Xt13 and Xt23."
+materials.Xc,output,Pa,"[[8.7000e+01 8.7000e+01 8.7000e+01]
+ [4.5000e+08 4.5000e+08 4.5000e+08]
+ [8.1400e+08 8.1400e+08 8.1400e+08]
+ [3.1000e+08 3.1000e+08 3.1000e+08]
+ [4.7471e+08 1.1264e+08 1.1322e+08]
+ [1.0470e+09 0.0000e+00 0.0000e+00]
+ [7.0700e+07 7.0700e+07 1.1320e+08]
+ [4.4890e+08 1.7470e+08 1.1320e+08]
+ [1.5630e+06 1.5630e+06 1.5630e+06]
+ [0.0000e+00 0.0000e+00 0.0000e+00]
+ [4.0000e+05 4.0000e+05 4.0000e+05]]","2D array of the Ultimate Compressive Strength (UCS) of the materials. Each row represents a material, the three columns represent Xc12, Xc13 and Xc23."
+materials.S,output,Pa,"[[2.126e+07 2.126e+07 2.126e+07]
+ [0.000e+00 0.000e+00 0.000e+00]
+ [0.000e+00 0.000e+00 0.000e+00]
+ [0.000e+00 0.000e+00 0.000e+00]
+ [1.891e+07 1.724e+07 1.316e+07]
+ [0.000e+00 0.000e+00 0.000e+00]
+ [1.034e+08 1.720e+07 1.320e+07]
+ [1.034e+08 1.720e+07 1.320e+07]
+ [1.250e+06 1.250e+06 1.250e+06]
+ [0.000e+00 0.000e+00 0.000e+00]
+ [3.100e+05 3.100e+05 3.100e+05]]","2D array of the Ultimate Shear Strength (USS) of the materials. Each row represents a material, the three columns represent S12, S13 and S23."
+materials.sigma_y,output,Pa,"[0.00e+00 3.45e+08 4.85e+08 2.65e+08 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ 0.00e+00 0.00e+00 0.00e+00]",Yield stress of the material (in the principle direction for composites).
+materials.wohler_exp,output,,[ 1.   3.   3.   3.  10.  16.1 10.  10.   1.   1.   1. ],Exponent of S-N Wohler fatigue curve in the form of S = A*N^-(1/m).
+materials.wohler_intercept,output,,"[8.70000000e+01 3.55346484e+10 3.55346484e+10 3.55346484e+10
+ 6.09200000e+08 1.54600000e+09 1.13200000e+08 4.48900000e+08
+ 2.08300000e+06 0.00000000e+00 6.90000000e+05]","Stress-intercept (A) of S-N Wohler fatigue curve in the form of S = A*N^-(1/m), taken as ultimate stress unless otherwise specified."
+materials.unit_cost,output,USD/kg,[ 7.23  0.7   0.9   0.5   1.87 30.    3.    2.86 13.    3.63  9.  ],1D array of the unit costs of the materials.
+materials.waste,output,,[0.25 0.   0.   0.   0.05 0.05 0.15 0.15 0.2  0.   0.  ],1D array of the non-dimensional waste fraction of the materials.
+materials.roll_mass,output,kg,"[  0.       0.       0.       0.       0.       0.     181.4368 181.4368
+   0.       0.       0.    ]",1D array of the roll mass of the composite fabrics. Non-composite materials are kept at 0.
+materials.orth,output,Unavailable,[0. 0. 0. 0. 1. 1. 1. 1. 0. 0. 0.],1D array of flags to set whether a material is isotropic (0) or orthtropic (1). Each entry represents a material.
+monopile.s,output,,"[0.         0.46153846 0.53846154 0.61538462 0.76923077 0.92307692
+ 1.        ]","1D array of the non-dimensional grid defined along the tower axis (0-tower base, 1-tower top)"
+monopile.height,output,m,[65.],Scalar of the tower height computed along the z axis.
+monopile.length,output,m,[65.],Scalar of the tower length computed along its curved axis. A standard straight tower will be as high as long.
+monopile.foundation_height,output,m,[-50.],Foundation height in respect to the ground level.
+monopile.diameter,output,m,"[12.43319258 12.4331927  12.4331927  12.43319276 12.43319278 12.43319278
+ 12.43319278]",1D array of the outer diameter values defined along the tower axis.
+monopile.layer_thickness,output,m,[[0.077 0.077 0.077 0.077 0.077 0.077 0.077]],"2D array of the thickness of the layers of the tower structure. The first dimension represents each layer, the second dimension represents each piecewise-constant entry of the tower sections."
+monopile.outfitting_factor,output,,[1.07],Multiplier that accounts for secondary structure mass inside of tower
+monopile.transition_piece_mass,output,kg,[100000.],point mass of transition piece
+monopile.transition_piece_cost,output,USD,[500000.],cost of transition piece
+monopile.gravity_foundation_mass,output,kg,[0.],extra mass of gravity foundation
+monopile.layer_name,output,Unavailable,['monopile_wall'],1D array of the names of the layers modeled in the tower structure.
+monopile.layer_mat,output,Unavailable,['steel'],1D array of the names of the materials of each layer modeled in the tower structure.
+tower.ref_axis,output,m,"[[  0.   0.  15.]
+ [  0.   0.  50.]
+ [  0.   0. 100.]
+ [  0.   0. 130.]
+ [  0.   0. 158.]]","2D array of the coordinates (x,y,z) of the tower reference axis. The coordinate system is the global coordinate system of OpenFAST: it is placed at tower base with x pointing downwind, y pointing on the side and z pointing vertically upwards. A standard tower configuration will have zero x and y values and positive z values."
+tower.diameter,output,m,[12.43319278 12.43319278 11.42989152  8.90073352  6.01183391],1D array of the outer diameter values defined along the tower axis.
+tower.cd,output,,[0.5 0.5 0.5 0.5 0.5],1D array of the drag coefficients defined along the tower height.
+tower.layer_thickness,output,m,[[0.02921938 0.01614151 0.01226288 0.01122482 0.01163286]],"2D array of the thickness of the layers of the tower structure. The first dimension represents each layer, the second dimension represents each piecewise-constant entry of the tower sections."
+tower.outfitting_factor,output,,[1.07],Multiplier that accounts for secondary structure mass inside of tower
+tower.layer_name,output,Unavailable,['tower_wall'],1D array of the names of the layers modeled in the tower structure.
+tower.layer_mat,output,Unavailable,['steel'],1D array of the names of the materials of each layer modeled in the tower structure.
+tower_grid.s,output,,[0.         0.24475524 0.59440559 0.8041958  1.        ],"1D array of the non-dimensional grid defined along the tower axis (0-tower base, 1-tower top)"
+tower_grid.height,output,m,[147.96],Scalar of the tower height computed along the z axis.
+tower_grid.length,output,m,[147.96],Scalar of the tower length computed along its curved axis. A standard straight tower will be as high as long.
+tower_grid.foundation_height,output,m,[15.],Foundation height in respect to the ground level.

@@ -1,10 +1,10 @@
 general: {folder_output: outputs_mono, fname_output: monotow_output}
 design_variables:
     tower:
-        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 13.0}
-        layer_thickness: {flag: false, lower_bound: 0.004, upper_bound: 0.2}
+        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 10.0}
+        layer_thickness: {flag: true, lower_bound: 0.015, upper_bound: 0.04}
     monopile:
-        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 13.0}
+        outer_diameter: {flag: true, lower_bound: 9.001, upper_bound: 11.0}
         layer_thickness: {flag: true, lower_bound: 0.077, upper_bound: 0.13}
 merit_figure: structural_mass
 constraints:
@@ -29,6 +29,6 @@ constraints:
         pile_depth: {flag: true, lower_bound: 30.0}
         tower_diameter_coupling: {flag: true}
 driver:
-    optimization: {flag: true, tol: 1e-06, max_major_iter: 10, max_minor_iter: 100, max_iter: 500, step_size: 0.0001, solver: SLSQP, form: central}
+    optimization: {flag: true, tol: 0.001, max_major_iter: 10, max_minor_iter: 100, max_iter: 500, step_size: 0.0001, solver: SLSQP, form: central}
     design_of_experiments: {flag: false, run_parallel: true, generator: Uniform, num_samples: 5}
-recorder: {flag: false, file_name: log_opt.sql}
+recorder: {flag: true, file_name: log_opt_mono.sql}

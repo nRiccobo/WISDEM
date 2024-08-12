@@ -1,26 +1,27 @@
 general:
-        folder_output: outputs_grav
+        folder_output: outputs_mono
         fname_output: monotow_output
-design_variables:
 
+design_variables:
     tower:
         outer_diameter:
             flag: True
             lower_bound: 5.999
             upper_bound: 10.0
         layer_thickness:
-            flag: False
-            lower_bound: 4e-3
-            upper_bound: 2e-1
+            flag: True
+            lower_bound: 15.0e-3
+            upper_bound: 40.0e-3
     monopile:
         outer_diameter:
             flag: True
-            lower_bound: 5.999
+            lower_bound: 9.001
             upper_bound: 10.0
         layer_thickness:
             flag: True
             lower_bound: 77.0e-3
             upper_bound: 130.0e-3
+
 
 merit_figure: structural_mass
 
@@ -80,7 +81,7 @@ constraints:
 driver:
     optimization:
         flag: True            # Flag to enable optimization
-        tol: 1.e-6            # Optimality tolerance
+        tol: 1.e-3            # Optimality tolerance
         max_major_iter: 10    # Maximum number of major design iterations (SNOPT)
         max_minor_iter: 100   # Maximum number of minor design iterations (SNOPT)
         max_iter: 500         # Maximum number of iterations (SLSQP)
@@ -94,5 +95,5 @@ driver:
         num_samples: 5        # number of samples for (Uniform only)
 
 recorder:
-    flag: False                            # Flag to activate OpenMDAO recorder
-    file_name: log_opt.sql    # Name of OpenMDAO recorder
+    flag: True                            # Flag to activate OpenMDAO recorder
+    file_name: log_opt_mono.sql    # Name of OpenMDAO recorder

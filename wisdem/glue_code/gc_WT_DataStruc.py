@@ -37,6 +37,26 @@ class WindTurbineOntologyOpenMDAO(om.Group):
             Materials(mat_init_options=modeling_options["materials"], composites=modeling_options["flags"]["blade"]),
         )
 
+        # Environment inputs
+        if modeling_options["flags"]["environment"]:
+            env_ivc = self.add_subsystem("env", om.IndepVarComp())
+            env_ivc.add_output("rho_air", val=1.225, units="kg/m**3", desc="Density of air")
+            env_ivc.add_output("mu_air", val=1.81e-5, units="kg/(m*s)", desc="Dynamic viscosity of air")
+            env_ivc.add_output("shear_exp", val=0.2, desc="Shear exponent of the wind.")
+            env_ivc.add_output("speed_sound_air", val=340.0, units="m/s", desc="Speed of sound in air.")
+            env_ivc.add_output(
+                "weibull_k", val=2.0, desc="Shape parameter of the Weibull probability density function of the wind."
+            )
+            env_ivc.add_output("rho_water", val=1025.0, units="kg/m**3", desc="Density of ocean water")
+            env_ivc.add_output("mu_water", val=1.3351e-3, units="kg/(m*s)", desc="Dynamic viscosity of ocean water")
+            env_ivc.add_output(
+                "water_depth", val=0.0, units="m", desc="Water depth for analysis.  Values > 0 mean offshore"
+            )
+            env_ivc.add_output("Hsig_wave", val=0.0, units="m", desc="Significant wave height")
+            env_ivc.add_output("Tsig_wave", val=0.0, units="s", desc="Significant wave period")
+            env_ivc.add_output("G_soil", val=140e6, units="N/m**2", desc="Shear stress of soil")
+            env_ivc.add_output("nu_soil", val=0.4, desc="Poisson ratio of soil")
+        
         # Airfoil dictionary inputs
         if modeling_options["flags"]["airfoils"]:
             airfoils = om.IndepVarComp()
@@ -525,26 +545,6 @@ class WindTurbineOntologyOpenMDAO(om.Group):
             self.add_subsystem("mooring", Mooring(options=modeling_options))
             self.connect("floating.joints_xyz", "mooring.joints_xyz")
 
-        # Environment inputs
-        if modeling_options["flags"]["environment"]:
-            env_ivc = self.add_subsystem("env", om.IndepVarComp())
-            env_ivc.add_output("rho_air", val=1.225, units="kg/m**3", desc="Density of air")
-            env_ivc.add_output("mu_air", val=1.81e-5, units="kg/(m*s)", desc="Dynamic viscosity of air")
-            env_ivc.add_output("shear_exp", val=0.2, desc="Shear exponent of the wind.")
-            env_ivc.add_output("speed_sound_air", val=340.0, units="m/s", desc="Speed of sound in air.")
-            env_ivc.add_output(
-                "weibull_k", val=2.0, desc="Shape parameter of the Weibull probability density function of the wind."
-            )
-            env_ivc.add_output("rho_water", val=1025.0, units="kg/m**3", desc="Density of ocean water")
-            env_ivc.add_output("mu_water", val=1.3351e-3, units="kg/(m*s)", desc="Dynamic viscosity of ocean water")
-            env_ivc.add_output(
-                "water_depth", val=0.0, units="m", desc="Water depth for analysis.  Values > 0 mean offshore"
-            )
-            env_ivc.add_output("Hsig_wave", val=0.0, units="m", desc="Significant wave height")
-            env_ivc.add_output("Tsig_wave", val=0.0, units="s", desc="Significant wave period")
-            env_ivc.add_output("G_soil", val=140e6, units="N/m**2", desc="Shear stress of soil")
-            env_ivc.add_output("nu_soil", val=0.4, desc="Poisson ratio of soil")
-
         # Balance of station inputs
         if modeling_options["flags"]["bos"]:
             bos_ivc = self.add_subsystem("bos", om.IndepVarComp())
@@ -626,6 +626,9 @@ class WindTurbineOntologyOpenMDAO(om.Group):
             self.connect("blade.interp_airfoils.r_thick_interp", "af_3d.r_thick")
             self.connect("blade.pa.chord_param", "af_3d.chord")
             self.connect("control.rated_TSR", "af_3d.rated_TSR")
+            self.connect("control.maxOmega", "blade.compute_reynolds.maxOmega")
+            self.connect("control.max_TS", "blade.compute_reynolds.max_TS")
+            self.connect("control.V_out", "blade.compute_reynolds.V_out")
         if modeling_options["flags"]["tower"]:
             self.connect("tower.ref_axis", "high_level_tower_props.tower_ref_axis_user")
             self.add_subsystem("tower_grid", Compute_Grid(n_height=n_height_tower))
@@ -708,7 +711,9 @@ class Blade(om.Group):
 
         # TODO : Compute Reynolds here
         self.add_subsystem("compute_reynolds", ComputeReynolds(n_span=rotorse_options["n_span"]))
-
+        self.connect("high_level_blade_props.r_blade", "compute_reynolds.r_blade")
+        self.connect("high_level_blade_props.rotor_radius", "compute_reynolds.rotor_radius")
+        
         if rotorse_options["inn_af"]:
             self.add_subsystem(
                 "run_inn_af",
@@ -2369,8 +2374,8 @@ class Floating(om.Group):
                             ivc.add_output("outer_diameter_in", val=0.0, units="m")
                         else:
                             ivc.add_output("outer_diameter_in", val=np.zeros(n_geom), units="m")
-                        ivc.add_output("ca_usr", val=-1.0*np.ones(n_geom))
-                        ivc.add_output("cd_usr", val=-1.0*np.ones(n_geom))
+                        ivc.add_output("ca_usr_geom", val=-1.0*np.ones(n_geom))
+                        ivc.add_output("cd_usr_geom", val=-1.0*np.ones(n_geom))
                         member_shape_assigned = True
                     if "side_length_a" in float_opt["members"]["groups"][i]:
                         if float_opt["members"]["groups"][i]["side_length_a"]["constant"]:
@@ -2378,30 +2383,30 @@ class Floating(om.Group):
                         else:
                             ivc.add_output("side_length_a_in", val=np.zeros(n_geom), units="m")
                         member_shape_assigned = True
-                        ivc.add_output("ca_usr", val=-1.0*np.ones(n_geom))
-                        ivc.add_output("cd_usr", val=-1.0*np.ones(n_geom))
+                        ivc.add_output("ca_usr_geom", val=-1.0*np.ones(n_geom))
+                        ivc.add_output("cd_usr_geom", val=-1.0*np.ones(n_geom))
                     if "side_length_b" in float_opt["members"]["groups"][i]:
                         if float_opt["members"]["groups"][i]["side_length_b"]["constant"]:
                             ivc.add_output("side_length_b_in", val=0.0, units="m")
                         else:
                             ivc.add_output("side_length_b_in", val=np.zeros(n_geom), units="m")
-                        ivc.add_output("cay_usr", val=-1.0*np.ones(n_geom))
-                        ivc.add_output("cdy_usr", val=-1.0*np.ones(n_geom))
+                        ivc.add_output("cay_usr_geom", val=-1.0*np.ones(n_geom))
+                        ivc.add_output("cdy_usr_geom", val=-1.0*np.ones(n_geom))
                         member_shape_assigned = True
 
             if not member_shape_assigned:
                 # Use the memidx to query the correct member_shape
                 if floating_init_options["members"]["outer_shape"][memidx] == "circular":
                     ivc.add_output("outer_diameter_in", val=np.zeros(n_geom), units="m")
-                    ivc.add_output("ca_usr", val=-1.0*np.ones(n_geom))
-                    ivc.add_output("cd_usr", val=-1.0*np.ones(n_geom))
+                    ivc.add_output("ca_usr_geom", val=-1.0*np.ones(n_geom))
+                    ivc.add_output("cd_usr_geom", val=-1.0*np.ones(n_geom))
                 elif floating_init_options["members"]["outer_shape"][memidx] == "rectangular":
                     ivc.add_output("side_length_a_in", val=np.zeros(n_geom), units="m")
                     ivc.add_output("side_length_b_in", val=np.zeros(n_geom), units="m")
-                    ivc.add_output("ca_usr", val=-1.0*np.ones(n_geom))
-                    ivc.add_output("cd_usr", val=-1.0*np.ones(n_geom))
-                    ivc.add_output("cay_usr", val=-1.0*np.ones(n_geom))
-                    ivc.add_output("cdy_usr", val=-1.0*np.ones(n_geom))
+                    ivc.add_output("ca_usr_geom", val=-1.0*np.ones(n_geom))
+                    ivc.add_output("cd_usr_geom", val=-1.0*np.ones(n_geom))
+                    ivc.add_output("cay_usr_geom", val=-1.0*np.ones(n_geom))
+                    ivc.add_output("cdy_usr_geom", val=-1.0*np.ones(n_geom))
 
             ivc.add_discrete_output("layer_materials", val=[""] * n_layers)
             ivc.add_output("layer_thickness_in", val=np.zeros((n_layers, n_geom)), units="m")
@@ -2430,9 +2435,16 @@ class Floating(om.Group):
             # Here looping all dv member groups
             if floating_init_options["members"]["outer_shape"][memidx] == "circular":
                 self.connect(f"memgrp{k}.outer_diameter_in", f"memgrid{k}.outer_diameter_in")
+                self.connect(f"memgrp{k}.ca_usr_geom", f"memgrid{k}.ca_usr_geom")
+                self.connect(f"memgrp{k}.cd_usr_geom", f"memgrid{k}.cd_usr_geom")
             elif floating_init_options["members"]["outer_shape"][memidx] == "rectangular":
                 self.connect(f"memgrp{k}.side_length_a_in", f"memgrid{k}.side_length_a_in")
                 self.connect(f"memgrp{k}.side_length_b_in", f"memgrid{k}.side_length_b_in")
+                self.connect(f"memgrp{k}.ca_usr_geom", f"memgrid{k}.ca_usr_geom")
+                self.connect(f"memgrp{k}.cd_usr_geom", f"memgrid{k}.cd_usr_geom")
+                self.connect(f"memgrp{k}.cay_usr_geom", f"memgrid{k}.cay_usr_geom")
+                self.connect(f"memgrp{k}.cdy_usr_geom", f"memgrid{k}.cdy_usr_geom")
+
             self.connect(f"memgrp{k}.layer_thickness_in", f"memgrid{k}.layer_thickness_in")
 
         self.add_subsystem("alljoints", AggregateJoints(floating_init_options=floating_init_options), promotes=["*"])
@@ -2497,17 +2509,29 @@ class MemberGrid(om.ExplicitComponent):
         self.add_input("s_grid", val=np.zeros(n_height))
         if member_shape == "circular":
             self.add_input("outer_diameter_in", shape_by_conn=True, units="m")
+            self.add_input("ca_usr_geom", shape_by_conn=True)  
+            self.add_input("cd_usr_geom", shape_by_conn=True)            
         elif member_shape == "rectangular":
             self.add_input("side_length_a_in", shape_by_conn=True, units="m")
             self.add_input("side_length_b_in", shape_by_conn=True, units="m")
+            self.add_input("ca_usr_geom", shape_by_conn=True)  
+            self.add_input("cd_usr_geom", shape_by_conn=True)    
+            self.add_input("cay_usr_geom", shape_by_conn=True)  
+            self.add_input("cdy_usr_geom", shape_by_conn=True)    
 
         self.add_input("layer_thickness_in", val=np.zeros((n_layers, n_geom)), units="m")
 
         if member_shape == "circular":
             self.add_output("outer_diameter", val=np.zeros(n_height), units="m")
+            self.add_output("ca_usr_grid", val=-1.0*np.ones(n_height))
+            self.add_output("cd_usr_grid", val=-1.0*np.ones(n_height))
         elif member_shape == "rectangular":
             self.add_output("side_length_a", val=np.zeros(n_height), units="m")
             self.add_output("side_length_b", val=np.zeros(n_height), units="m")
+            self.add_output("ca_usr_grid", val=-1.0*np.ones(n_height))
+            self.add_output("cd_usr_grid", val=-1.0*np.ones(n_height))
+            self.add_output("cay_usr_grid", val=-1.0*np.ones(n_height))
+            self.add_output("cdy_usr_grid", val=-1.0*np.ones(n_height))
 
         self.add_output("layer_thickness", val=np.zeros((n_layers, n_height)), units="m")
 
@@ -2523,6 +2547,8 @@ class MemberGrid(om.ExplicitComponent):
                 outputs["outer_diameter"] = PchipInterpolator(s_in, inputs["outer_diameter_in"])(s_grid)
             else:
                 outputs["outer_diameter"][:] = inputs["outer_diameter_in"]
+            outputs["ca_usr_grid"] = PchipInterpolator(s_in, inputs["ca_usr_geom"])(s_grid)
+            outputs["cd_usr_grid"] = PchipInterpolator(s_in, inputs["cd_usr_geom"])(s_grid)
         elif member_shape == "rectangular":
             if len(inputs["side_length_a_in"]) > 1:
                 outputs["side_length_a"] = PchipInterpolator(s_in, inputs["side_length_a_in"])(s_grid)
@@ -2530,6 +2556,10 @@ class MemberGrid(om.ExplicitComponent):
             else:
                 outputs["side_length_a"][:] = inputs["side_length_a_in"]
                 outputs["side_length_b"][:] = inputs["side_length_b_in"]
+            outputs["ca_usr_grid"] = PchipInterpolator(s_in, inputs["ca_usr_geom"])(s_grid)
+            outputs["cd_usr_grid"] = PchipInterpolator(s_in, inputs["cd_usr_geom"])(s_grid)
+            outputs["cay_usr_grid"] = PchipInterpolator(s_in, inputs["cay_usr_geom"])(s_grid)
+            outputs["cdy_usr_grid"] = PchipInterpolator(s_in, inputs["cdy_usr_geom"])(s_grid)
         
         for k in range(n_layers):
             outputs["layer_thickness"][k, :] = PchipInterpolator(s_in, inputs["layer_thickness_in"][k, :])(s_grid)

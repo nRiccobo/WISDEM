@@ -78,18 +78,19 @@ class PoseOptimization(object):
                 - blade_opt["aero_shape"]["af_positions"]["af_start"]
                 - 1
             )
-        if len(blade_opt["structure"])>0:
-            for i in range(len(blade_opt["structure"])):
-                if blade_opt["structure"][i]["index_end"] > blade_opt["structure"][i]["n_opt"]:
-                    raise Exception(
-                        "Check the analysis options yaml, the index_end of a blade layer is higher than the number of DVs n_opt"
+        if "structure" in blade_opt:
+            if len(blade_opt["structure"])>0:
+                for i in range(len(blade_opt["structure"])):
+                    if blade_opt["structure"][i]["index_end"] > blade_opt["structure"][i]["n_opt"]:
+                        raise Exception(
+                            "Check the analysis options yaml, the index_end of a blade layer is higher than the number of DVs n_opt"
+                        )
+                    elif blade_opt["structure"][i]["index_end"] == 0:
+                        blade_opt["structure"][i]["index_end"] = blade_opt["structure"][i]["n_opt"]
+                    n_DV += (
+                        blade_opt["structure"][i]["index_end"]
+                        - blade_opt["structure"][i]["index_start"]
                     )
-                elif blade_opt["structure"][i]["index_end"] == 0:
-                    blade_opt["structure"][i]["index_end"] = blade_opt["structure"][i]["n_opt"]
-                n_DV += (
-                    blade_opt["structure"][i]["index_end"]
-                    - blade_opt["structure"][i]["index_start"]
-                )
         if self.opt["design_variables"]["control"]["tsr"]["flag"]:
             n_DV += 1
 
@@ -1358,7 +1359,10 @@ class PoseOptimization(object):
 
         if float_constr["metacentric_height"]["flag"]:
             wt_opt.model.add_constraint(
-                "floatingse.metacentric_height", lower=float_constr["metacentric_height"]["lower_bound"]
+                "floatingse.metacentric_height_roll", lower=float_constr["metacentric_height"]["lower_bound"]
+            )
+            wt_opt.model.add_constraint(
+                "floatingse.metacentric_height_pitch", lower=float_constr["metacentric_height"]["lower_bound"]
             )
 
         if float_constr["freeboard_margin"]["flag"]:

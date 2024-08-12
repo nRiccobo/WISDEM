@@ -1,13 +1,13 @@
 general: {folder_output: outputs_mono, fname_output: monotow_output}
 design_variables:
     tower:
-        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 13.0}
-        layer_thickness: {flag: true, lower_bound: 0.02, upper_bound: 0.05}
+        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 12.0}
+        layer_thickness: {flag: true, lower_bound: 0.015, upper_bound: 0.04}
         section_height: &id001 {flag: false, lower_bound: 5.0, upper_bound: 5.0}
         E: &id002 {flag: false, lower_bound: 200000000000.0, upper_bound: 200000000000.0}
         rho: &id003 {flag: false, lower_bound: 7800, upper_bound: 7800}
     monopile:
-        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 13.0}
+        outer_diameter: {flag: true, lower_bound: 9.001, upper_bound: 12.0}
         layer_thickness: {flag: true, lower_bound: 0.077, upper_bound: 0.13}
         section_height: *id001
         E: *id002
@@ -170,7 +170,7 @@ constraints:
         yaw_period: *id012
     user: []
 driver:
-    optimization: {flag: true, tol: 1e-06, max_major_iter: 10, max_minor_iter: 100, max_iter: 500, step_size: 0.0001, solver: SLSQP, form: central, time_limit: 0, max_function_calls: 100000, step_calc: None, debug_print: false}
+    optimization: {flag: true, tol: 0.001, max_major_iter: 10, max_minor_iter: 100, max_iter: 500, step_size: 0.0001, solver: SLSQP, form: central, time_limit: 0, max_function_calls: 100000, step_calc: None, debug_print: false}
     design_of_experiments: {flag: false, run_parallel: true, generator: Uniform, num_samples: 5, seed: 2, levels: 2, criterion: center, iterations: 2, debug_print: false}
     step_size_study:
         flag: false
@@ -180,8 +180,8 @@ driver:
         wrt: []
         driver_scaling: false
 recorder:
-    flag: false
-    file_name: log_opt.sql
+    flag: true
+    file_name: log_opt_mono.sql
     just_dvs: false
     includes: []
 merit_figure_user: {name: '', ref: 1, max_flag: false}

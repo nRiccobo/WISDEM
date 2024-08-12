@@ -1,13 +1,13 @@
 general: {folder_output: outputs_mono, fname_output: monotow_output}
 design_variables:
     tower:
-        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 10.0}
+        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 12.0}
         layer_thickness: {flag: true, lower_bound: 0.015, upper_bound: 0.04}
         section_height: &id001 {flag: false, lower_bound: 5.0, upper_bound: 5.0}
         E: &id002 {flag: false, lower_bound: 200000000000.0, upper_bound: 200000000000.0}
         rho: &id003 {flag: false, lower_bound: 7800, upper_bound: 7800}
     monopile:
-        outer_diameter: {flag: true, lower_bound: 9.001, upper_bound: 11.0}
+        outer_diameter: {flag: true, lower_bound: 9.001, upper_bound: 12.0}
         layer_thickness: {flag: true, lower_bound: 0.077, upper_bound: 0.13}
         section_height: *id001
         E: *id002

@@ -17,7 +17,9 @@ import time
 
 # Should we go through and run the design optimizations?
 run_optimization = True #True
-overwrite_geometry = True
+overwrite_geometry = False
+
+reset_geometry = True
 
 # Should we just evaluate the current design and generate WISDEM outputs? (always run if optimizing)
 run_evaluation = True
@@ -35,13 +37,13 @@ gear_box = False
 ratings = [15] # , 20, 22] # [15, 20, 22, 25]
 
 # Which depths should we run [in m] (choices are 20, 30, 40, 50, 60)?
-depths  = [20, 30, 40, 50, 60]
+depths  = [20] # , 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
-max_diam = 13. * np.ones( (len(ratings), len(depths)) )
-if len(ratings) > 1:
-    max_diam[1,:] = 11. # 20 m
-    max_diam[2,:] = 11. # 22 m
+max_diam = 12 * np.ones( (len(ratings), len(depths)) )
+#if len(ratings) > 1:
+#    max_diam[1,:] = 11. # 20 m
+#    max_diam[2,:] = 11. # 22 m
     #max_diam[3,:] = 12. # 25 m
 
 # Set the first natural frequency [in Hz] of the monopile-tower structure (with the nacelle+rotor on top)
@@ -86,6 +88,15 @@ for ri, r in enumerate(ratings):
 
         # Run optimization
         if run_optimization:
+
+            # reset tower and monopile geometry
+            if reset_geometry:
+                write_yaml(fgeometry, fanalysis_tmp)
+                fgeometry_tmp = load_yaml(fgeometry)
+
+                fgeometry_tmp['components']['monopile']['outer_shape_bem']['outer_diameter']['values'] = [13]*7
+                #fgeometry_tmp['components']['monopile']['internal_structure_2d_fem']['layers']['thickness']['values'] = [0.09]*6
+
             # Write out customized analysis options
             analysis_opt_yaml['design_variables']['tower']['outer_diameter']['upper_bound'] = float(max_diam[ri, di])
             analysis_opt_yaml['design_variables']['monopile']['outer_diameter']['upper_bound'] = float(max_diam[ri, di])
@@ -97,7 +108,7 @@ for ri, r in enumerate(ratings):
 
             # Run WISDEM optimization of tower and monopile
             t = time.time()
-            wt_opt, _, _ = run_wisdem(fgeometry, fmodeling_opt, fanalysis_tmp)
+            wt_opt, _, _ = run_wisdem(fgeometry_tmp, fmodeling_opt, fanalysis_tmp)
 
             # Read output
             fopt_path = os.path.join('outputs_mono', 'monotow_output.yaml')
@@ -116,6 +127,8 @@ for ri, r in enumerate(ratings):
             wt_run, _, _ = run_wisdem(fgeometry, fmodeling, fanalysis)
 
             print(f"{r}mw {d}m Eval Elapsed Time: {time.time() - t2:.2f}")
+
+        # Run WEIS to calculate fatigue results
         if run_fatigue_openfast:
             wt_run, _, _ = run_weis(fgeometry, fmodeling, fanalysis)
 

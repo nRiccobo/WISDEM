@@ -94,13 +94,13 @@ WISDEM:
         n_layers_monopile: 1
     BOS: {flag: false}
     Loading:
-        mass: 967074.89012356
-        center_of_mass: [-6.61477744, -0.09771873, 4.53683107]
-        moment_of_inertia: [413558635.0, 276071589.0, 257350933.0, 786.163621, 13535972.2, 170976.373]
+        mass: 951334.48341963
+        center_of_mass: [-7.33983021, -0.09929177, 4.60295305]
+        moment_of_inertia: [378224314.0, 272487855.0, 253187505.0, 852.611923, 19419909.4, 170683.998]
         loads:
-           -  force: [2427925.55809699, 29094.73368413, -7074256.2758736]
-              moment: [-278500.68674037, -12634193.44789813, 1299461.07383137]
-              velocity: 11.73732
+           -  force: [3787067.18771772, 22429.5465114, -8904060.94535821]
+              moment: [-1132154.80072261, -40689360.79046182, 9736548.45914849]
+              velocity: 10
     FloatingSE:
         flag: false
         n_refine: 1
@@ -112,7 +112,6 @@ WISDEM:
         gamma_freq: 1.1
         gamma_fatigue: 1.0
         symmetric_moorings: true
-        rank_and_file: false
     GeneratorSE: {type: pmsg_outer}
 flags: {blade: false, hub: false, nacelle: false, tower: true, monopile: true, jacket: false, floating_platform: false, mooring: false, RNA: false, assembly: true, components: true, airfoils: true, materials: true, control: true, environment: true, bos: false, costs: true, generator: false, floating: false, offshore: true}
 materials: {n_mat: 11}

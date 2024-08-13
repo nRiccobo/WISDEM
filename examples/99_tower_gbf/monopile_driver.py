@@ -17,7 +17,7 @@ import time
 
 # Should we go through and run the design optimizations?
 run_optimization = True #True
-overwrite_geometry = False
+overwrite_geometry = True
 
 reset_geometry = True
 
@@ -37,10 +37,10 @@ gear_box = False
 ratings = [15] # , 20, 22] # [15, 20, 22, 25]
 
 # Which depths should we run [in m] (choices are 20, 30, 40, 50, 60)?
-depths  = [20] # , 30, 40, 50, 60]
+depths  = [30] # [20, 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
-max_diam = 12 * np.ones( (len(ratings), len(depths)) )
+max_diam = 11 * np.ones( (len(ratings), len(depths)) )
 #if len(ratings) > 1:
 #    max_diam[1,:] = 11. # 20 m
 #    max_diam[2,:] = 11. # 22 m
@@ -94,7 +94,7 @@ for ri, r in enumerate(ratings):
                 write_yaml(fgeometry, fanalysis_tmp)
                 fgeometry_tmp = load_yaml(fgeometry)
 
-                fgeometry_tmp['components']['monopile']['outer_shape_bem']['outer_diameter']['values'] = [13]*7
+                fgeometry_tmp['components']['monopile']['outer_shape_bem']['outer_diameter']['values'] = [9.5]*7
                 #fgeometry_tmp['components']['monopile']['internal_structure_2d_fem']['layers']['thickness']['values'] = [0.09]*6
 
             # Write out customized analysis options

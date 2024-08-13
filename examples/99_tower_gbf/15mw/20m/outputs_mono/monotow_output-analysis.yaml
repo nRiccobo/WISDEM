@@ -1,14 +1,14 @@
 general: {folder_output: outputs_mono, fname_output: monotow_output}
 design_variables:
     tower:
-        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 12.0}
-        layer_thickness: {flag: true, lower_bound: 0.015, upper_bound: 0.04}
+        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 11.0}
+        layer_thickness: {flag: true, lower_bound: 0.035, upper_bound: 0.055}
         section_height: &id001 {flag: false, lower_bound: 5.0, upper_bound: 5.0}
         E: &id002 {flag: false, lower_bound: 200000000000.0, upper_bound: 200000000000.0}
         rho: &id003 {flag: false, lower_bound: 7800, upper_bound: 7800}
     monopile:
-        outer_diameter: {flag: true, lower_bound: 9.001, upper_bound: 12.0}
-        layer_thickness: {flag: true, lower_bound: 0.077, upper_bound: 0.13}
+        outer_diameter: {flag: true, lower_bound: 9.001, upper_bound: 11.0}
+        layer_thickness: {flag: true, lower_bound: 0.05, upper_bound: 0.135}
         section_height: *id001
         E: *id002
         rho: *id003
@@ -72,20 +72,20 @@ merit_figure: structural_mass
 constraints:
     tower:
         height_constraint: {flag: false, lower_bound: 0.01, upper_bound: 0.01}
-        stress: {flag: true}
-        global_buckling: {flag: true}
-        shell_buckling: {flag: true}
-        d_to_t: {flag: false, lower_bound: 120.0, upper_bound: 2000.0}
+        stress: {flag: false}
+        global_buckling: {flag: false}
+        shell_buckling: {flag: false}
+        d_to_t: {flag: true, lower_bound: 80.0, upper_bound: 200.0}
         taper: {flag: false, lower_bound: 0.2}
         slope: {flag: true}
         frequency: {flag: false}
-        frequency_1: {flag: true, lower_bound: 0.22, upper_bound: 0.4}
+        frequency_1: {flag: false, lower_bound: 0.22, upper_bound: 0.4}
         thickness_slope: &id005 {flag: false}
     monopile:
         stress: {flag: true}
         global_buckling: {flag: true}
         shell_buckling: {flag: true}
-        d_to_t: {flag: false, lower_bound: 120.0, upper_bound: 130.0}
+        d_to_t: {flag: true, lower_bound: 80.0, upper_bound: 160.0}
         taper: {flag: false, lower_bound: 0.2}
         slope: {flag: true}
         frequency_1: {flag: true, lower_bound: 0.22, upper_bound: 0.4}

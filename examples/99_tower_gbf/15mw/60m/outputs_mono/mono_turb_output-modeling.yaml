@@ -120,7 +120,6 @@ WISDEM:
         gamma_freq: 1.1
         gamma_fatigue: 1.0
         symmetric_moorings: true
-        rank_and_file: false
     GeneratorSE: {type: pmsg_outer}
 Level3:
     flag: true

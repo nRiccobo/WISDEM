@@ -1,7 +1,7 @@
 General:
     verbosity: false
     goodman_correction: true
-    openfast_configuration: {use_exe: false, OF_run_fst: EquinorRWT, OF_run_dir: OFtemp}
+    openfast_configuration: {use_exe: false, OF_run_fst: NicksRWT, OF_run_dir: OFtemp}
     solver_maxiter: 5
 WISDEM:
     RotorSE:
@@ -69,7 +69,7 @@ WISDEM:
     TowerSE:
         flag: true
         wind: PowerWind
-        gamma_f: 1.35
+        gamma_f: 1.2
         gamma_m: 1.3
         gamma_n: 1.0
         gamma_b: 1.1

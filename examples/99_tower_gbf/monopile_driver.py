@@ -37,18 +37,19 @@ gear_box = False
 ratings = [15] # , 20, 22] # [15, 20, 22, 25]
 
 # Which depths should we run [in m] (choices are 20, 30, 40, 50, 60)?
-depths  = [30] # [20, 30, 40, 50, 60]
+depths  = [20, 30, 40, 50, 60] # [20, 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
 max_diam = 11 * np.ones( (len(ratings), len(depths)) )
+tow_diam = 8 * np.ones( (len(ratings), len(depths)) )
 #if len(ratings) > 1:
 #    max_diam[1,:] = 11. # 20 m
 #    max_diam[2,:] = 11. # 22 m
     #max_diam[3,:] = 12. # 25 m
 
 # Set the first natural frequency [in Hz] of the monopile-tower structure (with the nacelle+rotor on top)
-freq_lower = 0.22 * np.ones( (len(ratings), len(depths)) )
-freq_upper = 0.4 * np.ones( (len(ratings), len(depths)) )
+freq_lower = 0.13 * np.ones( (len(ratings), len(depths)) )
+freq_upper = 0.24 * np.ones( (len(ratings), len(depths)) )
 # ---------------------------------------------------------------------------------------------
 
 # Load WEIS only if that is what is being run, otherwise it brings in many new dependencies and baggage
@@ -97,8 +98,11 @@ for ri, r in enumerate(ratings):
                 fgeometry_tmp['components']['monopile']['outer_shape_bem']['outer_diameter']['values'] = [9.5]*7
                 #fgeometry_tmp['components']['monopile']['internal_structure_2d_fem']['layers']['thickness']['values'] = [0.09]*6
 
+            else:
+                fgeometry_tmp = fgeometry
+
             # Write out customized analysis options
-            analysis_opt_yaml['design_variables']['tower']['outer_diameter']['upper_bound'] = float(max_diam[ri, di])
+            analysis_opt_yaml['design_variables']['tower']['outer_diameter']['upper_bound'] = float(tow_diam[ri, di])
             analysis_opt_yaml['design_variables']['monopile']['outer_diameter']['upper_bound'] = float(max_diam[ri, di])
             analysis_opt_yaml['constraints']['tower']['frequency_1']['lower_bound'] = float(freq_lower[ri, di])
             analysis_opt_yaml['constraints']['tower']['frequency_1']['upper_bound'] = float(freq_upper[ri, di])
@@ -111,7 +115,7 @@ for ri, r in enumerate(ratings):
             wt_opt, _, _ = run_wisdem(fgeometry_tmp, fmodeling_opt, fanalysis_tmp)
 
             # Read output
-            fopt_path = os.path.join('outputs_mono', 'monotow_output.yaml')
+            fopt_path = os.path.join('outputs_mono', 'monotow_iea15_output.yaml')
             if not os.path.exists(fopt_path): continue
 
             # Overwrite orignal file

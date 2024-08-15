@@ -1,11 +1,11 @@
-general: {folder_output: outputs_mono, fname_output: monotow_output}
+general: {folder_output: outputs_mono, fname_output: monotow_iea15_output}
 design_variables:
     tower:
-        outer_diameter: {flag: true, lower_bound: 5.999, upper_bound: 11.0}
-        layer_thickness: {flag: true, lower_bound: 0.035, upper_bound: 0.055}
+        outer_diameter: {flag: true, lower_bound: 6.0, upper_bound: 8.0}
+        layer_thickness: {flag: true, lower_bound: 0.025, upper_bound: 0.1}
     monopile:
-        outer_diameter: {flag: true, lower_bound: 9.001, upper_bound: 11.0}
-        layer_thickness: {flag: true, lower_bound: 0.05, upper_bound: 0.135}
+        outer_diameter: {flag: true, lower_bound: 6.001, upper_bound: 11.0}
+        layer_thickness: {flag: true, lower_bound: 0.07, upper_bound: 0.125}
 merit_figure: structural_mass
 constraints:
     tower:
@@ -13,22 +13,24 @@ constraints:
         stress: {flag: false}
         global_buckling: {flag: false}
         shell_buckling: {flag: false}
-        d_to_t: {flag: true, lower_bound: 80.0, upper_bound: 200.0}
-        taper: {flag: false, lower_bound: 0.2}
+        d_to_t: {flag: false, lower_bound: 80.0, upper_bound: 200.0}
+        taper: {flag: false, lower_bound: 0.4}
         slope: {flag: true}
+        thickness_slope: {flag: true}
         frequency: {flag: false}
-        frequency_1: {flag: false, lower_bound: 0.22, upper_bound: 0.4}
+        frequency_1: {flag: false, lower_bound: 0.13, upper_bound: 0.24}
     monopile:
         stress: {flag: true}
         global_buckling: {flag: true}
         shell_buckling: {flag: true}
         d_to_t: {flag: true, lower_bound: 80.0, upper_bound: 160.0}
-        taper: {flag: false, lower_bound: 0.2}
+        taper: {flag: true, lower_bound: 0.4}
         slope: {flag: true}
-        frequency_1: {flag: true, lower_bound: 0.22, upper_bound: 0.4}
-        pile_depth: {flag: true, lower_bound: 30.0}
+        thickness_slope: {flag: true}
+        frequency_1: {flag: true, lower_bound: 0.13, upper_bound: 0.24}
+        pile_depth: {flag: false, lower_bound: 45.0}
         tower_diameter_coupling: {flag: true}
 driver:
-    optimization: {flag: true, tol: 0.001, max_major_iter: 10, max_minor_iter: 100, max_iter: 500, step_size: 0.0001, solver: SLSQP, form: central}
+    optimization: {flag: true, tol: 1e-08, max_major_iter: 10, max_minor_iter: 100, max_iter: 200, step_size: 1e-05, solver: SLSQP, form: forward}
     design_of_experiments: {flag: false, run_parallel: true, generator: Uniform, num_samples: 5}
-recorder: {flag: true, file_name: log_opt_mono.sql}
+recorder: {flag: true, file_name: log_opt_mono_iea15.sql}

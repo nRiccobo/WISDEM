@@ -1,26 +1,26 @@
 general:
         folder_output: outputs_mono
-        fname_output: monotow_output
+        fname_output: monotow_iea15_output
 
 design_variables:
     tower:
         outer_diameter:
             flag: True
-            lower_bound: 5.999
+            lower_bound: 6.0
             upper_bound: 10.0
         layer_thickness:
             flag: True
-            lower_bound: 35.0e-3
-            upper_bound: 55.0e-3
+            lower_bound: 25.0e-3
+            upper_bound: 100.0e-3
     monopile:
         outer_diameter:
             flag: True
-            lower_bound: 9.001
+            lower_bound: 6.001
             upper_bound: 10.0
         layer_thickness:
             flag: True
-            lower_bound: 50.0e-3
-            upper_bound: 135.0e-3
+            lower_bound: 70.0e-3
+            upper_bound: 125.0e-3
 
 
 merit_figure: structural_mass
@@ -38,20 +38,22 @@ constraints:
         shell_buckling:
             flag: False
         d_to_t:
-            flag: True
+            flag: False
             lower_bound: 80.0 #100 - 200 maybe 160 is max.
             upper_bound: 200.0
         taper:
             flag: False
-            lower_bound: 0.2
+            lower_bound: 0.4
         slope:
+            flag: True
+        thickness_slope:    # suggested by Garrett
             flag: True
         frequency:
             flag: False
         frequency_1:
-            flag: False
-            lower_bound: 0.22
-            upper_bound: 0.40
+            flag: False   # this doesn't matter because we set frequency_1 in the monopile. From Pietro and Garrett.
+            lower_bound: 0.13
+            upper_bound: 0.24
     monopile:
         stress:
             flag: True
@@ -64,30 +66,32 @@ constraints:
             lower_bound: 80.0
             upper_bound: 160.0
         taper:
-            flag: False
-            lower_bound: 0.2
+            flag: True
+            lower_bound: 0.4
         slope:
+            flag: True
+        thickness_slope:
             flag: True
         frequency_1:
             flag: True
-            lower_bound: 0.22
-            upper_bound: 0.40
+            lower_bound: 0.13
+            upper_bound: 0.24
         pile_depth:
-            flag: True
-            lower_bound: 30.0
+            flag: False
+            lower_bound: 45.0
         tower_diameter_coupling:
             flag: True
 
 driver:
     optimization:
         flag: True            # Flag to enable optimization
-        tol: 1.e-3            # Optimality tolerance
+        tol: 1.e-8            # Optimality tolerance
         max_major_iter: 10    # Maximum number of major design iterations (SNOPT)
         max_minor_iter: 100   # Maximum number of minor design iterations (SNOPT)
-        max_iter: 500         # Maximum number of iterations (SLSQP)
-        step_size: 1.e-4      # Step size for finite differencing
+        max_iter: 200         # Maximum number of iterations (SLSQP)
+        step_size: 1.e-5      # Step size for finite differencing
         solver: SLSQP         # Optimization solver. Other options are 'SLSQP' - 'CONMIN'
-        form: central         # Finite differencing mode, either forward or central
+        form: forward         # Finite differencing mode, either forward or central
     design_of_experiments:
         flag: False           # Flag to enable design of experiments
         run_parallel: True    # Flag to run using parallel processing
@@ -96,4 +100,4 @@ driver:
 
 recorder:
     flag: True                            # Flag to activate OpenMDAO recorder
-    file_name: log_opt_mono.sql    # Name of OpenMDAO recorder
+    file_name: log_opt_mono_iea15.sql    # Name of OpenMDAO recorder

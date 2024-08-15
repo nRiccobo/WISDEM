@@ -10,7 +10,7 @@ WISDEM:
     TowerSE:             # Options of TowerSE module
         flag: True
         wind: PowerWind  # Wind used
-        gamma_f: 1.35    # Safety factor for fatigue loads
+        gamma_f: 1.2    # Safety factor for fatigue loads
         gamma_m: 1.3     # Safety factor for material properties
         gamma_n: 1.0     # Safety factor for ...
         gamma_b: 1.1     # Safety factor for ...
@@ -20,12 +20,13 @@ WISDEM:
         frame3dd:
             shear: True
             geom: True
-            tol: 1e-8
+            tol: 1e-9
     FixedBottomSE:
         flag: True
         soil_springs: True
+        gravity_foundation: False
         wind: PowerWind  # Wind used
-        gamma_f: 1.35    # Safety factor for fatigue loads
+        gamma_f: 1.2     # Safety factor for fatigue loads
         gamma_m: 1.3     # Safety factor for material properties
         gamma_n: 1.0     # Safety factor for ...
         gamma_b: 1.1     # Safety factor for ...
@@ -35,8 +36,8 @@ WISDEM:
         frame3dd:
             shear: True
             geom: True
-            tol: 1e-8
-            modal_method: 1
+            tol: 1e-9
+            #modal_method: 1
     BOS:
         flag: False
     Loading:
@@ -56,6 +57,7 @@ WISDEM:
         #      moment: [-278500.68674037, -12634193.44789813, 1299461.07383137]
         #      velocity: 11.73732
 
+        # AFTER BUG FIX on wisdem-develop
         # running 02_reference_turbine/iea15_driver.py
         # from simulation towerse.rna_mass,intermediate,kg
         #towerse.rna_I,intermediate,kg*m**2,

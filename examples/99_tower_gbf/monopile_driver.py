@@ -19,7 +19,7 @@ import time
 run_optimization = True #True
 overwrite_geometry = True
 
-reset_geometry = True
+reset_geometry = False
 
 # Should we just evaluate the current design and generate WISDEM outputs? (always run if optimizing)
 run_evaluation = True
@@ -40,8 +40,8 @@ ratings = [15] # , 20, 22] # [15, 20, 22, 25]
 depths  = [20, 30, 40, 50, 60] # [20, 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
-max_diam = 11 * np.ones( (len(ratings), len(depths)) )
-tow_diam = 8 * np.ones( (len(ratings), len(depths)) )
+max_diam = 13 * np.ones( (len(ratings), len(depths)) )
+tow_diam = 10 * np.ones( (len(ratings), len(depths)) )
 #if len(ratings) > 1:
 #    max_diam[1,:] = 11. # 20 m
 #    max_diam[2,:] = 11. # 22 m

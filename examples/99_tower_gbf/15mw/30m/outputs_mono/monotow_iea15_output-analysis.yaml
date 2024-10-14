@@ -1,14 +1,15 @@
 general: {folder_output: outputs_mono, fname_output: monotow_iea15_output}
 design_variables:
     tower:
-        outer_diameter: {flag: true, lower_bound: 6.0, upper_bound: 8.0}
-        layer_thickness: {flag: true, lower_bound: 0.025, upper_bound: 0.1}
+        outer_diameter: {flag: true, lower_bound: 6.0, upper_bound: 10.0}
+        layer_thickness: {flag: true, lower_bound: 0.02, upper_bound: 0.04}
         section_height: &id001 {flag: false, lower_bound: 5.0, upper_bound: 5.0}
         E: &id002 {flag: false, lower_bound: 200000000000.0, upper_bound: 200000000000.0}
         rho: &id003 {flag: false, lower_bound: 7800, upper_bound: 7800}
     monopile:
-        outer_diameter: {flag: true, lower_bound: 6.001, upper_bound: 11.0}
-        layer_thickness: {flag: true, lower_bound: 0.07, upper_bound: 0.125}
+        outer_diameter: {flag: true, lower_bound: 6.001, upper_bound: 13.0}
+        layer_thickness: {flag: true, lower_bound: 0.075, upper_bound: 0.15}
+        gravity_foundation_mass: {flag: false}
         section_height: *id001
         E: *id002
         rho: *id003
@@ -85,13 +86,14 @@ constraints:
         stress: {flag: true}
         global_buckling: {flag: true}
         shell_buckling: {flag: true}
-        d_to_t: {flag: true, lower_bound: 80.0, upper_bound: 160.0}
+        d_to_t: {flag: false, lower_bound: 80.0, upper_bound: 160.0}
         taper: {flag: true, lower_bound: 0.4}
         slope: {flag: true}
         thickness_slope: {flag: true}
         frequency_1: {flag: true, lower_bound: 0.13, upper_bound: 0.24}
         pile_depth: {flag: false, lower_bound: 45.0}
         tower_diameter_coupling: {flag: true}
+        top_deflection: {flag: false}
     blade:
         strains_spar_cap_ss: {flag: false, max: 0.004, index_start: 0, index_end: 8}
         strains_spar_cap_ps: {flag: false, max: 0.004, index_start: 0, index_end: 8}

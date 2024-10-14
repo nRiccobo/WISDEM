@@ -39,9 +39,10 @@ depths  = [20] #, 30, 40, 50, 60]
 
 # Set the maximum diameter [in m] for the optimizations.  Can be constant or refine by rating-depth combo
 max_diam = 50. * np.ones( (len(ratings), len(depths)) )
-if len(ratings) > 1:
-    max_diam[1,:] = 11. # 20 m
-    max_diam[2,:] = 11. # 22 m
+tow_diam = 8 * np.ones( (len(ratings), len(depths)) )
+#if len(ratings) > 1:
+#    max_diam[1,:] = 11. # 20 m
+#    max_diam[2,:] = 11. # 22 m
     #max_diam[3,:] = 12. # 25 m
 
 # Set the first natural frequency [in Hz] of the monopile-tower structure (with the nacelle+rotor on top)
@@ -73,7 +74,7 @@ for ri, r in enumerate(ratings):
         fgeometry = f'modified_{r}_gen.yaml'
 
     else:
-        fgeometry = f'modified_{r}.yaml'
+        fgeometry = f'modified_{r}_grav.yaml'
 
     # The shortened WISDEM simulation that only runs the tower-monopile modules for quicker optimization
     fmodeling_opt  = os.path.join(mydir, f'{r}mw', 'modeling_options_gravitybase_noRNA.yaml')
@@ -87,7 +88,7 @@ for ri, r in enumerate(ratings):
         # Run optimization
         if run_optimization:
             # Write out customized analysis options
-            analysis_opt_yaml['design_variables']['tower']['outer_diameter']['upper_bound'] = float(max_diam[ri, di])
+            analysis_opt_yaml['design_variables']['tower']['outer_diameter']['upper_bound'] = float(tow_diam[ri, di])
             analysis_opt_yaml['design_variables']['monopile']['outer_diameter']['upper_bound'] = float(max_diam[ri, di])
             analysis_opt_yaml['constraints']['tower']['frequency_1']['lower_bound'] = float(freq_lower[ri, di])
             analysis_opt_yaml['constraints']['tower']['frequency_1']['upper_bound'] = float(freq_upper[ri, di])
@@ -100,7 +101,7 @@ for ri, r in enumerate(ratings):
             wt_opt, _, _ = run_wisdem(fgeometry, fmodeling_opt, fanalysis_tmp)
 
             # Read output
-            fopt_path = os.path.join('outputs', 'gravtow_output.yaml')
+            fopt_path = os.path.join('outputs_grav', 'gravtow_output.yaml')
             if not os.path.exists(fopt_path): continue
 
             # Overwrite orignal file
@@ -116,6 +117,8 @@ for ri, r in enumerate(ratings):
             wt_run, _, _ = run_wisdem(fgeometry, fmodeling, fanalysis)
 
             print(f"{r}mw {d}m Eval Elapsed Time: {time.time() - t2:.2f}")
+
+        # Run WEIS to calculate fatigue results
         if run_fatigue_openfast:
             wt_run, _, _ = run_weis(fgeometry, fmodeling, fanalysis)
 

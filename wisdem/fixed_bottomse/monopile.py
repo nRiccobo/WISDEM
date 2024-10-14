@@ -141,6 +141,7 @@ class MonopileMass(om.ExplicitComponent):
         self.add_input("tower_cost", val=0.0, units="USD")
 
         self.add_output("monopile_mass", val=0.0, units="kg")
+        self.add_output("grav_foundation_mass", val=0.0, units="kg")
         self.add_output("monopile_cost", val=0.0, units="USD")
         self.add_output("monopile_z_cg", val=0.0, units="m")
         self.add_output("monopile_I_base", np.zeros(6), units="kg*m**2")
@@ -159,6 +160,7 @@ class MonopileMass(om.ExplicitComponent):
         m_cyl = inputs["cylinder_mass"]
         c_cyl = inputs["cylinder_cost"]
 
+        outputs["grav_foundation_mass"] = m_grav
         outputs["monopile_mass"] = m_mono = m_cyl + m_trans + m_grav
         outputs["monopile_cost"] = c_cyl + c_trans
         outputs["structural_mass"] = outputs["monopile_mass"] + inputs["tower_mass"]
@@ -705,7 +707,7 @@ class MonopileFrame(om.ExplicitComponent):
         outputs["monopile_Mxx"] = Mxx[: (n_mono - 1)]
         outputs["monopile_Myy"] = Myy[: (n_mono - 1)]
         outputs["monopile_Mzz"] = Mzz[: (n_mono - 1)]
-    
+
 
         outputs["monopile_tower_Fz"] = Fz
         outputs["monopile_tower_Vx"] = Vx
@@ -1026,4 +1028,4 @@ class MonopileSE(om.Group):
         if mod_opt["soil_springs"]:
             self.connect("soil.z_k", "monopile.z_soil")
             self.connect("soil.k", "monopile.k_soil")
-            
+

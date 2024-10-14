@@ -105,6 +105,8 @@ class PoseOptimization(object):
                 self.modeling["WISDEM"]["FixedBottomSE"]["n_height"]
                 * self.modeling["WISDEM"]["FixedBottomSE"]["n_layers"]
             )
+        if mono_opt["gravity_foundation"]["flag"]:
+            print("I'm HERE NICK!!! ")
         # TODO: FIX THIS
         # if jacket_opt["outer_diameter"]["flag"]:
         #    n_DV += self.modeling["WISDEM"]["FixedBottomSE"]["n_height"]
@@ -737,6 +739,14 @@ class PoseOptimization(object):
                 upper=monopile_opt["layer_thickness"]["upper_bound"],
                 ref=1e-2,
             )
+        if monopile_opt["gravity_foundation_mass"]["flag"]:
+            #print('Im here in set_design_variables')
+            wt_opt.model.add_design_var(
+                "monopile.gravity_foundation_mass",
+                lower=monopile_opt["gravity_foundation_mass"]["lower_bound"],
+                upper=monopile_opt["gravity_foundation_mass"]["upper_bound"],
+                ref=100e3,
+            )
 
         # -- Jacket --
         if jacket_opt["foot_head_ratio"]["flag"]:
@@ -1300,6 +1310,9 @@ class PoseOptimization(object):
 
         if monopile_constr["tower_diameter_coupling"]["flag"]:
             wt_opt.model.add_constraint("fixedse.constr_diam_consistency", upper=1.0)
+
+        if monopile_constr["top_deflection"]["flag"]:
+            wt_opt.model.add_constraint("fixedse.monopile.top_deflection", upper=1.0)
 
         # Jacket constraints
         jacket_constr = self.opt["constraints"]["jacket"]
